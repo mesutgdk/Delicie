@@ -34,9 +34,9 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         
-        let page1 = OnboardingViewController(imageName: "slide1", titleText: "Quick Delivery At Your Doorstep", secondTitleText: "Home Delivery and Online rezervation system for restaurants and cafes")
-        let page2 = OnboardingViewController(imageName: "slide2", titleText: "nasılsın", secondTitleText: "bababa")
-        let page3 = OnboardingViewController(imageName: "slide3", titleText: "iyi misin", secondTitleText: "ananne")
+        let page1 = OnboardingViewController(imageName: "slide1", titleText: "Quick Delivery At Your Doorstep", secondTitleText: "Home delivery and Online rezervation system for restaurants and cafes")
+        let page2 = OnboardingViewController(imageName: "slide2", titleText: "World-Class Chefs", secondTitleText: "Our dishes are prepared by the best")
+        let page3 = OnboardingViewController(imageName: "slide3", titleText: "Delicious Dishes", secondTitleText: "Experince a variety of amazing dishes from different cultures around the world")
         
         pages.append(page1)
         pages.append(page2)
@@ -97,7 +97,7 @@ class OnboardingContainerViewController: UIViewController {
 extension OnboardingContainerViewController{
     
     @objc func nextTapped(){
-        pageViewController.viewControllers
+       
         if indexTurn < 1{
             currentVC = pages[indexTurn+1]
         } else {

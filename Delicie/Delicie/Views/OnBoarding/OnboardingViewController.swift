@@ -81,34 +81,29 @@ extension OnboardingViewController{
     private func layout(){
         //imageview
         NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
             imageView.leftAnchor.constraint(equalTo: view.leftAnchor),
             imageView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            imageView.bottomAnchor.constraint(equalTo: view.centerYAnchor,constant: 150)
+//            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
         //firstLabel
         NSLayoutConstraint.activate([
-            firstLabel.leftAnchor.constraint(equalTo: view.leftAnchor),
-            firstLabel.rightAnchor.constraint(equalTo: view.rightAnchor),
-            firstLabel.bottomAnchor.constraint(equalTo: secondLabel.topAnchor, constant: -50),
-            firstLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            firstLabel.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
+            firstLabel.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 16),
+            firstLabel.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -16),
+            
         ])
 
         //secondLabel
         NSLayoutConstraint.activate([
-            secondLabel.rightAnchor.constraint(equalTo: view.rightAnchor),
-            secondLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            secondLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
+            secondLabel.topAnchor.constraint(equalTo: firstLabel.bottomAnchor, constant: 16),
+            secondLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            secondLabel.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -16),
+            
         ])
 
-        
-        
-//        NSLayoutConstraint.activate([
-//            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-//            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
-//        ])
         
     }
 }
