@@ -16,4 +16,14 @@ extension UIView{
             self.layer.cornerRadius = newValue
         }
     }
+    
+    func addSubviews(_ views: UIView...) {
+        views.forEach({
+            addSubview($0)
+        })
+    }
+}
+
+extension UIDevice{
+    static let isIphone = UIDevice.current.userInterfaceIdiom == .phone
 }

@@ -12,14 +12,7 @@ class OnboardingViewController: UIViewController {
     let imageName: String
     let titleText: String
     let seconderyText: String
-    
-    let stackView : UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        return stackView
-    }()
+
     
     let imageView : UIImageView = {
         let imageView = UIImageView()
@@ -30,24 +23,27 @@ class OnboardingViewController: UIViewController {
     }()
     
     
-    let firstlabel: UILabel = {
+    let firstLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.preferredFont(forTextStyle: .title1).withSize(31)
+//        label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
         return label
     }()
-    let secondlabel: UILabel = {
+    let secondLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .title3)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.textColor = .systemGray
+//        label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
         return label
     }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,22 +71,44 @@ extension OnboardingViewController{
         view.backgroundColor = .systemBackground
         imageView.image = UIImage(named: imageName)
         
-        firstlabel.text = titleText
-        secondlabel.text = seconderyText
+        firstLabel.text = titleText
+        secondLabel.text = seconderyText
         
-        stackView.addArrangedSubview(imageView) // image is upper so it is up
-        stackView.addArrangedSubview(firstlabel)
+        view.addSubviews(imageView,firstLabel,secondLabel)
         
-        view.addSubview(stackView)
     }
     
     private func layout(){
+        //imageview
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
+            imageView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+        
+        //firstLabel
+        NSLayoutConstraint.activate([
+            firstLabel.leftAnchor.constraint(equalTo: view.leftAnchor),
+            firstLabel.rightAnchor.constraint(equalTo: view.rightAnchor),
+            firstLabel.bottomAnchor.constraint(equalTo: secondLabel.topAnchor, constant: -50),
+            firstLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+
+        //secondLabel
+        NSLayoutConstraint.activate([
+            secondLabel.rightAnchor.constraint(equalTo: view.rightAnchor),
+            secondLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            secondLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
+        ])
+
+        
+        
+//        NSLayoutConstraint.activate([
+//            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+//            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
+//        ])
         
     }
 }
