@@ -7,11 +7,11 @@
 
 import UIKit
 
-class OnboardingContainerViewController: UIViewController {
+final class OnboardingContainerViewController: UIViewController {
     
     private let pageViewController: UIPageViewController = {
         let pageVC = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        
+        pageVC.view.translatesAutoresizingMaskIntoConstraints = false
         return pageVC
     }()
     
@@ -19,18 +19,20 @@ class OnboardingContainerViewController: UIViewController {
     
     private var currentVC: UIViewController
     
-    private let nextButton: UIButton = {
+    private let skipButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Next", for: [])
-        button.backgroundColor?.setFill()
-        button.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
+        button.setTitle("Skip", for: [])
+        button.backgroundColor = .systemGray5
+        button.tintColor = .black
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 8
+        
+        button.addTarget(self, action: #selector(skipTapped), for: .primaryActionTriggered)
         
         return button
     }()
-    
-    private var indexTurn: Int = 0
-    
+        
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         
@@ -60,21 +62,19 @@ class OnboardingContainerViewController: UIViewController {
     }
     
     private func setup(){
-        view.backgroundColor = .red
+        view.backgroundColor = .systemRed
         
         // It is how to add child VC to ParentVC, 3 steps
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
         
-        view.addSubview(nextButton)
+        view.addSubview(skipButton)
         
         // Protocol-Delegate Pattern
         pageViewController.dataSource = self
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
-        //currentVC = pages.first!
         
     }
     
@@ -87,8 +87,9 @@ class OnboardingContainerViewController: UIViewController {
         ])
         //nextButton
         NSLayoutConstraint.activate([
-            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
+            skipButton.topAnchor.constraint(equalTo: view.topAnchor,constant: 50),
+            skipButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+            skipButton.widthAnchor.constraint(equalToConstant: 75)
         ])
     }
     
@@ -96,13 +97,9 @@ class OnboardingContainerViewController: UIViewController {
 
 extension OnboardingContainerViewController{
     
-    @objc func nextTapped(){
+    @objc func skipTapped(){
        
-        if indexTurn < 1{
-            currentVC = pages[indexTurn+1]
-        } else {
-            print("end of the road")
-        }
+        print("end of the road")
     }
 }
 // MARK: - UIPageViewControllerDataSource
@@ -124,8 +121,11 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 
     private func getNextViewController(from viewController: UIViewController) -> UIViewController? {
         guard let index = pages.firstIndex(of: viewController), index + 1 < pages.count else { return nil }
-        indexTurn = index
+        
         currentVC = pages[index + 1]
+        if index+2 == pages.count {
+            skipButton.setTitle("Close", for: [])
+        }
         return pages[index + 1]
     }
 

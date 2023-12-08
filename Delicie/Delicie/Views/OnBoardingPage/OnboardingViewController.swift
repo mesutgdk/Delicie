@@ -7,14 +7,14 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
     
-    let imageName: String
-    let titleText: String
-    let seconderyText: String
+    private let imageName: String
+    private let titleText: String
+    private let seconderyText: String
 
     
-    let imageView : UIImageView = {
+    private let imageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -23,7 +23,7 @@ class OnboardingViewController: UIViewController {
     }()
     
     
-    let firstLabel: UILabel = {
+    private let firstLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -32,7 +32,7 @@ class OnboardingViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-    let secondLabel: UILabel = {
+    private let secondLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center

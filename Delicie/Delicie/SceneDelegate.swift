@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let vc = ViewController()
         let onboardinVC = OnboardingContainerViewController()
-        window.rootViewController = onboardinVC
+        let onboardingWithCollectionVC = OnBoardingVC2()
+        
+        window.rootViewController = onboardingWithCollectionVC
         window.makeKeyAndVisible()
         self.window = window
     }
