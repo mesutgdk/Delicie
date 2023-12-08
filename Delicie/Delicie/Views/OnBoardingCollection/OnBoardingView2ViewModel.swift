@@ -41,19 +41,16 @@ extension OnBoardingView2ViewModel: UICollectionViewDataSource {
     }
 }
 // MARK: - Collectionview delegate
-
 extension OnBoardingView2ViewModel:UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let bounds = collectionView.bounds
-        let width : CGFloat
-        let height : CGFloat
-        
-        width = bounds.width
-        height = bounds.height
+       
         return CGSize(
-            width: width,
-            height: height)
-        
+            width: bounds.width,
+            height: bounds.height)
     }
+    
+    
 }
+

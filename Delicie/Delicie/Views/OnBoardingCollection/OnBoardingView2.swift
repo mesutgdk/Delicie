@@ -13,11 +13,13 @@ final class OnBoardingView2: UIView{
 
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
         collectionView.register(OnBoarding2CollectionViewCell.self, forCellWithReuseIdentifier: OnBoarding2CollectionViewCell.cellIdentifier)
 
         return collectionView
@@ -53,7 +55,7 @@ final class OnBoardingView2: UIView{
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200)
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
         ])
     }
     

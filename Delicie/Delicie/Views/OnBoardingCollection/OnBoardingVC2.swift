@@ -14,6 +14,8 @@ final class OnBoardingVC2: UIViewController {
     private let pageControl : UIPageControl = {
        let pg = UIPageControl()
         pg.translatesAutoresizingMaskIntoConstraints = false
+        pg.numberOfPages = 3
+        pg.currentPage = 1
         return pg
     }()
     
@@ -23,11 +25,9 @@ final class OnBoardingVC2: UIViewController {
         button.setTitle("Next", for: [])
         button.backgroundColor = .systemGray5
         button.tintColor = .black
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 8
+        button.cornerRadius = 10
         
         button.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
-        
         return button
     }()
     
@@ -52,9 +52,7 @@ final class OnBoardingVC2: UIViewController {
             onBoardingView.leftAnchor.constraint(equalTo: view.leftAnchor),
             onBoardingView.rightAnchor.constraint(equalTo: view.rightAnchor),
             onBoardingView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200)
-//            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
         //firstLabel
         NSLayoutConstraint.activate([
             pageControl.topAnchor.constraint(equalTo: onBoardingView.bottomAnchor, constant: 16),
@@ -68,8 +66,9 @@ final class OnBoardingVC2: UIViewController {
         //secondLabel
         NSLayoutConstraint.activate([
             skipButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 16),
-            skipButton.widthAnchor.constraint(equalToConstant: 300),
-            skipButton.heightAnchor.constraint(equalToConstant: 100)
+            skipButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            skipButton.widthAnchor.constraint(equalToConstant: 150),
+            skipButton.heightAnchor.constraint(equalToConstant: 50),
             
         ])
 
