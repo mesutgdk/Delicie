@@ -37,7 +37,12 @@ final class OnBoardingView2: UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     private func setup(){
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubviews(collectionView)
+
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
     }
