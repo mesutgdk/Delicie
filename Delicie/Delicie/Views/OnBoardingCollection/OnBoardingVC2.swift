@@ -15,19 +15,22 @@ final class OnBoardingVC2: UIViewController {
        let pg = UIPageControl()
         pg.translatesAutoresizingMaskIntoConstraints = false
         pg.numberOfPages = 3
-        pg.currentPage = 1
+        pg.currentPage = 0
+        pg.currentPageIndicatorTintColor = .systemRed
+        pg.pageIndicatorTintColor = .systemGray3
+//        pg.backgroundColor = .red
         return pg
     }()
     
     private let skipButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Next", for: [])
+        button.setTitle("Next", for: .normal)
         button.backgroundColor = .systemGray5
         button.tintColor = .black
         button.cornerRadius = 10
         
-        button.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
+        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
     
@@ -42,7 +45,6 @@ final class OnBoardingVC2: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubviews(onBoardingView,pageControl,skipButton)
-        
     }
     
     private func layout(){
@@ -77,8 +79,13 @@ final class OnBoardingVC2: UIViewController {
 }
 extension OnBoardingVC2{
     
-    @objc func nextTapped(){
-       
-        print("end of the road")
+    @objc private func nextTapped(){
+        let nextIndex = min(pageControl.currentPage + 1, 2)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        onBoardingView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        pageControl.currentPage = nextIndex
+
+        print(indexPath)
+        print(pageControl.currentPage)
     }
 }

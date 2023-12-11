@@ -11,7 +11,7 @@ final class OnBoardingView2: UIView{
     
     private let viewModel = OnBoardingView2ViewModel()
 
-    private let collectionView: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
         layout.scrollDirection = .horizontal

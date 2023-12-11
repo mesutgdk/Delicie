@@ -58,8 +58,8 @@ final class OnBoarding2CollectionViewCell: UICollectionViewCell {
         //imageview
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
             imageView.bottomAnchor.constraint(equalTo: contentView.centerYAnchor,constant: 150)
 //            imageView.centerYAnchor.constraint(equalTo: viecontentVieww.centerYAnchor)
         ])
