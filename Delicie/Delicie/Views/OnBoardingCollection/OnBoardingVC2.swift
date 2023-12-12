@@ -11,7 +11,9 @@ final class OnBoardingVC2: UIViewController {
 
     private let onBoardingView = OnBoardingView2()
     
-    private let pageControl : UIPageControl = {
+    private let viewModel = OnBoardingView2ViewModel()
+    
+    let pageControl : UIPageControl = {
        let pg = UIPageControl()
         pg.translatesAutoresizingMaskIntoConstraints = false
         pg.numberOfPages = 3
@@ -39,12 +41,16 @@ final class OnBoardingVC2: UIViewController {
         
         setup()
         layout()
+        
+        
     }
     
     private func setup(){
         view.backgroundColor = .systemBackground
         
         view.addSubviews(onBoardingView,pageControl,skipButton)
+        
+        viewModel.delegate = self
     }
     
     private func layout(){
@@ -84,8 +90,19 @@ extension OnBoardingVC2{
         let indexPath = IndexPath(item: nextIndex, section: 0)
         onBoardingView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         pageControl.currentPage = nextIndex
+        
+        
 
         print(indexPath)
         print(pageControl.currentPage)
     }
 }
+
+extension OnBoardingVC2:OnboardingViewModelDelegate{
+    func setCurrentPage(_ onBoardingView2ViewModel: OnBoardingView2ViewModel, didSetCurrentPage cPage: Int) {
+        pageControl.currentPage = cPage
+    }
+    
+    
+}
+

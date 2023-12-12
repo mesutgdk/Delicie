@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol OnboardingViewModelDelegate: AnyObject{
+    func setCurrentPage(_ onBoardingView2ViewModel: OnBoardingView2ViewModel, didSetCurrentPage cPage: Int)
+}
+
 final class OnBoardingView2ViewModel:NSObject{
     
+    public weak var delegate : OnboardingViewModelDelegate?
+    
     private var cellViewModels: [OnBoarding2CollectionViewCellViewModel] = []
+    
+    lazy var currentPage = 0
     
     let page1 = OnBoarding2CollectionViewCellViewModel(imageName: "slide1", firstText: "Quick Delivery At Your Doorstep", secondText: "Home delivery and Online rezervation system for restaurants and cafes")
     let page2 = OnBoarding2CollectionViewCellViewModel(imageName: "slide2", firstText: "World-Class Chefs", secondText: "Our dishes are prepared by the best")
@@ -51,6 +59,13 @@ extension OnBoardingView2ViewModel:UICollectionViewDelegate, UICollectionViewDel
             height: bounds.height)
     }
     
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        
+        currentPage = Int(scrollView.contentOffset.x / width)
+        
+        delegate?.setCurrentPage(self, didSetCurrentPage: currentPage)
+    }
 }
+
 

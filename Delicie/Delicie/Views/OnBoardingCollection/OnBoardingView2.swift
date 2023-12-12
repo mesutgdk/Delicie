@@ -10,7 +10,7 @@ import UIKit
 final class OnBoardingView2: UIView{
     
     private let viewModel = OnBoardingView2ViewModel()
-
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
@@ -58,6 +58,8 @@ final class OnBoardingView2: UIView{
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
         ])
     }
+    
+    
     
 }
 
