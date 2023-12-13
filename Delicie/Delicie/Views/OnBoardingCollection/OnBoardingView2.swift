@@ -11,7 +11,7 @@ final class OnBoardingView2: UIView{
     
     private let viewModel = OnBoardingView2ViewModel()
     
-    let collectionView: UICollectionView = {
+    private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
         layout.scrollDirection = .horizontal
@@ -58,7 +58,6 @@ final class OnBoardingView2: UIView{
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
         ])
     }
-    
     
     
 }

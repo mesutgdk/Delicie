@@ -13,11 +13,13 @@ final class OnBoardingVC2: UIViewController {
     
     private let viewModel = OnBoardingView2ViewModel()
     
+    static var currentPg : Int = 0
+    
     let pageControl : UIPageControl = {
        let pg = UIPageControl()
         pg.translatesAutoresizingMaskIntoConstraints = false
         pg.numberOfPages = 3
-        pg.currentPage = 0
+        pg.currentPage = OnBoardingVC2.currentPg
         pg.currentPageIndicatorTintColor = .systemRed
         pg.pageIndicatorTintColor = .systemGray3
 //        pg.backgroundColor = .red
@@ -41,7 +43,6 @@ final class OnBoardingVC2: UIViewController {
         
         setup()
         layout()
-        
         
     }
     
@@ -86,21 +87,20 @@ final class OnBoardingVC2: UIViewController {
 extension OnBoardingVC2{
     
     @objc private func nextTapped(){
+        pageControl.currentPage = OnBoardingVC2.currentPg
         let nextIndex = min(pageControl.currentPage + 1, 2)
         let indexPath = IndexPath(item: nextIndex, section: 0)
         onBoardingView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        pageControl.currentPage = nextIndex
-        
-        
 
-        print(indexPath)
-        print(pageControl.currentPage)
     }
+    
 }
 
 extension OnBoardingVC2:OnboardingViewModelDelegate{
     func setCurrentPage(_ onBoardingView2ViewModel: OnBoardingView2ViewModel, didSetCurrentPage cPage: Int) {
+        print("delegate page : \(cPage)")
         pageControl.currentPage = cPage
+       
     }
     
     
