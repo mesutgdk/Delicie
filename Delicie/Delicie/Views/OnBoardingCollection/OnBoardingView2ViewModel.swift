@@ -63,13 +63,11 @@ extension OnBoardingView2ViewModel:UICollectionViewDelegate, UICollectionViewDel
         let width = scrollView.frame.width
         
         currentPage = Int(scrollView.contentOffset.x / width)
-        print("Current page: \(currentPage) ")
+//        print("Current page: \(currentPage) ")
         
-        let nextIndex = min(currentPage + 1, 2)
-        let indexPath = IndexPath(item: nextIndex, section: 0)
-        
-        
-        OnBoardingVC2.currentPg = currentPage
+//        let nextIndex = min(currentPage + 1, 2)
+//        let indexPath = IndexPath(item: nextIndex, section: 0)
+//        OnBoardingVC2.currentPg = currentPage
         
         delegate?.setCurrentPage(self, didSetCurrentPage: currentPage)
     }
