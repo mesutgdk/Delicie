@@ -1,17 +1,13 @@
 //
-//  OnBoardingVC2.swift
+//  OnBoarding1ViewController.swift
 //  Delicie
 //
-//  Created by Mesut Gedik on 7.12.2023.
+//  Created by Mesut Gedik on 18.12.2023.
 //
 
 import UIKit
 
-final class OnBoardingVC2: UIViewController {
-
-    private let onBoardingView = OnBoardingView2()
-    
-    private let viewModel = OnBoardingView2ViewModel()
+class OnBoarding1ViewController: UIViewController {
     
     var currentPg  = 0 {
         didSet{
@@ -22,6 +18,20 @@ final class OnBoardingVC2: UIViewController {
             }
         }
     }
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
+        collectionView.register(OnBoarding2CollectionViewCell.self, forCellWithReuseIdentifier: OnBoarding2CollectionViewCell.cellIdentifier)
+
+        return collectionView
+    } ()
     
     let pageControl : UIPageControl = {
        let pg = UIPageControl()
@@ -45,39 +55,35 @@ final class OnBoardingVC2: UIViewController {
         button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
         layout()
-        
+        setup()
+
     }
     
     private func setup(){
         view.backgroundColor = .systemBackground
         
-        view.addSubviews(onBoardingView,pageControl,skipButton)
+        view.addSubviews(collectionView,pageControl,skipButton)
         
         viewModel.delegate = self
-        pageControl.currentPage = currentPg
+        
     }
-    
     private func layout(){
         //imageview
         NSLayoutConstraint.activate([
-            onBoardingView.topAnchor.constraint(equalTo: view.topAnchor),
-            onBoardingView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            onBoardingView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            onBoardingView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200)
         ])
         //firstLabel
         NSLayoutConstraint.activate([
-            pageControl.topAnchor.constraint(equalTo: onBoardingView.bottomAnchor, constant: 16),
-            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-//            pageControl.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 16),
-//            pageControl.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -16),
+            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             
         ])
 
@@ -93,24 +99,11 @@ final class OnBoardingVC2: UIViewController {
         
     }
 }
-extension OnBoardingVC2{
-    
+
+extension OnBoarding1ViewController{
     @objc private func nextTapped(){
-        pageControl.currentPage = currentPg
         let nextIndex = min(pageControl.currentPage + 1, 2)
         let indexPath = IndexPath(item: nextIndex, section: 0)
-        onBoardingView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 
     }
-    
 }
-
-extension OnBoardingVC2:OnboardingViewModelDelegate{
-    func setCurrentPage(_ onBoardingView2ViewModel: OnBoardingView2ViewModel, didSetCurrentPage cPage: Int) {
-        print("delegate page : \(cPage)")
-        pageControl.currentPage = cPage
-    }
-    
-    
-}
-
