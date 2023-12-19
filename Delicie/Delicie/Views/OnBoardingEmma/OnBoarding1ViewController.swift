@@ -61,8 +61,8 @@ class OnBoarding1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        layout()
         setup()
+        layout()
         
         slides = [
             OnboardingSlide(title: "Quick Delivery At Your Doorstep", description: "Home delivery and Online rezervation system for restaurants and cafes", image:.slide1),
