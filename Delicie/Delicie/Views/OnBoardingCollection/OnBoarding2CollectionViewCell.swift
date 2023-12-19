@@ -89,7 +89,7 @@ final class OnBoarding2CollectionViewCell: UICollectionViewCell {
         secondLabel.text = nil
     }
     
-    public func configure(with viewModel: OnBoarding2CollectionViewCellViewModel){
+    public func configure(with viewModel: OnBoarding2CollectionViewCellModel){
         imageView.image = UIImage(named: viewModel.imageName)
         firstLabel.text = viewModel.firstText
         secondLabel.text = viewModel.secondText

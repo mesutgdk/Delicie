@@ -81,19 +81,13 @@ final class OnBoarding1CollectionViewCell: UICollectionViewCell{
         ])
 
     }
-    // MARK: - prepare to reuse
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-        firstLabel.text = nil
-        secondLabel.text = nil
-    }
+//    // MARK: - prepare to reuse
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        imageView.image = nil
+//        firstLabel.text = nil
+//        secondLabel.text = nil
+//    }
     
-    public func configure(with viewModel: OnBoarding2CollectionViewCellViewModel){
-        imageView.image = UIImage(named: viewModel.imageName)
-        firstLabel.text = viewModel.firstText
-        secondLabel.text = viewModel.secondText
-    }
-    
-    
+
 }

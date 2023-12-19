@@ -12,7 +12,7 @@
 		632B05F92B2262A300D364B4 /* OnBoardingVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05F82B2262A300D364B4 /* OnBoardingVC2.swift */; };
 		632B05FB2B22634D00D364B4 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05FA2B22634D00D364B4 /* OnBoardingView2.swift */; };
 		632B05FD2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05FC2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift */; };
-		632B05FF2B22667A00D364B4 /* OnBoarding2CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellViewModel.swift */; };
+		632B05FF2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift */; };
 		632B06012B22DBD800D364B4 /* OnBoardingView2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B06002B22DBD800D364B4 /* OnBoardingView2ViewModel.swift */; };
 		634A76A02AFBAE4100636975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A769F2AFBAE4100636975 /* AppDelegate.swift */; };
 		634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A12AFBAE4100636975 /* SceneDelegate.swift */; };
@@ -21,6 +21,7 @@
 		634A76AC2AFBAE4200636975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634A76AA2AFBAE4200636975 /* LaunchScreen.storyboard */; };
 		63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */; };
 		63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */; };
+		63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */; };
 		63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +31,7 @@
 		632B05F82B2262A300D364B4 /* OnBoardingVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC2.swift; sourceTree = "<group>"; };
 		632B05FA2B22634D00D364B4 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
 		632B05FC2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2CollectionViewCell.swift; sourceTree = "<group>"; };
-		632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2CollectionViewCellModel.swift; sourceTree = "<group>"; };
 		632B06002B22DBD800D364B4 /* OnBoardingView2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2ViewModel.swift; sourceTree = "<group>"; };
 		634A769C2AFBAE4100636975 /* Delicie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delicie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		634A769F2AFBAE4100636975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		634A76AD2AFBAE4200636975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1CollectionViewCell.swift; sourceTree = "<group>"; };
 		63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
+		63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +64,7 @@
 				632B05FA2B22634D00D364B4 /* OnBoardingView2.swift */,
 				632B06002B22DBD800D364B4 /* OnBoardingView2ViewModel.swift */,
 				632B05FC2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift */,
-				632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellViewModel.swift */,
+				632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift */,
 			);
 			path = OnBoardingCollection;
 			sourceTree = "<group>";
@@ -102,6 +104,7 @@
 		634A76B32AFBBBFB00636975 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */,
 				632B05FB2B22634D00D364B4 /* OnBoardingView2.swift in Sources */,
 				632B05F42B21EFE300D364B4 /* UIView+Extension.swift in Sources */,
 				632B05F62B21F45D00D364B4 /* OnboardingViewController.swift in Sources */,
@@ -219,7 +223,7 @@
 				63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */,
 				632B05F92B2262A300D364B4 /* OnBoardingVC2.swift in Sources */,
 				63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */,
-				632B05FF2B22667A00D364B4 /* OnBoarding2CollectionViewCellViewModel.swift in Sources */,
+				632B05FF2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift in Sources */,
 				632B06012B22DBD800D364B4 /* OnBoardingView2ViewModel.swift in Sources */,
 				634A76A02AFBAE4100636975 /* AppDelegate.swift in Sources */,
 				634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */,

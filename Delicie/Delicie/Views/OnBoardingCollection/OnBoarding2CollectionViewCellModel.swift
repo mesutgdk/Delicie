@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OnBoarding2CollectionViewCellViewModel{
+struct OnBoarding2CollectionViewCellModel{
     
     let imageName: String
     let firstText: String

@@ -55,6 +55,8 @@ class OnBoarding1ViewController: UIViewController {
         button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
+    
+    var slides: [OnboardingSlide] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +71,7 @@ class OnBoarding1ViewController: UIViewController {
         
         view.addSubviews(collectionView,pageControl,skipButton)
         
-        viewModel.delegate = self
+        
         
     }
     private func layout(){
@@ -95,8 +97,6 @@ class OnBoarding1ViewController: UIViewController {
             skipButton.heightAnchor.constraint(equalToConstant: 50),
             
         ])
-
-        
     }
 }
 
