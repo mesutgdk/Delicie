@@ -28,7 +28,7 @@ class OnBoarding1ViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
-        collectionView.register(OnBoarding2CollectionViewCell.self, forCellWithReuseIdentifier: OnBoarding2CollectionViewCell.cellIdentifier)
+        collectionView.register(OnBoarding1CollectionViewCell.self, forCellWithReuseIdentifier: OnBoarding1CollectionViewCell.cellIdentifier)
 
         return collectionView
     } ()
@@ -63,6 +63,12 @@ class OnBoarding1ViewController: UIViewController {
         
         layout()
         setup()
+        
+        slides = [
+            OnboardingSlide(title: "Quick Delivery At Your Doorstep", description: "Home delivery and Online rezervation system for restaurants and cafes", image:.slide1),
+            OnboardingSlide(title: "World-Class Chefs", description: "Our dishes are prepared by the best", image: .slide2),
+            OnboardingSlide(title: "Delicious Dishes", description: "Experince a variety of amazing dishes from different cultures around the world", image: .slide3)
+        ]
 
     }
     
@@ -70,17 +76,19 @@ class OnBoarding1ViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubviews(collectionView,pageControl,skipButton)
+        view.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
     }
     private func layout(){
         //imageview
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -300)
         ])
         //firstLabel
         NSLayoutConstraint.activate([
@@ -106,4 +114,32 @@ extension OnBoarding1ViewController{
         let indexPath = IndexPath(item: nextIndex, section: 0)
 
     }
+}
+
+extension OnBoarding1ViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return slides.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnBoarding1CollectionViewCell.cellIdentifier, for: indexPath) as? OnBoarding1CollectionViewCell else {
+            fatalError("Cant deque cell")
+        }
+        cell.configure(slides[indexPath.row])
+        return cell
+        
+    }
+    
+    
+}
+extension OnBoarding1ViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let bounds = collectionView.bounds
+       
+        return CGSize(
+            width: bounds.width,
+            height: bounds.height)
+    }
+    
 }

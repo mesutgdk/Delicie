@@ -17,11 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let vc = ViewController()
-        let onboardinVC = OnboardingContainerViewController()
-        let onboardingWithCollectionVC = OnBoardingVC2()
+        let lastOnboardingVC = OnBoarding1ViewController()
+//        let vc = ViewController()
+//        let onboardinVC = OnboardingContainerViewController()
+//        let onboardingWithCollectionVC = OnBoardingVC2()
         
-        window.rootViewController = onboardingWithCollectionVC
+        window.rootViewController = lastOnboardingVC
         window.makeKeyAndVisible()
         self.window = window
     }

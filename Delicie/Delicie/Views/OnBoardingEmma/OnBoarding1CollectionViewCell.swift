@@ -8,7 +8,8 @@
 import UIKit
 
 final class OnBoarding1CollectionViewCell: UICollectionViewCell{
-    static let cellIdentifier = "OnBoarding1CollectionCell"
+   // static let cellIdentifier = "OnBoarding1CollectionCell"
+    static let cellIdentifier = String(describing: OnBoarding1CollectionViewCell.self)
     
     private let imageView : UIImageView = {
         let imageView = UIImageView()
@@ -81,13 +82,19 @@ final class OnBoarding1CollectionViewCell: UICollectionViewCell{
         ])
 
     }
-//    // MARK: - prepare to reuse
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        imageView.image = nil
-//        firstLabel.text = nil
-//        secondLabel.text = nil
-//    }
+    // MARK: - prepare to reuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        firstLabel.text = nil
+        secondLabel.text = nil
+    }
     
-
+    func configure(_ slide: OnboardingSlide){
+        imageView.image = slide.image
+        firstLabel.text = slide.title
+        secondLabel.text = slide.description
+    }
+    
+    
 }
