@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     let dummyLabel : UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "dummy Label"
+        label.text = "Dummy Label"
         label.textColor = .systemRed
         label.font = UIFont.systemFont(ofSize: 24)
         
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(dummyLabel)
+        view.backgroundColor = .systemBackground
         
         NSLayoutConstraint.activate([
             dummyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),

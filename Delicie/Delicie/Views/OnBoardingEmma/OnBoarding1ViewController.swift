@@ -113,7 +113,13 @@ class OnBoarding1ViewController: UIViewController {
 extension OnBoarding1ViewController{
     @objc private func nextTapped(){ // there is a bug with scrolling, pagination is turned off - scrolled - and on again
         if currentPage == slides.count-1{
-            print( "it is the end of the road")
+//            print( "it is the end of the road")
+            let vc = ViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            navVC.modalPresentationStyle = .fullScreen
+//            navVC.modalTransitionStyle = .flipHorizontal
+            
+            present(navVC, animated: true, completion: nil)
         }else{
             currentPage += 1
             
