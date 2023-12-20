@@ -9,9 +9,9 @@ import UIKit
 
 class OnBoarding1ViewController: UIViewController {
     
-    var currentPg  = 0 {
+    var currentPage  = 0 {
         didSet{
-            if currentPg == 2 {
+            if currentPage == 2 {
                 skipButton.setTitle("Get Started", for: .normal)
             } else {
                 skipButton.setTitle("Next", for: .normal)
@@ -21,7 +21,7 @@ class OnBoarding1ViewController: UIViewController {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        
+//        layout.estimatedItemSize = .zero
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -88,7 +88,7 @@ class OnBoarding1ViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -300)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -250)
         ])
         //firstLabel
         NSLayoutConstraint.activate([
@@ -99,7 +99,7 @@ class OnBoarding1ViewController: UIViewController {
 
         //secondLabel
         NSLayoutConstraint.activate([
-            skipButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 16),
+            skipButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 36),
             skipButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             skipButton.widthAnchor.constraint(equalToConstant: 150),
             skipButton.heightAnchor.constraint(equalToConstant: 50),
@@ -129,17 +129,19 @@ extension OnBoarding1ViewController: UICollectionViewDataSource{
         return cell
         
     }
-    
-    
 }
 extension OnBoarding1ViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let bounds = collectionView.bounds
-       
+        let frame = collectionView.frame
         return CGSize(
-            width: bounds.width,
-            height: bounds.height)
+            width: frame.width,
+            height: frame.height)
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        
+        currentPage = Int(scrollView.contentOffset.x/width) // bize güncel sayfayı verecek
     }
     
 }
