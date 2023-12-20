@@ -11,7 +11,8 @@ class OnBoarding1ViewController: UIViewController {
     
     var currentPage  = 0 {
         didSet{
-            if currentPage == 2 {
+            pageControl.currentPage = currentPage
+            if currentPage == slides.count-1 {
                 skipButton.setTitle("Get Started", for: .normal)
             } else {
                 skipButton.setTitle("Next", for: .normal)
@@ -36,6 +37,7 @@ class OnBoarding1ViewController: UIViewController {
     let pageControl : UIPageControl = {
        let pg = UIPageControl()
         pg.translatesAutoresizingMaskIntoConstraints = false
+        pg.isUserInteractionEnabled = false // tıklanmasın
         pg.numberOfPages = 3
         pg.currentPage = 0
         pg.currentPageIndicatorTintColor = .systemRed
@@ -107,15 +109,24 @@ class OnBoarding1ViewController: UIViewController {
         ])
     }
 }
-
+// MARK: - Button Action
 extension OnBoarding1ViewController{
-    @objc private func nextTapped(){
-        let nextIndex = min(pageControl.currentPage + 1, 2)
-        let indexPath = IndexPath(item: nextIndex, section: 0)
-
+    @objc private func nextTapped(){ // there is a bug with scrolling, pagination is turned off - scrolled - and on again
+        if currentPage == slides.count-1{
+            print( "it is the end of the road")
+        }else{
+            currentPage += 1
+            
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            collectionView.isPagingEnabled = false
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            collectionView.isPagingEnabled = true
+            
+    //        pageControl.currentPage = currentPage  // didsete ekledim
+        }
     }
 }
-
+// MARK: - CollectionViewDataSource and Delegate
 extension OnBoarding1ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return slides.count
@@ -127,7 +138,6 @@ extension OnBoarding1ViewController: UICollectionViewDataSource{
         }
         cell.configure(slides[indexPath.row])
         return cell
-        
     }
 }
 extension OnBoarding1ViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
@@ -138,10 +148,14 @@ extension OnBoarding1ViewController: UICollectionViewDelegate,UICollectionViewDe
             width: frame.width,
             height: frame.height)
     }
+    // MARK: - Pagination with scrollview
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         
         currentPage = Int(scrollView.contentOffset.x/width) // bize güncel sayfayı verecek
+        
+//        pageControl.currentPage = currentPage  // didsete ekledim
     }
     
 }
