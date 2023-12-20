@@ -71,7 +71,6 @@ class OnBoarding1ViewController: UIViewController {
             OnboardingSlide(title: "World-Class Chefs", description: "Our dishes are prepared by the best", image: .slide2),
             OnboardingSlide(title: "Delicious Dishes", description: "Experince a variety of amazing dishes from different cultures around the world", image: .slide3)
         ]
-
     }
     
     private func setup(){
@@ -114,7 +113,7 @@ extension OnBoarding1ViewController{
     @objc private func nextTapped(){ // there is a bug with scrolling, pagination is turned off - scrolled - and on again
         if currentPage == slides.count-1{
 //            print( "it is the end of the road")
-            let vc = ViewController()
+            let vc = HomeViewController()
             let navVC = UINavigationController(rootViewController: vc)
             navVC.modalPresentationStyle = .fullScreen
 //            navVC.modalTransitionStyle = .flipHorizontal
