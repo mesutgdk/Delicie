@@ -14,11 +14,13 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
 
         title = "Delicie"
+        
         addNavigationItem()
     }
     
     private func addNavigationItem(){
-        let cardItem = UIBarButtonItem(image: UIImage(systemName: "card.circle.fill"), style: .plain, target: self, action: #selector(cardButtonTapped))
+        let cardItem = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cardButtonTapped))
+        cardItem.customView?.backgroundColor = .red
         navigationItem.rightBarButtonItem = cardItem
     }
     

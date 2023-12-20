@@ -19,6 +19,7 @@
 		634A76A42AFBAE4100636975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A32AFBAE4100636975 /* ViewController.swift */; };
 		634A76A92AFBAE4200636975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634A76A82AFBAE4200636975 /* Assets.xcassets */; };
 		634A76AC2AFBAE4200636975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634A76AA2AFBAE4200636975 /* LaunchScreen.storyboard */; };
+		63A031A42B335BD000B325C8 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A32B335BD000B325C8 /* LocalState.swift */; };
 		63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */; };
 		63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */; };
 		63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */; };
@@ -41,6 +42,7 @@
 		634A76A82AFBAE4200636975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		634A76AB2AFBAE4200636975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		634A76AD2AFBAE4200636975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63A031A32B335BD000B325C8 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1CollectionViewCell.swift; sourceTree = "<group>"; };
 		63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		634A769E2AFBAE4100636975 /* Delicie */ = {
 			isa = PBXGroup;
 			children = (
-				63D417972B208C5400E64CA6 /* Custom Views */,
+				63A031A22B335BA200B325C8 /* Utilities */,
 				634A76B42AFBBC0500636975 /* Views */,
 				634A76B32AFBBBFB00636975 /* Models */,
 				634A769F2AFBAE4100636975 /* AppDelegate.swift */,
@@ -129,6 +131,15 @@
 			path = OnBoardingPage;
 			sourceTree = "<group>";
 		};
+		63A031A22B335BA200B325C8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				632B05F32B21EFE300D364B4 /* UIView+Extension.swift */,
+				63A031A32B335BD000B325C8 /* LocalState.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		63BC25DF2B30152300832E5B /* OnBoardingEmma */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,14 +147,6 @@
 				63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */,
 			);
 			path = OnBoardingEmma;
-			sourceTree = "<group>";
-		};
-		63D417972B208C5400E64CA6 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				632B05F32B21EFE300D364B4 /* UIView+Extension.swift */,
-			);
-			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		63F340332B3320BF0065AFBA /* OnBoarding */ = {
@@ -241,6 +244,7 @@
 				634A76A42AFBAE4100636975 /* ViewController.swift in Sources */,
 				63F340362B3321080065AFBA /* HomeViewController.swift in Sources */,
 				63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */,
+				63A031A42B335BD000B325C8 /* LocalState.swift in Sources */,
 				632B05F92B2262A300D364B4 /* OnBoardingVC2.swift in Sources */,
 				63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */,
 				632B05FF2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift in Sources */,
