@@ -11,19 +11,28 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-
+        
+        setup()
+        layout()
+    }
+    private func setup(){
         title = "Delicie"
+        view.backgroundColor = .systemBackground
         
         addNavigationItem()
     }
     
+    private func layout(){
+        
+    }
+    
     private func addNavigationItem(){
         let cardItem = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cardButtonTapped))
-        cardItem.customView?.backgroundColor = .red
+        cardItem.tintColor = .systemRed
         navigationItem.rightBarButtonItem = cardItem
     }
     
+    // MARK: - Action Functions
     @objc private func cardButtonTapped(){
         
     }

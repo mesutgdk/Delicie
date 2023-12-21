@@ -17,14 +17,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let lastOnboardingVC = OnBoarding1ViewController()
+        
+        if LocalState.hasOnboard{  // check whether it is onboarded or not
+            
+            let vc = HomeViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            
+            window.rootViewController = navVC
+            window.makeKeyAndVisible()
+            self.window = window
+        }else{
+            let lastOnboardingVC = OnBoarding1ViewController()
+            
+            window.rootViewController = lastOnboardingVC
+            window.makeKeyAndVisible()
+            self.window = window
+        }
 //        let vc = ViewController()
 //        let onboardinVC = OnboardingContainerViewController()
 //        let onboardingWithCollectionVC = OnBoardingVC2()
         
-        window.rootViewController = lastOnboardingVC
-        window.makeKeyAndVisible()
-        self.window = window
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

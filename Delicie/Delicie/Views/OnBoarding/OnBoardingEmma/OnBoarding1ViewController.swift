@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnBoarding1ViewController: UIViewController {
+final class OnBoarding1ViewController: UIViewController {
     
     var currentPage  = 0 {
         didSet{
@@ -118,6 +118,7 @@ extension OnBoarding1ViewController{
             navVC.modalPresentationStyle = .fullScreen
 //            navVC.modalTransitionStyle = .flipHorizontal
             
+            LocalState.hasOnboard = true // to set onboard state true
             present(navVC, animated: true, completion: nil)
         }else{
             currentPage += 1
