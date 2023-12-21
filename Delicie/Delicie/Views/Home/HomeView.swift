@@ -11,6 +11,7 @@ final class HomeView: UIView {
 
     private let foodLabel1 : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food Category"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
@@ -21,6 +22,7 @@ final class HomeView: UIView {
     
     private let popularLabel2 : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Popular Dishes"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
@@ -31,6 +33,7 @@ final class HomeView: UIView {
     
     private let chefLabel3 : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Chef's Specials"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
@@ -40,18 +43,34 @@ final class HomeView: UIView {
     }()
     
     private let foodCollectionView1 : UICollectionView = {
-       let collectionView = UICollectionView()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemGray5
         
         return collectionView
     }()
     private let popularCollectionView2 : UICollectionView = {
-       let collectionView = UICollectionView()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemGray5
+
         
         return collectionView
     }()
     private let chefCollectionView3 : UICollectionView = {
-       let collectionView = UICollectionView()
-        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemGray5
+
         return collectionView
     }()
     
@@ -60,7 +79,8 @@ final class HomeView: UIView {
         
         setup()
         layout()
-                
+        
+        setupCollectionViews()
     }
     
     required init?(coder: NSCoder) {
@@ -84,24 +104,24 @@ final class HomeView: UIView {
     private func layout(){
         //foodCategoryLabel
         NSLayoutConstraint.activate([
-            foodLabel1.topAnchor.constraint(equalTo: topAnchor, constant: 4),
+            foodLabel1.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             foodLabel1.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
             foodLabel1.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
         ])
         // foodCategoryCollectionView
         NSLayoutConstraint.activate([
-            foodCollectionView1.topAnchor.constraint(equalTo: foodLabel1.bottomAnchor, constant: 4),
-            foodCollectionView1.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
-            foodCollectionView1.rightAnchor.constraint(equalTo: rightAnchor, constant: -4),
-            foodCollectionView1.heightAnchor.constraint(equalToConstant: frame.height/5)
+            foodCollectionView1.topAnchor.constraint(equalTo: foodLabel1.bottomAnchor),
+            foodCollectionView1.leftAnchor.constraint(equalTo: leftAnchor),
+            foodCollectionView1.rightAnchor.constraint(equalTo: rightAnchor),
+            foodCollectionView1.heightAnchor.constraint(equalToConstant: 150)
         ])
         // chefCollectionView
         NSLayoutConstraint.activate([
-            chefCollectionView3.topAnchor.constraint(equalTo: chefLabel3.bottomAnchor, constant: 4),
-            chefCollectionView3.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
-            chefCollectionView3.rightAnchor.constraint(equalTo: rightAnchor, constant: -4),
-            chefCollectionView3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
-            chefCollectionView3.heightAnchor.constraint(equalToConstant: frame.height/5)
+            chefCollectionView3.topAnchor.constraint(equalTo: chefLabel3.bottomAnchor),
+            chefCollectionView3.leftAnchor.constraint(equalTo: leftAnchor),
+            chefCollectionView3.rightAnchor.constraint(equalTo: rightAnchor),
+            chefCollectionView3.bottomAnchor.constraint(equalTo: bottomAnchor),
+            chefCollectionView3.heightAnchor.constraint(equalToConstant: 150)
         ])
         //chefLabel
         NSLayoutConstraint.activate([
@@ -117,12 +137,16 @@ final class HomeView: UIView {
         ])
         // popularCollectionView
         NSLayoutConstraint.activate([
-            popularCollectionView2.topAnchor.constraint(equalTo: popularLabel2.bottomAnchor, constant: 4),
-            popularCollectionView2.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
-            popularCollectionView2.rightAnchor.constraint(equalTo: rightAnchor, constant: -4),
-            popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor, constant: -4)
+            popularCollectionView2.topAnchor.constraint(equalTo: popularLabel2.bottomAnchor),
+            popularCollectionView2.leftAnchor.constraint(equalTo: leftAnchor),
+            popularCollectionView2.rightAnchor.constraint(equalTo: rightAnchor),
+            popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor)
         ])
     }
-    
+    private func setupCollectionViews(){
+//        collectionView.dataSource = collectionViewModel
+//        collectionView.delegate = collectionViewModel
+        
+    }
 
 }
