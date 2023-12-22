@@ -62,6 +62,9 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         foodLabel.text = nil
         foodImageView.image = nil
+    }
+    
+    func configure(category: DishCategory){
         
     }
 }
