@@ -10,20 +10,24 @@ import Kingfisher
 
 final class FoodCollectionViewCell: UICollectionViewCell {
     
-    private  let foodImageView: UIImageView = {
+    static let cellIdentifier = String(describing: FoodCollectionViewCell.self)
+    
+    let foodImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "globe.americas")
+        imageView.backgroundColor = .blue
         return imageView
     }()
     
-    private  let foodLabel: UILabel = {
+    let foodLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.backgroundColor = .systemRed
         return label
     }()
     
@@ -67,6 +71,6 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     
     func configure(category: DishCategory){
         foodLabel.text = category.name
-        foodImageView.kf.setImage(with: <#T##Source?#>)
+        foodImageView.kf.setImage(with: category.image.asUrl)
     }
 }

@@ -26,6 +26,7 @@
 		63A031AD2B34519000B325C8 /* ChefCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031AC2B34519000B325C8 /* ChefCollectionViewCell.swift */; };
 		63A031AF2B35AF3400B325C8 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031AE2B35AF3400B325C8 /* DishCategory.swift */; };
 		63A031B12B35B2F900B325C8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031B02B35B2F900B325C8 /* String+Extension.swift */; };
+		63A031B32B3600B100B325C8 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031B22B3600B100B325C8 /* HomeViewViewModel.swift */; };
 		63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */; };
 		63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */; };
 		63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */; };
@@ -56,6 +57,7 @@
 		63A031AC2B34519000B325C8 /* ChefCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCollectionViewCell.swift; sourceTree = "<group>"; };
 		63A031AE2B35AF3400B325C8 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		63A031B02B35B2F900B325C8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		63A031B22B3600B100B325C8 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1CollectionViewCell.swift; sourceTree = "<group>"; };
 		63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				63F340352B3321080065AFBA /* HomeViewController.swift */,
 				63A031A52B337C3C00B325C8 /* HomeView.swift */,
+				63A031B22B3600B100B325C8 /* HomeViewViewModel.swift */,
 				63A031A72B342D3700B325C8 /* HomeCollectionView */,
 			);
 			path = Home;
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */,
+				63A031B32B3600B100B325C8 /* HomeViewViewModel.swift in Sources */,
 				632B05FB2B22634D00D364B4 /* OnBoardingView2.swift in Sources */,
 				632B05F42B21EFE300D364B4 /* UIView+Extension.swift in Sources */,
 				632B05F62B21F45D00D364B4 /* OnboardingViewController.swift in Sources */,
@@ -498,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B34M97ZY6W;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Delicie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -526,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B34M97ZY6W;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Delicie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

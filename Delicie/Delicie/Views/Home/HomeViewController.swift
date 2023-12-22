@@ -11,6 +11,8 @@ final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
     
+    private let viewModel = HomeViewViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,9 @@ final class HomeViewController: UIViewController {
         addNavigationItem()
         view.addSubview(homeView)
         homeView.backgroundColor = .red
+        
+        homeView.foodCollectionView1.delegate = viewModel
+        homeView.foodCollectionView1.dataSource = viewModel
         
     }
     
@@ -46,5 +51,4 @@ final class HomeViewController: UIViewController {
     @objc private func cardButtonTapped(){
         
     }
-    
 }
