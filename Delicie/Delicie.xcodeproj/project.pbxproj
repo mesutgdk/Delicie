@@ -30,6 +30,7 @@
 		63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */; };
 		63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */; };
 		63F340362B3321080065AFBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F340352B3321080065AFBA /* HomeViewController.swift */; };
+		FB8B3B5FE54C4296B8CDBE1C /* Pods_Delicie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFED603BA8E7F0E59139606 /* Pods_Delicie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,9 @@
 		63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		63F340352B3321080065AFBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CBDE5121B4EECB54EF15112D /* Pods-Delicie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delicie.debug.xcconfig"; path = "Target Support Files/Pods-Delicie/Pods-Delicie.debug.xcconfig"; sourceTree = "<group>"; };
+		DBFED603BA8E7F0E59139606 /* Pods_Delicie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delicie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEEAF68A3F4A0FE75432624B /* Pods-Delicie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delicie.release.xcconfig"; path = "Target Support Files/Pods-Delicie/Pods-Delicie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +69,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8B3B5FE54C4296B8CDBE1C /* Pods_Delicie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55768C08CF44A811980A778A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBDE5121B4EECB54EF15112D /* Pods-Delicie.debug.xcconfig */,
+				EEEAF68A3F4A0FE75432624B /* Pods-Delicie.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		632B05F72B22626900D364B4 /* OnBoardingCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,8 @@
 			children = (
 				634A769E2AFBAE4100636975 /* Delicie */,
 				634A769D2AFBAE4100636975 /* Products */,
+				55768C08CF44A811980A778A /* Pods */,
+				D2115B763615B55193DF1DD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +207,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D2115B763615B55193DF1DD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBFED603BA8E7F0E59139606 /* Pods_Delicie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 634A76B02AFBAE4200636975 /* Build configuration list for PBXNativeTarget "Delicie" */;
 			buildPhases = (
+				6957E56A16940D66B0BBB5EF /* [CP] Check Pods Manifest.lock */,
 				634A76982AFBAE4100636975 /* Sources */,
 				634A76992AFBAE4100636975 /* Frameworks */,
 				634A769A2AFBAE4100636975 /* Resources */,
+				63A3E5E2A7962D59DA78643A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +281,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63A3E5E2A7962D59DA78643A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Delicie/Pods-Delicie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Delicie/Pods-Delicie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Delicie/Pods-Delicie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6957E56A16940D66B0BBB5EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Delicie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		634A76982AFBAE4100636975 /* Sources */ = {
@@ -419,6 +488,7 @@
 		};
 		634A76B12AFBAE4200636975 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBDE5121B4EECB54EF15112D /* Pods-Delicie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -446,6 +516,7 @@
 		};
 		634A76B22AFBAE4200636975 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEEAF68A3F4A0FE75432624B /* Pods-Delicie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
