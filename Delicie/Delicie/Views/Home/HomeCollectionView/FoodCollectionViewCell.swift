@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class FoodCollectionViewCell: UICollectionViewCell {
     
@@ -65,6 +66,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(category: DishCategory){
-        
+        foodLabel.text = category.name
+        foodImageView.kf.setImage(with: <#T##Source?#>)
     }
 }
