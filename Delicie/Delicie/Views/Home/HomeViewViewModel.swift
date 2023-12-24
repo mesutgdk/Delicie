@@ -27,7 +27,7 @@ extension HomeViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.cellIdentifier , for: indexPath) as? FoodCollectionViewCell else {
             fatalError("hard error to deque Food Cell")
         }
-//        cell.configure(category: indexPath.row)
+        cell.configure(category: categories[indexPath.row])
         return cell
     }
 }
