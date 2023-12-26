@@ -17,8 +17,13 @@ final class HomeViewViewModel: NSObject{
         .init(id: "id1", name: "Africa Dish 5", image: "https://picsum.photo/100/200")
     ]
     
-    
-}
+    var populars: [Dish] = [
+        .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34.28242),
+        .init(id: "id1", name: "Indomia", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 314.28242),
+        .init(id: "id1", name: "Pizza", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 1006.2)
+    ]
+    }
+
 extension HomeViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count

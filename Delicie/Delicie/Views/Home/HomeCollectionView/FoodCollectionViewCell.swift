@@ -11,9 +11,7 @@ import Kingfisher
 final class FoodCollectionViewCell: UICollectionViewCell {
     
     static let cellIdentifier = String(describing: FoodCollectionViewCell.self)
-    
-    private let cardView = CardView()
-    
+        
     let foodImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,18 +44,8 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     
     private func setup(){
         contentView.backgroundColor = .systemBackground
-        contentView.layer.masksToBounds = true
-        
-        contentView.layer.cornerRadius = 8
-        contentView.clipsToBounds = false
-        
-        contentView.layer.borderWidth = 0.3
-        contentView.layer.borderColor = UIColor.black.cgColor
-        
-        contentView.layer.shadowColor = UIColor.black.cgColor
-        contentView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        contentView.layer.shadowOpacity = 0.3
-        contentView.layer.shadowRadius = 4
+
+        contentView.addShadow(self) // extensionda tanımladım
 
         contentView.addSubviews(foodImageView,foodLabel)
     }
