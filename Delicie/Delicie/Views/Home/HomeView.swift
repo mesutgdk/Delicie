@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeView: UIView {
-
+    
     private let foodLabel1 : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,8 @@ final class HomeView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 8)
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemBackground
@@ -59,11 +60,13 @@ final class HomeView: UIView {
     let popularCollectionView2 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        
         layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemGray5
-
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(FoodCollectionViewCell.self, forCellWithReuseIdentifier: FoodCollectionViewCell.cellIdentifier)
         
         return collectionView
     }()
@@ -74,7 +77,7 @@ final class HomeView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemGray5
-
+        
         return collectionView
     }()
     
@@ -146,5 +149,5 @@ final class HomeView: UIView {
             popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor)
         ])
     }
-
+    
 }

@@ -29,6 +29,9 @@ final class HomeViewController: UIViewController {
         homeView.foodCollectionView1.delegate = viewModel
         homeView.foodCollectionView1.dataSource = viewModel
         
+        homeView.popularCollectionView2.delegate = viewModel
+        homeView.popularCollectionView2.dataSource = viewModel
+        
     }
     
     private func layout(){
