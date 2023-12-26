@@ -45,10 +45,12 @@ final class HomeView: UIView {
     let foodCollectionView1 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        layout.minimumLineSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemBackground
+        collectionView.clipsToBounds = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(FoodCollectionViewCell.self, forCellWithReuseIdentifier: FoodCollectionViewCell.cellIdentifier)
         

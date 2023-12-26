@@ -19,6 +19,7 @@
 		634A76A42AFBAE4100636975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A32AFBAE4100636975 /* ViewController.swift */; };
 		634A76A92AFBAE4200636975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634A76A82AFBAE4200636975 /* Assets.xcassets */; };
 		634A76AC2AFBAE4200636975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634A76AA2AFBAE4200636975 /* LaunchScreen.storyboard */; };
+		6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D28F2B3AE5C500C20E9F /* CardView.swift */; };
 		63A031A42B335BD000B325C8 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A32B335BD000B325C8 /* LocalState.swift */; };
 		63A031A62B337C3C00B325C8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A52B337C3C00B325C8 /* HomeView.swift */; };
 		63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */; };
@@ -50,6 +51,7 @@
 		634A76A82AFBAE4200636975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		634A76AB2AFBAE4200636975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		634A76AD2AFBAE4200636975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6359D28F2B3AE5C500C20E9F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63A031A32B335BD000B325C8 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		63A031A52B337C3C00B325C8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				63F340332B3320BF0065AFBA /* OnBoarding */,
 				63F340342B3320EA0065AFBA /* Home */,
+				6359D28E2B3AE5B000C20E9F /* CardView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +163,14 @@
 				632B05F52B21F45D00D364B4 /* OnboardingViewController.swift */,
 			);
 			path = OnBoardingPage;
+			sourceTree = "<group>";
+		};
+		6359D28E2B3AE5B000C20E9F /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				6359D28F2B3AE5C500C20E9F /* CardView.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		63A031A22B335BA200B325C8 /* Utilities */ = {
@@ -356,6 +367,7 @@
 				632B05FD2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift in Sources */,
 				63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */,
 				63A031AF2B35AF3400B325C8 /* DishCategory.swift in Sources */,
+				6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */,
 				63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

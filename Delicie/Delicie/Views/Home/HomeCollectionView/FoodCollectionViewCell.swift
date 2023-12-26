@@ -12,6 +12,8 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     
     static let cellIdentifier = String(describing: FoodCollectionViewCell.self)
     
+    private let cardView = CardView()
+    
     let foodImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +29,6 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         label.text = "Food"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13, weight: .semibold)
-        label.backgroundColor = .systemRed
         return label
     }()
     
@@ -46,6 +47,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     private func setup(){
         contentView.backgroundColor = .systemBackground
         contentView.layer.masksToBounds = true
+        
         contentView.layer.cornerRadius = 8
         contentView.clipsToBounds = false
         
@@ -56,10 +58,11 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         contentView.layer.shadowOffset = CGSize(width: 3, height: 3)
         contentView.layer.shadowOpacity = 0.3
         contentView.layer.shadowRadius = 4
-        
+
         contentView.addSubviews(foodImageView,foodLabel)
     }
     private func layout(){
+        
         // foodImageView
         NSLayoutConstraint.activate([
             foodImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
