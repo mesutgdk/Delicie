@@ -45,7 +45,7 @@ final class HomeView: UIView {
     let foodCollectionView1 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemGray5
@@ -82,7 +82,6 @@ final class HomeView: UIView {
         setup()
         layout()
         
-        setupCollectionViews()
     }
     
     required init?(coder: NSCoder) {
@@ -144,11 +143,6 @@ final class HomeView: UIView {
             popularCollectionView2.rightAnchor.constraint(equalTo: rightAnchor),
             popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor)
         ])
-    }
-    private func setupCollectionViews(){
-//        collectionView.dataSource = collectionViewModel
-//        collectionView.delegate = collectionViewModel
-        
     }
 
 }
