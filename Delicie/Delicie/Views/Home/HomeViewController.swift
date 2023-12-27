@@ -11,7 +11,8 @@ final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
     
-    private let viewModel = HomeViewViewModel()
+    private let foodViewModel = FoodCollectionViewViewModel()
+    private let popularViewModel = PopularCollectionViewViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,11 @@ final class HomeViewController: UIViewController {
         view.addSubview(homeView)
         homeView.backgroundColor = .red
         
-        homeView.foodCollectionView1.delegate = viewModel
-        homeView.foodCollectionView1.dataSource = viewModel
+        homeView.foodCollectionView1.delegate = foodViewModel
+        homeView.foodCollectionView1.dataSource = foodViewModel
         
-        homeView.popularCollectionView2.delegate = viewModel
-        homeView.popularCollectionView2.dataSource = viewModel
+        homeView.popularCollectionView2.delegate = popularViewModel
+        homeView.popularCollectionView2.dataSource = popularViewModel
         
     }
     
