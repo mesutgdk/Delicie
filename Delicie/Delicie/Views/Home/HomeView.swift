@@ -42,7 +42,7 @@ final class HomeView: UIView {
         return label
     }()
     
-    let foodCollectionView1 : UICollectionView = {
+    public let foodCollectionView1 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
@@ -57,7 +57,7 @@ final class HomeView: UIView {
         
         return collectionView
     }()
-    let popularCollectionView2 : UICollectionView = {
+    public let popularCollectionView2 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
@@ -70,7 +70,7 @@ final class HomeView: UIView {
         
         return collectionView
     }()
-    let chefCollectionView3 : UICollectionView = {
+    public let chefCollectionView3 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
