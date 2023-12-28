@@ -1,13 +1,14 @@
 //
-//  PopularCollectionViewViewModel.swift
+//  ChefCollectionViewViewModel.swift
 //  Delicie
 //
-//  Created by Mesut Gedik on 27.12.2023.
+//  Created by Mesut Gedik on 28.12.2023.
 //
+
 
 import UIKit
 
-final class PopularCollectionViewViewModel: NSObject{
+final class ChefCollectionViewViewModel: NSObject{
                     
     var populars: [Dish] = [
         .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34.28242),
@@ -16,7 +17,7 @@ final class PopularCollectionViewViewModel: NSObject{
     ]
     }
 
-extension PopularCollectionViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
  
         return populars.count
@@ -37,12 +38,12 @@ extension PopularCollectionViewViewModel: UICollectionViewDataSource,UICollectio
         let bounds = collectionView.bounds
         let width, height: CGFloat
         
-        width = (bounds.width-20)/2
-        height = (bounds.height-20)
+        width = (bounds.width-40)/2
+        height = (bounds.height-20)/2
     
         return CGSize(
-            width: width,
-            height: height
+            width: 180,
+            height: 300
         )
     }
 }

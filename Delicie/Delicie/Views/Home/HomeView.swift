@@ -67,6 +67,7 @@ final class HomeView: UIView {
         collectionView.backgroundColor = .systemGray5
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
+//        collectionView.clipsToBounds = false
         collectionView.register(PopularCollectionViewCell.self, forCellWithReuseIdentifier: PopularCollectionViewCell.cellIdentifier)
         
         return collectionView

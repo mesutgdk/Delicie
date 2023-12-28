@@ -44,10 +44,11 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     
     private func setup(){
         contentView.backgroundColor = .systemBackground
+        
+        contentView.addSubviews(foodImageView,foodLabel)
 
         contentView.addShadow(self) // extensionda tanımladım
 
-        contentView.addSubviews(foodImageView,foodLabel)
     }
     private func layout(){
         

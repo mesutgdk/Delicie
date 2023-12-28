@@ -32,7 +32,7 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     let popularTitleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Popular"
+//        label.text = "Popular"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
@@ -40,19 +40,21 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     let popularCaloriesLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Less Popular"
+//        label.text = "Less Popular"
         label.textAlignment = .left
         label.textColor = .systemRed
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.font = .systemFont(ofSize: 13, weight: .regular)
         return label
     }()
     let popularDescriptionLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "UnPopular"
+//        label.text = "UnPopular"
         label.textAlignment = .left
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 17, weight: .regular)
+//        label.adjustsFontForContentSizeCategory = true
+//        label.numberOfLines = 1
         return label
     }()
     
@@ -81,10 +83,10 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     private func layout(){
         // stackView
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor)
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
     }
     

@@ -33,6 +33,7 @@
 		63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */; };
 		63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */; };
 		63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */; };
+		63CF92F22B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */; };
 		63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */; };
 		63F340362B3321080065AFBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F340352B3321080065AFBA /* HomeViewController.swift */; };
 		FB8B3B5FE54C4296B8CDBE1C /* Pods_Delicie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFED603BA8E7F0E59139606 /* Pods_Delicie.framework */; };
@@ -67,6 +68,7 @@
 		63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1CollectionViewCell.swift; sourceTree = "<group>"; };
 		63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		63F340352B3321080065AFBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CBDE5121B4EECB54EF15112D /* Pods-Delicie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delicie.debug.xcconfig"; path = "Target Support Files/Pods-Delicie/Pods-Delicie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */,
 				63A031AA2B34518500B325C8 /* PopularCollectionViewCell.swift */,
 				63A031AC2B34519000B325C8 /* ChefCollectionViewCell.swift */,
+				63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */,
 			);
 			path = HomeCollectionView;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */,
 				6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */,
 				63A031B32B3600B100B325C8 /* FoodCollectionViewViewModel.swift in Sources */,
+				63CF92F22B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift in Sources */,
 				632B05FB2B22634D00D364B4 /* OnBoardingView2.swift in Sources */,
 				632B05F42B21EFE300D364B4 /* UIView+Extension.swift in Sources */,
 				632B05F62B21F45D00D364B4 /* OnboardingViewController.swift in Sources */,

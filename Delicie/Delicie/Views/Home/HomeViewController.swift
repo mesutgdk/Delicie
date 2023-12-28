@@ -22,7 +22,8 @@ final class HomeViewController: UIViewController {
     }
     private func setup(){
         title = "Delicie"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(red: 249, green: 249, blue: 249, alpha: 1)
+        
         addNavigationItem()
         view.addSubview(homeView)
         homeView.backgroundColor = .red
