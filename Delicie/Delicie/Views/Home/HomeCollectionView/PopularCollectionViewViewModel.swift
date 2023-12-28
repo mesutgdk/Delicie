@@ -41,8 +41,8 @@ extension PopularCollectionViewViewModel: UICollectionViewDataSource,UICollectio
         height = (bounds.height-20)/2
     
         return CGSize(
-            width: width,
-            height: height
+            width: 180,
+            height: 300
         )
     }
 }

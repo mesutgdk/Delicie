@@ -60,7 +60,7 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        setup()
+        setup()
         layout()
     }
     
@@ -75,11 +75,6 @@ final class PopularCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(popularDescriptionLabel)
         
         contentView.addSubview(stackView)
-//        contentView.addSubviews(
-//            popularTitleLabel,
-//            popularImageView,
-//            popularSecondLabel,
-//            popularThirdLabel)
         contentView.addShadow(self)
     }
     
