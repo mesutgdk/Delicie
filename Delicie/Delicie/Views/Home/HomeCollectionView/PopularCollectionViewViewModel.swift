@@ -38,7 +38,7 @@ extension PopularCollectionViewViewModel: UICollectionViewDataSource,UICollectio
         let width, height: CGFloat
         
         width = (bounds.width-20)/2
-        height = (bounds.height-20)
+        height = (bounds.height-10)
     
         return CGSize(
             width: width,

@@ -67,7 +67,8 @@ final class HomeView: UIView {
         collectionView.backgroundColor = .systemGray5
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-//        collectionView.clipsToBounds = false
+//        collectionView.isPagingEnabled = true
+        collectionView.clipsToBounds = true
         collectionView.register(PopularCollectionViewCell.self, forCellWithReuseIdentifier: PopularCollectionViewCell.cellIdentifier)
         
         return collectionView
@@ -79,6 +80,7 @@ final class HomeView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemGray5
+        
         
         return collectionView
     }()
