@@ -42,7 +42,7 @@ final class OnBoardingVC2: UIViewController {
         button.tintColor = .black
         button.cornerRadius = 10
         
-        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
     
@@ -61,6 +61,8 @@ final class OnBoardingVC2: UIViewController {
         
         viewModel.delegate = self
         pageControl.currentPage = currentPg
+        
+        createNextButtonAction()
     }
     
     private func layout(){
@@ -95,7 +97,15 @@ final class OnBoardingVC2: UIViewController {
 }
 extension OnBoardingVC2{
     
-    @objc private func nextTapped(){
+    private func createNextButtonAction(){
+        let action = UIAction{[weak self] _ in
+            self?.nextTapped()
+        }
+        skipButton.addAction(action, for: .touchUpInside)
+
+    }
+    
+    private func nextTapped(){
         pageControl.currentPage = currentPg
         let nextIndex = min(pageControl.currentPage + 1, 2)
         let indexPath = IndexPath(item: nextIndex, section: 0)

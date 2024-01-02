@@ -28,8 +28,7 @@ final class OnboardingContainerViewController: UIViewController {
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 8
         
-        button.addTarget(self, action: #selector(skipTapped), for: .primaryActionTriggered)
-        
+//        button.addTarget(self, action: #selector(skipTapped), for: .primaryActionTriggered)
         return button
     }()
         
@@ -76,6 +75,7 @@ final class OnboardingContainerViewController: UIViewController {
         
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
         
+        createNextButtonAction()
     }
     
     private func layout(){
@@ -94,10 +94,16 @@ final class OnboardingContainerViewController: UIViewController {
     }
     
 }
-
+// MARK: - Actions
 extension OnboardingContainerViewController{
-    
-    @objc func skipTapped(){
+    private func createNextButtonAction(){
+        let action = UIAction{[weak self] _ in
+            self?.skipTapped()
+        }
+        skipButton.addAction(action, for: .touchUpInside)
+
+    }
+    private func skipTapped(){
        
         print("end of the road")
     }

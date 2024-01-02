@@ -53,8 +53,8 @@ final class OnBoarding1ViewController: UIViewController {
         button.backgroundColor = .systemGray5
         button.tintColor = .black
         button.cornerRadius = 10
-        
-        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
+                
+//        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
     
@@ -82,6 +82,7 @@ final class OnBoarding1ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        createNextButtonAction()
     }
     private func layout(){
         //imageview
@@ -110,7 +111,15 @@ final class OnBoarding1ViewController: UIViewController {
 }
 // MARK: - Button Action
 extension OnBoarding1ViewController{
-    @objc private func nextTapped(){ // there is a bug with scrolling, pagination is turned off - scrolled - and on again
+    
+    private func createNextButtonAction(){
+        let action = UIAction{[weak self] _ in
+            self?.nextTapped()
+        }
+        skipButton.addAction(action, for: .touchUpInside)
+
+    }
+    private func nextTapped(){ // there is a bug with scrolling, pagination is turned off - scrolled - and on again
         if currentPage == slides.count-1{
 //            print( "it is the end of the road")
             let vc = HomeViewController()
