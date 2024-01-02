@@ -193,12 +193,12 @@
 		63A031A72B342D3700B325C8 /* HomeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				63A031B22B3600B100B325C8 /* FoodCollectionViewViewModel.swift */,
 				63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */,
-				6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */,
+				63A031B22B3600B100B325C8 /* FoodCollectionViewViewModel.swift */,
 				63A031AA2B34518500B325C8 /* PopularCollectionViewCell.swift */,
-				63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */,
+				6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */,
 				63A031AC2B34519000B325C8 /* ChefCollectionViewCell.swift */,
+				63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */,
 			);
 			path = HomeCollectionView;
 			sourceTree = "<group>";

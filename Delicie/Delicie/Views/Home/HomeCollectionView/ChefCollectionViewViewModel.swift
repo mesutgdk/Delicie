@@ -36,14 +36,13 @@ extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let bounds = collectionView.bounds
-//        let width, height: CGFloat
         
         let width = (bounds.width-40)/2
         let height = (bounds.height-20)/2
     
         return CGSize(
-            width: 180,
-            height: 300
+            width: 330,
+            height: 93
         )
     }
 }
