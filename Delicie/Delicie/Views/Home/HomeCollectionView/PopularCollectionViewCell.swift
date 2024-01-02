@@ -23,16 +23,16 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     let popularImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "globe.americas")
         imageView.backgroundColor = .systemPink
+        imageView.cornerRadius = 5
         return imageView
     }()
     
     let popularTitleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Popular"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
@@ -40,7 +40,6 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     let popularCaloriesLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Less Popular"
         label.textAlignment = .left
         label.textColor = .systemRed
         label.font = .systemFont(ofSize: 13, weight: .regular)
@@ -49,7 +48,6 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     let popularDescriptionLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "UnPopular"
         label.textAlignment = .left
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 17, weight: .regular)

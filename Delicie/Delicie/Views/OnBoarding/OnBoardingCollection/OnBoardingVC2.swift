@@ -95,16 +95,16 @@ final class OnBoardingVC2: UIViewController {
         
     }
 }
+// MARK: -Actions
 extension OnBoardingVC2{
     
     private func createNextButtonAction(){
         let action = UIAction{[weak self] _ in
             self?.nextTapped()
         }
-        skipButton.addAction(action, for: .touchUpInside)
+        skipButton.addAction(action, for: .primaryActionTriggered)
 
     }
-    
     private func nextTapped(){
         pageControl.currentPage = currentPg
         let nextIndex = min(pageControl.currentPage + 1, 2)
@@ -112,15 +112,13 @@ extension OnBoardingVC2{
         onBoardingView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 
     }
-    
 }
+// MARK: - OnboardingViewModelDelegate
 
 extension OnBoardingVC2:OnboardingViewModelDelegate{
     func setCurrentPage(_ onBoardingView2ViewModel: OnBoardingView2ViewModel, didSetCurrentPage cPage: Int) {
         print("delegate page : \(cPage)")
         pageControl.currentPage = cPage
     }
-    
-    
 }
 

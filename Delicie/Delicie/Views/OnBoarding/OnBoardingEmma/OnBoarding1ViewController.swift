@@ -116,7 +116,7 @@ extension OnBoarding1ViewController{
         let action = UIAction{[weak self] _ in
             self?.nextTapped()
         }
-        skipButton.addAction(action, for: .touchUpInside)
+        skipButton.addAction(action, for: .primaryActionTriggered)
 
     }
     private func nextTapped(){ // there is a bug with scrolling, pagination is turned off - scrolled - and on again

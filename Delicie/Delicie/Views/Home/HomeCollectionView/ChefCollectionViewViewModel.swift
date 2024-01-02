@@ -11,9 +11,9 @@ import UIKit
 final class ChefCollectionViewViewModel: NSObject{
                     
     var populars: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34.28242),
-        .init(id: "id1", name: "Indomia", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 314.28242),
-        .init(id: "id1", name: "Pizza", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 1006.2)
+        .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34),
+        .init(id: "id1", name: "Indomia", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 214),
+        .init(id: "id1", name: "Pizza", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 1006)
     ]
     }
 
@@ -36,10 +36,10 @@ extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let bounds = collectionView.bounds
-        let width, height: CGFloat
+//        let width, height: CGFloat
         
-        width = (bounds.width-40)/2
-        height = (bounds.height-20)/2
+        let width = (bounds.width-40)/2
+        let height = (bounds.height-20)/2
     
         return CGSize(
             width: 180,

@@ -100,7 +100,7 @@ extension OnboardingContainerViewController{
         let action = UIAction{[weak self] _ in
             self?.skipTapped()
         }
-        skipButton.addAction(action, for: .touchUpInside)
+        skipButton.addAction(action, for: .primaryActionTriggered)
 
     }
     private func skipTapped(){
