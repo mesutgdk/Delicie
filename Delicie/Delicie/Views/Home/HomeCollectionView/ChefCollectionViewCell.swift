@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ChefCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = String(describing: ChefCollectionViewCell.self)
     
-    let chefImageView: UIImageView = {
+    let dishImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "globe.americas")
         imageView.backgroundColor = .systemPink
-//        imageView.cornerRadius = 5
+        imageView.cornerRadius = 10
         return imageView
     }()
     
@@ -30,26 +31,26 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    let chefTitleLabel: UILabel = {
+    let dishTitleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 19, weight: .semibold)
         return label
     }()
-    let chefLabel: UILabel = {
+    let dishDescriptionLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-//        label.textColor = .systemRed
+        label.textColor = .systemGray
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
-    let chefDescriptionLabel: UILabel = {
+    let dishCaloryLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-//        label.textColor = .systemGray
+        label.textColor = .systemRed
         label.font = .systemFont(ofSize: 12, weight: .regular)
 //        label.adjustsFontForContentSizeCategory = true
 //        label.numberOfLines = 1
@@ -67,25 +68,25 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     }
     
     private func setup(){
-        stackView.addArrangedSubview(chefTitleLabel)
-        stackView.addArrangedSubview(chefLabel)
-        stackView.addArrangedSubview(chefDescriptionLabel)
+        stackView.addArrangedSubview(dishTitleLabel)
+        stackView.addArrangedSubview(dishDescriptionLabel)
+        stackView.addArrangedSubview(dishCaloryLabel)
         
-        contentView.addSubviews(chefImageView,stackView)
+        contentView.addSubviews(dishImageView,stackView)
         
     }
     
     private func layout(){
         //chefImageView
         NSLayoutConstraint.activate([
-            chefImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            chefImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-            chefImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            dishImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            dishImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            dishImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
         //stackView
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            stackView.leftAnchor.constraint(equalTo: chefImageView.rightAnchor, constant: 12),
+            stackView.leftAnchor.constraint(equalTo: dishImageView.rightAnchor, constant: 12),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
@@ -93,14 +94,17 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {  // hücreleri tekrar kullanabilmek için nille
         super.prepareForReuse()
-        chefTitleLabel.text = nil
-        chefLabel.text = nil
-        chefDescriptionLabel.text = nil
-        chefImageView.image = nil
+        dishTitleLabel.text = nil
+        dishDescriptionLabel.text = nil
+        dishCaloryLabel.text = nil
+        dishImageView.image = nil
     }
     
-    func configureCell(){
-        
+    func configureCell(dish: Dish){
+        dishImageView.kf.setImage(with: dish.image?.asUrl)
+        dishTitleLabel.text = dish.name
+        dishDescriptionLabel.text = dish.description
+        dishCaloryLabel.text = dish.formattedCalories
     }
     
 }
