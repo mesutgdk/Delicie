@@ -8,7 +8,7 @@
 import UIKit
 
 final class ChefCollectionViewCell: UICollectionViewCell {
-    static let identifier = String(describing: ChefCollectionViewCell.self)
+    static let cellIdentifier = String(describing: ChefCollectionViewCell.self)
     
     let chefImageView: UIImageView = {
        let imageView = UIImageView()
@@ -25,6 +25,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
 //        stackView.spacing = 8
+        stackView.distribution = .fillEqually
         
         return stackView
     }()
@@ -32,24 +33,24 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     let chefTitleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 19, weight: .semibold)
         return label
     }()
     let chefLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.textColor = .systemRed
-        label.font = .systemFont(ofSize: 13, weight: .regular)
+//        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     let chefDescriptionLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+//        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 12, weight: .regular)
 //        label.adjustsFontForContentSizeCategory = true
 //        label.numberOfLines = 1
         return label
@@ -84,7 +85,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         //stackView
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            stackView.leftAnchor.constraint(equalTo: chefImageView.rightAnchor, constant: 8),
+            stackView.leftAnchor.constraint(equalTo: chefImageView.rightAnchor, constant: 12),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
