@@ -10,7 +10,7 @@ import UIKit
 
 final class ChefCollectionViewViewModel: NSObject{
                     
-    var populars: [Dish] = [
+    var dishes: [Dish] = [
         .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34),
         .init(id: "id1", name: "Indomia", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 214),
         .init(id: "id1", name: "Pizza", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 1006)
@@ -20,15 +20,15 @@ final class ChefCollectionViewViewModel: NSObject{
 extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
  
-        return populars.count
+        return dishes.count
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIdentifier , for: indexPath) as? PopularCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefCollectionViewCell.cellIdentifier , for: indexPath) as? ChefCollectionViewCell else {
             fatalError("hard error to deque Food Cell")
         }
-        cell.configure(dish: populars[indexPath.row])
+        cell.configureCell(dish: dishes[indexPath.row])
         return cell
         
     }
@@ -38,11 +38,11 @@ extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
         let bounds = collectionView.bounds
         
         let width = (bounds.width-40)/2
-        let height = (bounds.height-20)/2
+        
     
         return CGSize(
-            width: 330,
-            height: 93
+            width: width,
+            height: (width-40)/2
         )
     }
 }

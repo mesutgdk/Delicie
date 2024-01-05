@@ -13,6 +13,7 @@ final class HomeViewController: UIViewController {
     
     private let foodViewModel = FoodCollectionViewViewModel()
     private let popularViewModel = PopularCollectionViewViewModel()
+    private let chefViewModel = ChefCollectionViewViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,9 @@ final class HomeViewController: UIViewController {
         
         homeView.popularCollectionView2.delegate = popularViewModel
         homeView.popularCollectionView2.dataSource = popularViewModel
+        
+        homeView.chefCollectionView3.delegate = chefViewModel
+        homeView.chefCollectionView3.dataSource = chefViewModel
         
     }
     

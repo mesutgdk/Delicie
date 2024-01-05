@@ -73,7 +73,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(dishCaloryLabel)
         
         contentView.addSubviews(dishImageView,stackView)
-        
+        contentView.addShadow(self)
     }
     
     private func layout(){
