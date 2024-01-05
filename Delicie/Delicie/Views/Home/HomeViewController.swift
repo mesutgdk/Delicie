@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController {
         
         addNavigationItem()
         view.addSubview(homeView)
-        homeView.backgroundColor = .red
+        homeView.backgroundColor = .systemBackground
         
         homeView.foodCollectionView1.delegate = foodViewModel
         homeView.foodCollectionView1.dataSource = foodViewModel

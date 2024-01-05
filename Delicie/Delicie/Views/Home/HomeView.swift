@@ -15,7 +15,10 @@ final class HomeView: UIView {
         label.text = "Food Category"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
-        label.textAlignment = .left
+        label.textAlignment = .center
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 5
+        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -26,7 +29,10 @@ final class HomeView: UIView {
         label.text = "Popular Dishes"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
-        label.textAlignment = .left
+        label.textAlignment = .center
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 5
+        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -37,7 +43,10 @@ final class HomeView: UIView {
         label.text = "Chef's Specials"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
-        label.textAlignment = .left
+        label.textAlignment = .center
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 5
+        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -46,7 +55,7 @@ final class HomeView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 8)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,11 +84,11 @@ final class HomeView: UIView {
     }()
     public let chefCollectionView3 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemGray5
+        collectionView.backgroundColor = .systemBackground
         
         collectionView.clipsToBounds = true
         collectionView.register(ChefCollectionViewCell.self, forCellWithReuseIdentifier: ChefCollectionViewCell.cellIdentifier)
@@ -92,7 +101,6 @@ final class HomeView: UIView {
         
         setup()
         layout()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -109,8 +117,6 @@ final class HomeView: UIView {
             chefCollectionView3
         )
         translatesAutoresizingMaskIntoConstraints = false
-        
-        
     }
     
     private func layout(){

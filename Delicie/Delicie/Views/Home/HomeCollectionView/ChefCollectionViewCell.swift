@@ -14,7 +14,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     let dishImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "globe.americas")
         imageView.backgroundColor = .systemPink
         imageView.cornerRadius = 10
@@ -27,6 +27,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         stackView.axis = .vertical
 //        stackView.spacing = 8
         stackView.distribution = .fillEqually
+//        stackView.backgroundColor = .cyan
         
         return stackView
     }()
