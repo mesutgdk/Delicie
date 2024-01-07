@@ -10,9 +10,9 @@ import UIKit
 
 final class ChefCollectionViewViewModel: NSObject{
                     
-    var dishes: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34),
-        .init(id: "id1", name: "Indomia", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 214),
+    var specials: [Dish] = [
+        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photo/100/200", description: "This is my favorite dish.", calories: 34),
+        .init(id: "id1", name: "Beans and Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 214),
         .init(id: "id1", name: "Pizza", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 1006),
         .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34),
         .init(id: "id1", name: "Indomia", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 214),
@@ -23,7 +23,7 @@ final class ChefCollectionViewViewModel: NSObject{
 extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
  
-        return dishes.count
+        return specials.count
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,7 +31,7 @@ extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefCollectionViewCell.cellIdentifier , for: indexPath) as? ChefCollectionViewCell else {
             fatalError("hard error to deque Food Cell")
         }
-        cell.configureCell(dish: dishes[indexPath.row])
+        cell.configureCell(dish: specials[indexPath.row])
         return cell
         
     }
@@ -42,7 +42,7 @@ extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
         let width, height: CGFloat
         
         width = (bounds.width-40)/2
-        height = (bounds.height-20)/2
+        height = (bounds.height-20)
     
         return CGSize(
             width: width,

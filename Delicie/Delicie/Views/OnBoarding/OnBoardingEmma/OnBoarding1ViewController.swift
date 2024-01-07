@@ -29,6 +29,7 @@ final class OnBoarding1ViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(OnBoarding1CollectionViewCell.self, forCellWithReuseIdentifier: OnBoarding1CollectionViewCell.cellIdentifier)
 
         return collectionView

@@ -76,6 +76,8 @@ final class PopularCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(stackView)
         contentView.addShadow(self)
+        
+        contentView.backgroundColor = .systemBackground
     }
     
     private func layout(){

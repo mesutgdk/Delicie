@@ -8,17 +8,17 @@
 import UIKit
 
 final class HomeView: UIView {
-    
+        
     private let foodLabel1 : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food Category"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-        label.backgroundColor = .systemGray5
+//        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -29,10 +29,10 @@ final class HomeView: UIView {
         label.text = "Popular Dishes"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-        label.backgroundColor = .systemGray5
+//        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -43,10 +43,10 @@ final class HomeView: UIView {
         label.text = "Chef's Specials"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .darkGray
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-        label.backgroundColor = .systemGray5
+//        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -59,7 +59,7 @@ final class HomeView: UIView {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .clear
         collectionView.clipsToBounds = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(FoodCollectionViewCell.self, forCellWithReuseIdentifier: FoodCollectionViewCell.cellIdentifier)
@@ -73,7 +73,7 @@ final class HomeView: UIView {
         layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
 //        collectionView.isPagingEnabled = true
@@ -85,12 +85,15 @@ final class HomeView: UIView {
     public let chefCollectionView3 : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        
         layout.sectionInset = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .clear
         
-        collectionView.clipsToBounds = true
+        collectionView.clipsToBounds = false
         collectionView.register(ChefCollectionViewCell.self, forCellWithReuseIdentifier: ChefCollectionViewCell.cellIdentifier)
         
         return collectionView
@@ -126,39 +129,39 @@ final class HomeView: UIView {
             foodLabel1.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
             foodLabel1.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
         ])
-        // foodCategoryCollectionView
+        // foodCollectionView
         NSLayoutConstraint.activate([
-            foodCollectionView1.topAnchor.constraint(equalTo: foodLabel1.bottomAnchor),
+            foodCollectionView1.topAnchor.constraint(equalTo: foodLabel1.bottomAnchor, constant: 8),
             foodCollectionView1.leftAnchor.constraint(equalTo: leftAnchor),
             foodCollectionView1.rightAnchor.constraint(equalTo: rightAnchor),
             foodCollectionView1.heightAnchor.constraint(equalToConstant: 150)
         ])
         // chefCollectionView
         NSLayoutConstraint.activate([
-            chefCollectionView3.topAnchor.constraint(equalTo: chefLabel3.bottomAnchor),
+            chefCollectionView3.topAnchor.constraint(equalTo: chefLabel3.bottomAnchor,constant: 8),
             chefCollectionView3.leftAnchor.constraint(equalTo: leftAnchor),
             chefCollectionView3.rightAnchor.constraint(equalTo: rightAnchor),
             chefCollectionView3.bottomAnchor.constraint(equalTo: bottomAnchor),
-            chefCollectionView3.heightAnchor.constraint(equalToConstant: 150)
+            chefCollectionView3.heightAnchor.constraint(equalToConstant: 100)
         ])
         //chefLabel
         NSLayoutConstraint.activate([
-            chefLabel3.bottomAnchor.constraint(equalTo: chefCollectionView3.topAnchor, constant: -4),
+            chefLabel3.bottomAnchor.constraint(equalTo: chefCollectionView3.topAnchor, constant: -8),
             chefLabel3.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
             chefLabel3.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
         ])
         //popularLabel
         NSLayoutConstraint.activate([
-            popularLabel2.topAnchor.constraint(equalTo: foodCollectionView1.bottomAnchor, constant: 4),
+            popularLabel2.topAnchor.constraint(equalTo: foodCollectionView1.bottomAnchor, constant: 8),
             popularLabel2.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
             popularLabel2.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
         ])
         // popularCollectionView
         NSLayoutConstraint.activate([
-            popularCollectionView2.topAnchor.constraint(equalTo: popularLabel2.bottomAnchor),
+            popularCollectionView2.topAnchor.constraint(equalTo: popularLabel2.bottomAnchor, constant: 8),
             popularCollectionView2.leftAnchor.constraint(equalTo: leftAnchor),
             popularCollectionView2.rightAnchor.constraint(equalTo: rightAnchor),
-            popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor)
+            popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor, constant: -8)
         ])
     }
     

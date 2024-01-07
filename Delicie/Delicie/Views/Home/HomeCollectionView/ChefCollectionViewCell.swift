@@ -75,6 +75,8 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubviews(dishImageView,stackView)
         contentView.addShadow(self)
+        
+        contentView.backgroundColor = .systemBackground
     }
     
     private func layout(){

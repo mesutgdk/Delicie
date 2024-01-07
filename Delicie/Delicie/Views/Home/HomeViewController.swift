@@ -23,11 +23,12 @@ final class HomeViewController: UIViewController {
     }
     private func setup(){
         title = "Delicie"
-        view.backgroundColor = UIColor(red: 249, green: 249, blue: 249, alpha: 1)
+        view.backgroundColor = .systemGray6
+        homeView.backgroundColor = .systemGray6
         
         addNavigationItem()
         view.addSubview(homeView)
-        homeView.backgroundColor = .systemBackground
+        
         
         homeView.foodCollectionView1.delegate = foodViewModel
         homeView.foodCollectionView1.dataSource = foodViewModel
