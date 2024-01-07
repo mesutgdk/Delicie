@@ -107,7 +107,7 @@ final class HomeView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     private func setup(){
@@ -126,8 +126,8 @@ final class HomeView: UIView {
         //foodCategoryLabel
         NSLayoutConstraint.activate([
             foodLabel1.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            foodLabel1.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
-            foodLabel1.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
+            foodLabel1.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
+            foodLabel1.rightAnchor.constraint(equalTo: rightAnchor, constant: -8)
         ])
         // foodCollectionView
         NSLayoutConstraint.activate([
@@ -147,14 +147,14 @@ final class HomeView: UIView {
         //chefLabel
         NSLayoutConstraint.activate([
             chefLabel3.bottomAnchor.constraint(equalTo: chefCollectionView3.topAnchor, constant: -8),
-            chefLabel3.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
-            chefLabel3.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
+            chefLabel3.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
+            chefLabel3.rightAnchor.constraint(equalTo: rightAnchor, constant: -8)
         ])
         //popularLabel
         NSLayoutConstraint.activate([
             popularLabel2.topAnchor.constraint(equalTo: foodCollectionView1.bottomAnchor, constant: 8),
-            popularLabel2.leftAnchor.constraint(equalTo: leftAnchor, constant: 4),
-            popularLabel2.rightAnchor.constraint(equalTo: rightAnchor, constant: -4)
+            popularLabel2.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
+            popularLabel2.rightAnchor.constraint(equalTo: rightAnchor, constant: -8)
         ])
         // popularCollectionView
         NSLayoutConstraint.activate([
