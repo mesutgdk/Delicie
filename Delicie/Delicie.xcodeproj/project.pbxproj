@@ -162,7 +162,7 @@
 			children = (
 				63F340332B3320BF0065AFBA /* OnBoarding */,
 				63F340342B3320EA0065AFBA /* Home */,
-				63F680002B4AE6CE000FB1A5 /* HomeDetail */,
+				63F680002B4AE6CE000FB1A5 /* DishDetail */,
 				6359D28E2B3AE5B000C20E9F /* CardView */,
 			);
 			path = Views;
@@ -237,13 +237,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		63F680002B4AE6CE000FB1A5 /* HomeDetail */ = {
+		63F680002B4AE6CE000FB1A5 /* DishDetail */ = {
 			isa = PBXGroup;
 			children = (
 				63F680012B4AE6FC000FB1A5 /* HomeDetailViewController.swift */,
 				63F680032B4AE720000FB1A5 /* HomeDetailView.swift */,
 			);
-			path = HomeDetail;
+			path = DishDetail;
 			sourceTree = "<group>";
 		};
 		D2115B763615B55193DF1DD6 /* Frameworks */ = {
