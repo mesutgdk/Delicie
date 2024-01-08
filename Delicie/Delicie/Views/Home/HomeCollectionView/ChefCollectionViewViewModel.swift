@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ChefCollectionViewViewModelDelegate: AnyObject{
+    func didSelectDish(_ dish: Dish) //for going into detailed view
+}
+
 final class ChefCollectionViewViewModel: NSObject{
+    
+    public weak var delegate: ChefCollectionViewViewModelDelegate?
                     
     var specials: [Dish] = [
         .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photo/100/200", description: "This is my favorite dish.", calories: 34),
@@ -48,5 +54,9 @@ extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
             width: width,
             height: height
         )
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dish = specials[indexPath.row]
+        delegate?.didSelectDish(dish)
     }
 }

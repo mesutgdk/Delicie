@@ -10,11 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
-    
-    private let foodViewModel = FoodCollectionViewViewModel()
-    private let popularViewModel = PopularCollectionViewViewModel()
-    private let chefViewModel = ChefCollectionViewViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,16 +24,6 @@ final class HomeViewController: UIViewController {
         
         addNavigationItem()
         view.addSubview(homeView)
-        
-        
-        homeView.foodCollectionView1.delegate = foodViewModel
-        homeView.foodCollectionView1.dataSource = foodViewModel
-        
-        homeView.popularCollectionView2.delegate = popularViewModel
-        homeView.popularCollectionView2.dataSource = popularViewModel
-        
-        homeView.chefCollectionView3.delegate = chefViewModel
-        homeView.chefCollectionView3.dataSource = chefViewModel
         
     }
     

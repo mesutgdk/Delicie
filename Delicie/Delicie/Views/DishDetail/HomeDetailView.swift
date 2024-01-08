@@ -33,7 +33,7 @@ final class HomeDetailView: UIView {
         return stackView
     }()
     
-    let firstLabel : UILabel = {
+    let titleLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -41,7 +41,7 @@ final class HomeDetailView: UIView {
         return label
     }()
     
-    let secondLabel : UILabel = {
+    let caloryLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
@@ -70,7 +70,7 @@ final class HomeDetailView: UIView {
         return textField
     }()
     
-    let button : UIButton = {
+    let orderButton : UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Place Order", for: .normal)
@@ -93,13 +93,13 @@ final class HomeDetailView: UIView {
     }
     
     private func setup(){
-        horizontalStackView.addArrangedSubview(firstLabel)
-        horizontalStackView.addArrangedSubview(secondLabel)
+        horizontalStackView.addArrangedSubview(titleLabel)
+        horizontalStackView.addArrangedSubview(caloryLabel)
         
         verticalStackView.addArrangedSubview(horizontalStackView)
         verticalStackView.addArrangedSubview(descriptionLabel)
         verticalStackView.addArrangedSubview(textField)
-        verticalStackView.addArrangedSubview(button)
+        verticalStackView.addArrangedSubview(orderButton)
         
         addSubviews(detailedImageView,verticalStackView)
         
@@ -121,7 +121,7 @@ final class HomeDetailView: UIView {
         ])
         //secondLabel
         NSLayoutConstraint.activate([
-            secondLabel.widthAnchor.constraint(equalToConstant: 100)
+            caloryLabel.widthAnchor.constraint(equalToConstant: 100)
         ])
         
         // textField
@@ -132,9 +132,8 @@ final class HomeDetailView: UIView {
         
         //button
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 50),
+            orderButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-        
         
     }
 
@@ -144,7 +143,7 @@ extension HomeDetailView{
         let action = UIAction{[weak self] _ in
             self?.nextTapped()
         }
-        button.addAction(action, for: .primaryActionTriggered)
+        orderButton.addAction(action, for: .primaryActionTriggered)
 
     }
     

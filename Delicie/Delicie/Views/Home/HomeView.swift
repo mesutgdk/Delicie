@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol HomeViewDelegate: AnyObject {
+    func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish character: Dish)
+}
+
 final class HomeView: UIView {
+    
+    private let foodViewModel = FoodCollectionViewViewModel()
+    private let popularViewModel = PopularCollectionViewViewModel()
+    private let chefViewModel = ChefCollectionViewViewModel()
         
     private let foodLabel1 : UILabel = {
         let label = UILabel()
@@ -120,6 +128,16 @@ final class HomeView: UIView {
             chefCollectionView3
         )
         translatesAutoresizingMaskIntoConstraints = false
+        
+        foodCollectionView1.delegate = foodViewModel
+        foodCollectionView1.dataSource = foodViewModel
+        
+        popularCollectionView2.delegate = popularViewModel
+        popularCollectionView2.dataSource = popularViewModel
+        
+        chefCollectionView3.delegate = chefViewModel
+        chefCollectionView3.dataSource = chefViewModel
+        
     }
     
     private func layout(){

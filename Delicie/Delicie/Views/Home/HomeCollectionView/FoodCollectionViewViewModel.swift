@@ -8,9 +8,7 @@
 import UIKit
 
 final class FoodCollectionViewViewModel: NSObject{
-    
-    private let homeView = HomeView()
-            
+                
     var categories : [DishCategory] = [
         .init(id: "id1", name: "Africa Dish", image: "https://picsum.photo/100/200"),
         .init(id: "id1", name: "Africa Dish 2", image: "https://picsum.photo/100/200"),
