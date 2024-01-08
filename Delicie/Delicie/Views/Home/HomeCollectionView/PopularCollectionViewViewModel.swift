@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol PopularCollectionViewViewModelDelegate: AnyObject{
+    func didSelectDish(_ dish: Dish) //for going into detailed view
+}
+
 final class PopularCollectionViewViewModel: NSObject{
+    
+    public weak var delegate: PopularCollectionViewViewModelDelegate?
                     
     var populars: [Dish] = [
         .init(id: "id1", name: "Garri", image: "https://picsum.photo/100/200", description: "This is the best I ever had", calories: 34),
@@ -44,5 +50,10 @@ extension PopularCollectionViewViewModel: UICollectionViewDataSource,UICollectio
             width: width,
             height: height
         )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dish = populars[indexPath.row]
+        delegate?.didSelectDish(dish)
     }
 }

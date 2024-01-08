@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol FoodCollectionViewViewModelDelegate: AnyObject{
+    func didSelectCategory(_ dishCategory: DishCategory) //for going into detailed view
+}
+
 final class FoodCollectionViewViewModel: NSObject{
+    
+    public weak var delegate : FoodCollectionViewViewModelDelegate?
                 
     var categories : [DishCategory] = [
         .init(id: "id1", name: "Africa Dish", image: "https://picsum.photo/100/200"),
@@ -52,5 +58,10 @@ extension FoodCollectionViewViewModel: UICollectionViewDataSource,UICollectionVi
             width: width,
             height: height
         )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dishCategory = categories[indexPath.row]
+        delegate?.didSelectCategory(dishCategory)
     }
 }
