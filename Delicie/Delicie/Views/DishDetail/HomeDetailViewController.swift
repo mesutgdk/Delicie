@@ -34,6 +34,7 @@ final class HomeDetailViewController: UIViewController {
     
     private func setup(){
         view.backgroundColor = .systemBackground
+        view.addSubview(homeDetailedView)
         
     }
     private func layout(){

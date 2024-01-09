@@ -15,6 +15,7 @@ final class HomeDetailView: UIView {
     let detailedImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .red
         
         return imageView
     }()
@@ -24,6 +25,7 @@ final class HomeDetailView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 16
+//        stackView.backgroundColor = .red
         
         return stackView
     }()
@@ -32,6 +34,7 @@ final class HomeDetailView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
+//        stackView.backgroundColor = .cyan
         
         return stackView
     }()
@@ -98,6 +101,7 @@ final class HomeDetailView: UIView {
     }
     
     private func setup(){
+        translatesAutoresizingMaskIntoConstraints = false
         
         configure(viewModel: viewModel)
         
@@ -145,6 +149,7 @@ final class HomeDetailView: UIView {
     }
     
     func configure(viewModel: HomeDetailViewViewModel){
+        
         detailedImageView.kf.setImage(with: viewModel.dish.image?.asUrl)
         titleLabel.text = viewModel.dish.name
         caloryLabel.text = viewModel.dish.formattedCalories
