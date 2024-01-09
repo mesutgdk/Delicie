@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeDetailViewViewModel{
     
-    private let dish : Dish
+    let dish : Dish
     
     // MARK: - init
 

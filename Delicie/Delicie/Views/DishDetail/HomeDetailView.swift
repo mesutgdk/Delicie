@@ -84,7 +84,9 @@ final class HomeDetailView: UIView {
         return button
     }()
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, viewModel: HomeDetailViewViewModel) {
+        self.viewModel = viewModel
+        
         super.init(frame: frame)
         
         setup()
@@ -92,10 +94,13 @@ final class HomeDetailView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setup(){
+        
+        configure(viewModel: viewModel)
+        
         horizontalStackView.addArrangedSubview(titleLabel)
         horizontalStackView.addArrangedSubview(caloryLabel)
         
@@ -139,11 +144,11 @@ final class HomeDetailView: UIView {
         ])
     }
     
-    func configure(dish: Dish){
-        detailedImageView.kf.setImage(with: dish.image?.asUrl)
-        titleLabel.text = dish.name
-        caloryLabel.text = dish.formattedCalories
-        descriptionLabel.text = dish.description
+    func configure(viewModel: HomeDetailViewViewModel){
+        detailedImageView.kf.setImage(with: viewModel.dish.image?.asUrl)
+        titleLabel.text = viewModel.dish.name
+        caloryLabel.text = viewModel.dish.formattedCalories
+        descriptionLabel.text = viewModel.dish.description
     }
 
 }
