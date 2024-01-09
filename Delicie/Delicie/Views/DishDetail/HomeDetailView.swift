@@ -25,7 +25,6 @@ final class HomeDetailView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 16
-//        stackView.backgroundColor = .red
         
         return stackView
     }()
@@ -34,7 +33,7 @@ final class HomeDetailView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-//        stackView.backgroundColor = .cyan
+        stackView.spacing = 8
         
         return stackView
     }()
@@ -128,7 +127,7 @@ final class HomeDetailView: UIView {
         NSLayoutConstraint.activate([
             verticalStackView.topAnchor.constraint(equalTo: detailedImageView.bottomAnchor, constant: 16),
             verticalStackView.leftAnchor.constraint(equalTo: leftAnchor,constant: 16),
-            verticalStackView.rightAnchor.constraint(equalTo: rightAnchor,constant: 16),
+            verticalStackView.rightAnchor.constraint(equalTo: rightAnchor,constant: -16),
             verticalStackView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -16)
         ])
         //secondLabel
