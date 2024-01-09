@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class HomeDetailView: UIView {
+    
+    private let viewModel : HomeDetailViewViewModel
     
     let detailedImageView : UIImageView = {
         let imageView = UIImageView()
@@ -134,7 +137,13 @@ final class HomeDetailView: UIView {
         NSLayoutConstraint.activate([
             orderButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-        
+    }
+    
+    func configure(dish: Dish){
+        detailedImageView.kf.setImage(with: dish.image?.asUrl)
+        titleLabel.text = dish.name
+        caloryLabel.text = dish.formattedCalories
+        descriptionLabel.text = dish.description
     }
 
 }
