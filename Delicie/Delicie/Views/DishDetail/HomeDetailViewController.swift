@@ -31,6 +31,4 @@ final class HomeDetailViewController: UIViewController {
         ])
         
     }
-
-
 }

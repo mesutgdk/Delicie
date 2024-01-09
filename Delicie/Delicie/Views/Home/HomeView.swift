@@ -8,10 +8,12 @@
 import UIKit
 
 protocol HomeViewDelegate: AnyObject {
-    func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish character: Dish)
+    func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish dish: Dish)
 }
 
 final class HomeView: UIView {
+    
+    public weak var delegate: HomeViewDelegate?
     
     private let foodViewModel = FoodCollectionViewViewModel()
     private let popularViewModel = PopularCollectionViewViewModel()
@@ -138,6 +140,9 @@ final class HomeView: UIView {
         chefCollectionView3.delegate = chefViewModel
         chefCollectionView3.dataSource = chefViewModel
         
+        popularViewModel.delegate = self
+        chefViewModel.delegate = self
+        
     }
     
     private func layout(){
@@ -181,6 +186,13 @@ final class HomeView: UIView {
             popularCollectionView2.rightAnchor.constraint(equalTo: rightAnchor),
             popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor, constant: -8)
         ])
+    }
+    
+}
+
+extension HomeView: PopularCollectionViewViewModelDelegate,ChefCollectionViewViewModelDelegate{
+    func didSelectDish(_ dish: Dish) {
+        delegate?.homeDetailedView(self, didSelectDish: dish)
     }
     
 }

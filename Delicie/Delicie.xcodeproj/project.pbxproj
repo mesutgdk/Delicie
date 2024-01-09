@@ -22,6 +22,7 @@
 		6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D28F2B3AE5C500C20E9F /* CardView.swift */; };
 		6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D2912B3B0C0000C20E9F /* Dish.swift */; };
 		6366DE8B2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */; };
+		639CC4762B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4752B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift */; };
 		63A031A42B335BD000B325C8 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A32B335BD000B325C8 /* LocalState.swift */; };
 		63A031A62B337C3C00B325C8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A52B337C3C00B325C8 /* HomeView.swift */; };
 		63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */; };
@@ -59,6 +60,7 @@
 		6359D28F2B3AE5C500C20E9F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6359D2912B3B0C0000C20E9F /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		639CC4752B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewViewModel.swift; sourceTree = "<group>"; };
 		63A031A32B335BD000B325C8 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		63A031A52B337C3C00B325C8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				63F680012B4AE6FC000FB1A5 /* HomeDetailViewController.swift */,
 				63F680032B4AE720000FB1A5 /* HomeDetailView.swift */,
+				639CC4752B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift */,
 			);
 			path = DishDetail;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				634A76A42AFBAE4100636975 /* ViewController.swift in Sources */,
 				63A031A62B337C3C00B325C8 /* HomeView.swift in Sources */,
 				63F340362B3321080065AFBA /* HomeViewController.swift in Sources */,
+				639CC4762B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift in Sources */,
 				63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */,
 				63F680022B4AE6FC000FB1A5 /* HomeDetailViewController.swift in Sources */,
 				63A031A42B335BD000B325C8 /* LocalState.swift in Sources */,

@@ -25,6 +25,8 @@ final class HomeViewController: UIViewController {
         addNavigationItem()
         view.addSubview(homeView)
         
+        homeView.delegate = self
+        
     }
     
     private func layout(){
@@ -47,4 +49,11 @@ final class HomeViewController: UIViewController {
     @objc private func cardButtonTapped(){
         
     }
+}
+extension HomeViewController: HomeViewDelegate{
+    func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish dish: Dish) {
+        let viewModel = HomeDetailViewViewModel(dish: dish)
+        
+    }
+    
 }
