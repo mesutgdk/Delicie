@@ -24,6 +24,7 @@ final class HomeDetailViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ final class HomeDetailViewController: UIViewController {
         setup()
         layout()
     }
-    
+    // MARK: - Setup & Layout
+
     private func setup(){
         view.backgroundColor = .systemBackground
         view.addSubview(homeDetailedView)

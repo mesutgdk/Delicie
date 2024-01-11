@@ -16,6 +16,7 @@ final class HomeDetailView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .red
+//        imageView.contentMode = .scaleToFill
         
         return imageView
     }()
@@ -38,7 +39,7 @@ final class HomeDetailView: UIView {
         return stackView
     }()
     
-    let titleLabel : UILabel = {
+    private let titleLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -46,7 +47,7 @@ final class HomeDetailView: UIView {
         return label
     }()
     
-    let caloryLabel : UILabel = {
+    private let caloryLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
@@ -56,7 +57,7 @@ final class HomeDetailView: UIView {
         return label
     }()
     
-    let descriptionLabel : UILabel = {
+    private let descriptionLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
@@ -67,7 +68,7 @@ final class HomeDetailView: UIView {
         return label
     }()
     
-    let textField : UITextField = {
+    private let textField : UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter your name"
@@ -75,7 +76,7 @@ final class HomeDetailView: UIView {
         return textField
     }()
     
-    let orderButton : UIButton = {
+    private let orderButton : UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Place Order", for: .normal)
@@ -85,6 +86,7 @@ final class HomeDetailView: UIView {
         
         return button
     }()
+    // MARK: - Init
 
     init(frame: CGRect, viewModel: HomeDetailViewViewModel) {
         self.viewModel = viewModel
@@ -98,6 +100,8 @@ final class HomeDetailView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    // MARK: - Setup & Layout
+
     
     private func setup(){
         translatesAutoresizingMaskIntoConstraints = false
@@ -149,23 +153,26 @@ final class HomeDetailView: UIView {
     
     func configure(viewModel: HomeDetailViewViewModel){
         
-        detailedImageView.kf.setImage(with: viewModel.dish.image?.asUrl)
+//        detailedImageView.kf.setImage(with: viewModel.dish.image?.asUrl)
+        detailedImageView.image = viewModel.imageView.image
         titleLabel.text = viewModel.dish.name
         caloryLabel.text = viewModel.dish.formattedCalories
         descriptionLabel.text = viewModel.dish.description
     }
 
 }
+// MARK: - Action
+
 extension HomeDetailView{
     private func createNextButtonAction(){
         let action = UIAction{[weak self] _ in
-            self?.nextTapped()
+            self?.orderButtonTapped()
         }
         orderButton.addAction(action, for: .primaryActionTriggered)
 
     }
     
-    private func nextTapped(){
+    private func orderButtonTapped(){
         
     }
 }

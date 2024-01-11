@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class HomeDetailViewViewModel{
     
     let dish : Dish
     
+    let imageView = UIImageView()
+    
     // MARK: - init
 
     init(dish : Dish){
         self.dish = dish
+        fetchImage()
     }
+    
+    func fetchImage(){
+        imageView.image = UIImage(systemName: "trash")
+//        imageView.kf.setImage(with: dish.image?.asUrl)
+    }
+    
 }
