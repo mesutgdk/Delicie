@@ -152,11 +152,25 @@ final class HomeDetailView: UIView {
     
     func configure(viewModel: HomeDetailViewViewModel){
         
-//        detailedImageView.kf.setImage(with: viewModel.dish.image?.asUrl)
-        detailedImageView.image = viewModel.imageView.image
         titleLabel.text = viewModel.dish.name
         caloryLabel.text = viewModel.dish.formattedCalories
         descriptionLabel.text = viewModel.dish.description
+        
+
+        viewModel.fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.detailedImageView.image = data.image
+            case .failure(let error):
+                print(error.errorDescription ?? error.localizedDescription)
+                break
+            }
+        }
+        //        viewModel.fetchImage { [weak self] image in
+        //            guard let image = image else {return}
+        //
+        //            self?.detailedImageView.image = image
+        //        }
     }
 
 }
