@@ -21,9 +21,8 @@ final class HomeDetailViewViewModel{
         fetchImage()
     }
     
-    func fetchImage(){
-        imageView.image = UIImage(systemName: "trash")
-//        imageView.kf.setImage(with: dish.image?.asUrl)
+    public func fetchImage(){
+        imageView.kf.setImage(with: dish.image?.asUrl)
     }
     
 }
