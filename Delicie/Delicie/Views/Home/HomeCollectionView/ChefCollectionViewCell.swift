@@ -14,10 +14,10 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     let dishImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "globe.americas")
+        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemPink
         imageView.cornerRadius = 10
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -84,14 +84,15 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             dishImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             dishImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-            dishImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            dishImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            dishImageView.widthAnchor.constraint(equalTo: dishImageView.heightAnchor)
         ])
         //stackView
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             stackView.leftAnchor.constraint(equalTo: dishImageView.rightAnchor, constant: 12),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
+            stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
         ])
     }
     

@@ -23,10 +23,11 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     let popularImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "globe.americas")
         imageView.backgroundColor = .systemPink
         imageView.cornerRadius = 5
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -83,7 +84,7 @@ final class PopularCollectionViewCell: UICollectionViewCell {
     private func layout(){
         
         NSLayoutConstraint.activate([
-            
+            popularTitleLabel.heightAnchor.constraint(equalToConstant: 40)
         ])
         // stackView
         NSLayoutConstraint.activate([
