@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Kingfisher
 
 protocol ChefCollectionViewViewModelDelegate: AnyObject{
     func didSelectDish(_ dish: Dish) //for going into detailed view
@@ -24,6 +25,17 @@ final class ChefCollectionViewViewModel: NSObject{
         .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 214),
         .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 1006)
     ]
+    
+    public func fetchImage(url:URL?, imageCompletionHandler: @escaping (Result<RetrieveImageResult, KingfisherError>) -> Void){
+        
+        guard let url = url else {
+            return imageCompletionHandler(.failure(.requestError(reason: .emptyRequest)))
+                }
+        let resource = KF.ImageResource(downloadURL: url)
+        
+        KingfisherManager.shared.retrieveImage(with: resource, completionHandler: imageCompletionHandler)
+        
+    }
 }
 // MARK: - CollectionView DataSource, Delegate
 extension ChefCollectionViewViewModel: UICollectionViewDataSource,UICollectionViewDelegate{

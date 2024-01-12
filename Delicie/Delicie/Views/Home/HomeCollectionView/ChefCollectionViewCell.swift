@@ -14,7 +14,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     let dishImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "globe.americas")
         imageView.backgroundColor = .systemPink
         imageView.cornerRadius = 10
@@ -104,10 +104,12 @@ final class ChefCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(dish: Dish){
-        dishImageView.kf.setImage(with: dish.image?.asUrl)
+        
         dishTitleLabel.text = dish.name
         dishDescriptionLabel.text = dish.description
         dishCaloryLabel.text = dish.formattedCalories
+        dishImageView.kf.setImage(with: dish.image?.asUrl)  // problem\\\****
+        
     }
     
 }

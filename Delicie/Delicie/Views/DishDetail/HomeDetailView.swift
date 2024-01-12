@@ -15,7 +15,7 @@ final class HomeDetailView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .red
-//        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleToFill
         
         return imageView
     }()
@@ -123,7 +123,8 @@ final class HomeDetailView: UIView {
         NSLayoutConstraint.activate([
             detailedImageView.topAnchor.constraint(equalTo: topAnchor),
             detailedImageView.leftAnchor.constraint(equalTo: leftAnchor),
-            detailedImageView.rightAnchor.constraint(equalTo: rightAnchor)
+            detailedImageView.rightAnchor.constraint(equalTo: rightAnchor),
+            detailedImageView.bottomAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         // verticalStackView
