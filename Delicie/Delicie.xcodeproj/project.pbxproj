@@ -15,6 +15,8 @@
 		632B05FF2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift */; };
 		632B06012B22DBD800D364B4 /* OnBoardingView2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B06002B22DBD800D364B4 /* OnBoardingView2ViewModel.swift */; };
 		6341A0032B554A0E00DC2A1D /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0022B554A0E00DC2A1D /* DishListTableViewCell.swift */; };
+		6341A0052B55633A00DC2A1D /* DishTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0042B55633A00DC2A1D /* DishTableViewCellViewModel.swift */; };
+		6341A0072B556AEC00DC2A1D /* DishListTableViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0062B556AEC00DC2A1D /* DishListTableViewView.swift */; };
 		634A76A02AFBAE4100636975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A769F2AFBAE4100636975 /* AppDelegate.swift */; };
 		634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A12AFBAE4100636975 /* SceneDelegate.swift */; };
 		634A76A42AFBAE4100636975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A32AFBAE4100636975 /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		632B05FE2B22667A00D364B4 /* OnBoarding2CollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2CollectionViewCellModel.swift; sourceTree = "<group>"; };
 		632B06002B22DBD800D364B4 /* OnBoardingView2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2ViewModel.swift; sourceTree = "<group>"; };
 		6341A0022B554A0E00DC2A1D /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
+		6341A0042B55633A00DC2A1D /* DishTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		6341A0062B556AEC00DC2A1D /* DishListTableViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewView.swift; sourceTree = "<group>"; };
 		634A769C2AFBAE4100636975 /* Delicie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delicie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		634A769F2AFBAE4100636975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		634A76A12AFBAE4100636975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +124,9 @@
 		6341A0012B55498F00DC2A1D /* DishListTableView */ = {
 			isa = PBXGroup;
 			children = (
+				6341A0062B556AEC00DC2A1D /* DishListTableViewView.swift */,
 				6341A0022B554A0E00DC2A1D /* DishListTableViewCell.swift */,
+				6341A0042B55633A00DC2A1D /* DishTableViewCellViewModel.swift */,
 			);
 			path = DishListTableView;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */,
 				63A031B32B3600B100B325C8 /* FoodCollectionViewViewModel.swift in Sources */,
 				63CF92F22B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift in Sources */,
+				6341A0052B55633A00DC2A1D /* DishTableViewCellViewModel.swift in Sources */,
 				632B05FB2B22634D00D364B4 /* OnBoardingView2.swift in Sources */,
 				632B05F42B21EFE300D364B4 /* UIView+Extension.swift in Sources */,
 				632B05F62B21F45D00D364B4 /* OnboardingViewController.swift in Sources */,
@@ -393,6 +400,7 @@
 				634A76A42AFBAE4100636975 /* ViewController.swift in Sources */,
 				63A031A62B337C3C00B325C8 /* HomeView.swift in Sources */,
 				63F340362B3321080065AFBA /* HomeViewController.swift in Sources */,
+				6341A0072B556AEC00DC2A1D /* DishListTableViewView.swift in Sources */,
 				639CC4762B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift in Sources */,
 				63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */,
 				63F680022B4AE6FC000FB1A5 /* HomeDetailViewController.swift in Sources */,

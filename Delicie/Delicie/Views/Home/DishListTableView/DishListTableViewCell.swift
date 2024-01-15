@@ -58,6 +58,13 @@ final class DishListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dishImageView.image = nil
+        titleLabel.text = nil
+        descriptionLabel.text = nil
+    }
+    
     private func setup(){
         contentView.backgroundColor = .systemBackground
         stackView.addArrangedSubview(titleLabel)
@@ -88,5 +95,19 @@ final class DishListTableViewCell: UITableViewCell {
         ])
     }
     
-
+    func configure(viewModel: DishTableViewCellViewModel){
+        
+        titleLabel.text = viewModel.dish.name
+        descriptionLabel.text = viewModel.dish.description
+        
+        viewModel.fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.dishImageView.image = data.image
+            case .failure(let error):
+                print(error.errorDescription ?? error.localizedDescription)
+                break
+            }
+        }
+    }
 }
