@@ -11,7 +11,7 @@ final class DishListTableViewCell: UITableViewCell {
 
     static let cellIdentifier = String(describing: DishListTableViewCell.self)
         
-    let imageView: UIImageView = {
+    let dishImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -31,6 +31,22 @@ final class DishListTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    let titleLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        return label
+    }()
+    let descriptionLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -44,8 +60,10 @@ final class DishListTableViewCell: UITableViewCell {
     
     private func setup(){
         contentView.backgroundColor = .systemBackground
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(descriptionLabel)
         
-        contentView.addSubviews(imageView)
+        contentView.addSubviews(dishImageView,stackView)
 
         contentView.addShadow(self) // extensionda tanımladım
 
@@ -53,19 +71,19 @@ final class DishListTableViewCell: UITableViewCell {
     private func layout(){
         //imageView
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 1),
-            imageView.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 1),
-            imageView.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 1),
+            dishImageView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 1),
+            dishImageView.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 1),
+            dishImageView.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 1),
             
-            imageView.widthAnchor.constraint(equalToConstant: 50),
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            dishImageView.widthAnchor.constraint(equalToConstant: 50),
+            dishImageView.heightAnchor.constraint(equalTo: dishImageView.widthAnchor)
         ])
         
         //stackView
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: imageView.topAnchor),
-            stackView.leftAnchor.constraint(equalToSystemSpacingAfter: imageView.rightAnchor, multiplier: 2),
-            stackView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: dishImageView.topAnchor),
+            stackView.leftAnchor.constraint(equalToSystemSpacingAfter: dishImageView.rightAnchor, multiplier: 2),
+            stackView.bottomAnchor.constraint(equalTo: dishImageView.bottomAnchor),
             stackView.rightAnchor.constraint(equalToSystemSpacingAfter: contentView.rightAnchor, multiplier: -2)
         ])
     }
