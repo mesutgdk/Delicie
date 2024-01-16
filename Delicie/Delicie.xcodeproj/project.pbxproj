@@ -17,6 +17,7 @@
 		6341A0032B554A0E00DC2A1D /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0022B554A0E00DC2A1D /* DishListTableViewCell.swift */; };
 		6341A0052B55633A00DC2A1D /* DishTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0042B55633A00DC2A1D /* DishTableViewCellViewModel.swift */; };
 		6341A0072B556AEC00DC2A1D /* DishListTableViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0062B556AEC00DC2A1D /* DishListTableViewView.swift */; };
+		6341A0092B56520600DC2A1D /* DishTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341A0082B56520600DC2A1D /* DishTableViewViewModel.swift */; };
 		634A76A02AFBAE4100636975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A769F2AFBAE4100636975 /* AppDelegate.swift */; };
 		634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A12AFBAE4100636975 /* SceneDelegate.swift */; };
 		634A76A42AFBAE4100636975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A76A32AFBAE4100636975 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		6341A0022B554A0E00DC2A1D /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		6341A0042B55633A00DC2A1D /* DishTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		6341A0062B556AEC00DC2A1D /* DishListTableViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewView.swift; sourceTree = "<group>"; };
+		6341A0082B56520600DC2A1D /* DishTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewViewModel.swift; sourceTree = "<group>"; };
 		634A769C2AFBAE4100636975 /* Delicie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delicie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		634A769F2AFBAE4100636975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		634A76A12AFBAE4100636975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6341A0062B556AEC00DC2A1D /* DishListTableViewView.swift */,
+				6341A0082B56520600DC2A1D /* DishTableViewViewModel.swift */,
 				6341A0022B554A0E00DC2A1D /* DishListTableViewCell.swift */,
 				6341A0042B55633A00DC2A1D /* DishTableViewCellViewModel.swift */,
 			);
@@ -420,6 +423,7 @@
 				63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */,
 				63A031AF2B35AF3400B325C8 /* DishCategory.swift in Sources */,
 				6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */,
+				6341A0092B56520600DC2A1D /* DishTableViewViewModel.swift in Sources */,
 				63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

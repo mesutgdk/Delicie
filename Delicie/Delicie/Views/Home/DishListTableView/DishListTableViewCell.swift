@@ -10,6 +10,8 @@ import UIKit
 final class DishListTableViewCell: UITableViewCell {
 
     static let cellIdentifier = String(describing: DishListTableViewCell.self)
+    
+    static let rowHeight : CGFloat = 112
         
     let dishImageView: UIImageView = {
        let imageView = UIImageView()
