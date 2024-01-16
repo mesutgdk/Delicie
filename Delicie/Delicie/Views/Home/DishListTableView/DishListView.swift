@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class DishListTableViewView: UIView {
+final class DishListView: UIView {
     
-    private let viewModel = DishTableViewViewModel()
+    private let viewModel = DishListViewViewModel()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
