@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeViewDelegate: AnyObject {
     func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish dish: Dish)
+    func homeDetailedView(_ dishDetailedView: HomeView, didSelectCategory dishCategory: DishCategory)
 }
 
 final class HomeView: UIView {
@@ -189,11 +190,18 @@ final class HomeView: UIView {
     }
     
 }
+// MARK: - Popular/ChefCVVMDelegate
+// selection
 
-extension HomeView: PopularCollectionViewViewModelDelegate,ChefCollectionViewViewModelDelegate{
+extension HomeView: PopularCollectionViewViewModelDelegate,ChefCollectionViewViewModelDelegate {
+
     func didSelectDish(_ dish: Dish) {
         delegate?.homeDetailedView(self, didSelectDish: dish)
     }
-    
+}
+extension HomeView: FoodCollectionViewViewModelDelegate{
+    func didSelectCategory(_ dishCategory: DishCategory) {
+        delegate?.homeDetailedView(self, didSelectCategory: dishCategory)
+    }
 }
 

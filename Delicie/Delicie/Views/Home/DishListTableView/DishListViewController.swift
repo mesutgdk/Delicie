@@ -10,7 +10,7 @@ import UIKit
 final class DishListViewController: UIViewController {
 
     private let dishLishView = DishListView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()

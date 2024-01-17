@@ -9,6 +9,8 @@ import UIKit
 
 final class DishListViewViewModel:NSObject{
     
+    let dishCategory: DishCategory? = nil
+    
     private var cellViewModels: [DishTableViewCellViewModel] = [
         .init(dish: .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34)),
         .init(dish: .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214)),
