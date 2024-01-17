@@ -17,7 +17,7 @@ final class DishListTableViewCell: UITableViewCell {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "globe.americas")
+        
         imageView.backgroundColor = .blue
         return imageView
     }()
@@ -82,7 +82,7 @@ final class DishListTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             dishImageView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 1),
             dishImageView.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 1),
-            dishImageView.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: 1),
+            dishImageView.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: -1),
             
             dishImageView.widthAnchor.constraint(equalToConstant: 50),
             dishImageView.heightAnchor.constraint(equalTo: dishImageView.widthAnchor)

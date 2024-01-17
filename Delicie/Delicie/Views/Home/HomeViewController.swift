@@ -63,10 +63,14 @@ extension HomeViewController: HomeViewDelegate{
         
     }
     
-    func homeDetailedView(_ dishDetailedView: HomeView, didSelectCategory dishCategory: DishCategory) {
-        let viewModel = DishListViewViewModel(dishCategory: dishCategory)
+    func homeToDishCategory(_ dishDetailedView: HomeView, didSelectCategory dishCategory: DishCategory) {
+        let viewModel = DishListViewViewModel()
+        viewModel.dishCategory = dishCategory
         let vc = DishListViewController()
+        vc.title = viewModel.dishCategory?.name
+        vc.navigationItem.largeTitleDisplayMode = .automatic
         
+        navigationController?.pushViewController(vc, animated: true)  // homeVC is a rootVC with navC, so navC will push
     }
     
 }

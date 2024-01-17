@@ -20,7 +20,7 @@ final class DishListViewController: UIViewController {
         view.addSubview(dishLishView)
 
         view.backgroundColor = .systemBackground
-        title = "Dish List"
+//        title = "Dish List"
         
     }
     

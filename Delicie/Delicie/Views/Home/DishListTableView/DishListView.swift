@@ -16,6 +16,8 @@ final class DishListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(DishListTableViewCell.self, forCellReuseIdentifier: DishListTableViewCell.cellIdentifier)
         tableView.rowHeight = DishListTableViewCell.rowHeight
+        tableView.isHidden = true
+        tableView.alpha = 0
         
         return tableView
     }()
@@ -45,6 +47,8 @@ final class DishListView: UIView {
         backgroundColor = .systemBackground
         addSubviews(tableView,spinner)
         spinner.startAnimating()
+
+        animationSpinnerAndTableView()
     }
     private func layout(){
         // spinner
@@ -66,5 +70,17 @@ final class DishListView: UIView {
     private func configureTableView(){
         tableView.dataSource = viewModel
         tableView.delegate = viewModel
+    }
+    
+    private func animationSpinnerAndTableView(){
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
+            self.spinner.stopAnimating()
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+            UIView.animate(withDuration: 0.4) {
+                self.tableView.alpha = 1
+            }
+        }
+
     }
 }
