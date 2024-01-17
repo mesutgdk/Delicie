@@ -18,6 +18,8 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "globe.americas")
         imageView.backgroundColor = .blue
+        imageView.cornerRadius = 5
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -56,7 +58,9 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             foodImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             foodImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-            foodImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            foodImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            
+            foodImageView.heightAnchor.constraint(equalTo: foodImageView.widthAnchor)
         ])
         //foodLAbel
         NSLayoutConstraint.activate([

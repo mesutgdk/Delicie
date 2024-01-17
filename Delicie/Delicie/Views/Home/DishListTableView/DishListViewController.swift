@@ -19,9 +19,7 @@ final class DishListViewController: UIViewController {
     private func setup() {
         view.addSubview(dishLishView)
 
-        view.backgroundColor = .systemBackground
-//        title = "Dish List"
-        
+        view.backgroundColor = .systemBackground        
     }
     
     private func layout() {

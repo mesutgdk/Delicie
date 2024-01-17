@@ -17,7 +17,8 @@ final class DishListTableViewCell: UITableViewCell {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        
+        imageView.cornerRadius = 5
+        imageView.clipsToBounds = true
         imageView.backgroundColor = .blue
         return imageView
     }()
@@ -74,18 +75,18 @@ final class DishListTableViewCell: UITableViewCell {
         
         contentView.addSubviews(dishImageView,stackView)
 
-        contentView.addShadow(self) // extensionda tanımladım
+//        contentView.addShadow(self) // extensionda tanımladım
 
     }
     private func layout(){
         //imageView
         NSLayoutConstraint.activate([
-            dishImageView.topAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 1),
-            dishImageView.leftAnchor.constraint(equalToSystemSpacingAfter: contentView.leftAnchor, multiplier: 1),
-            dishImageView.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.bottomAnchor, multiplier: -1),
+            dishImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            dishImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            dishImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
-            dishImageView.widthAnchor.constraint(equalToConstant: 50),
-            dishImageView.heightAnchor.constraint(equalTo: dishImageView.widthAnchor)
+//            dishImageView.widthAnchor.constraint(equalToConstant: 50),
+            dishImageView.widthAnchor.constraint(equalTo: dishImageView.heightAnchor)
         ])
         
         //stackView
