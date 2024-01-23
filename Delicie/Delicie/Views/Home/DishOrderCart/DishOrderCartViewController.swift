@@ -41,8 +41,8 @@ extension DishOrderCartViewController: DishOrderCartViewDelegate{
         guard let orderDish = order.dish else {
             return
         }
-        let viewModel = HomeDetailViewViewModel(dish: orderDish)
-        let detailedVC = HomeDetailViewController(viewModel: viewModel)
+        let viewModel = DishDetailViewViewModel(dish: orderDish)
+        let detailedVC = DishDetailViewController(viewModel: viewModel)
 //        print(orderDish)
         
         detailedVC.navigationItem.largeTitleDisplayMode = .never

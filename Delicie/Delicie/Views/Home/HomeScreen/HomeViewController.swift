@@ -56,8 +56,8 @@ extension HomeViewController: HomeViewDelegate{
 
     
     func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish dish: Dish) {
-        let viewModel = HomeDetailViewViewModel(dish: dish)
-        let detailedVC = HomeDetailViewController(viewModel: viewModel)
+        let viewModel = DishDetailViewViewModel(dish: dish)
+        let detailedVC = DishDetailViewController(viewModel: viewModel)
 //        print(dish)
         
         detailedVC.navigationItem.largeTitleDisplayMode = .never

@@ -7,17 +7,17 @@
 
 import UIKit
 
-final class HomeDetailViewController: UIViewController {
+final class DishDetailViewController: UIViewController {
     
-    private let viewModel: HomeDetailViewViewModel
+    private let viewModel: DishDetailViewViewModel
     
-    private let homeDetailedView : HomeDetailView
+    private let dishDetailedView : DishDetailView
     
     // MARK: - Init
 //         to pass data with view model, it displays which cell we choose
-    init(viewModel: HomeDetailViewViewModel ) {
+    init(viewModel: DishDetailViewViewModel ) {
         self.viewModel = viewModel
-        self.homeDetailedView = HomeDetailView(frame: .zero, viewModel: viewModel)
+        self.dishDetailedView = DishDetailView(frame: .zero, viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,15 +36,15 @@ final class HomeDetailViewController: UIViewController {
 
     private func setup(){
         view.backgroundColor = .systemBackground
-        view.addSubview(homeDetailedView)
+        view.addSubview(dishDetailedView)
         
     }
     private func layout(){
         NSLayoutConstraint.activate([
-            homeDetailedView.topAnchor.constraint(equalTo: view.topAnchor),
-            homeDetailedView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            homeDetailedView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            homeDetailedView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            dishDetailedView.topAnchor.constraint(equalTo: view.topAnchor),
+            dishDetailedView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            dishDetailedView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            dishDetailedView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
     }

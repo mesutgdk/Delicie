@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class HomeDetailViewViewModel{
+final class DishDetailViewViewModel{
     
     let dish : Dish
         

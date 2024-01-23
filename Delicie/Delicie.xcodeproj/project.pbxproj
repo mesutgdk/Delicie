@@ -27,7 +27,7 @@
 		6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D28F2B3AE5C500C20E9F /* CardView.swift */; };
 		6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D2912B3B0C0000C20E9F /* Dish.swift */; };
 		6366DE8B2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */; };
-		639CC4762B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4752B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift */; };
+		639CC4762B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */; };
 		639FAF512B6057030056EC89 /* DishOrderCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF502B6057030056EC89 /* DishOrderCartViewController.swift */; };
 		639FAF532B60571F0056EC89 /* DishOrderCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF522B60571F0056EC89 /* DishOrderCartView.swift */; };
 		639FAF552B605B540056EC89 /* DishOrderCartViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF542B605B540056EC89 /* DishOrderCartViewVM.swift */; };
@@ -48,8 +48,8 @@
 		63CF92F22B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */; };
 		63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */; };
 		63F340362B3321080065AFBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F340352B3321080065AFBA /* HomeViewController.swift */; };
-		63F680022B4AE6FC000FB1A5 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F680012B4AE6FC000FB1A5 /* HomeDetailViewController.swift */; };
-		63F680042B4AE720000FB1A5 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F680032B4AE720000FB1A5 /* HomeDetailView.swift */; };
+		63F680022B4AE6FC000FB1A5 /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F680012B4AE6FC000FB1A5 /* DishDetailViewController.swift */; };
+		63F680042B4AE720000FB1A5 /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F680032B4AE720000FB1A5 /* DishDetailView.swift */; };
 		FB8B3B5FE54C4296B8CDBE1C /* Pods_Delicie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFED603BA8E7F0E59139606 /* Pods_Delicie.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,7 @@
 		6359D28F2B3AE5C500C20E9F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6359D2912B3B0C0000C20E9F /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewViewModel.swift; sourceTree = "<group>"; };
-		639CC4752B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewViewModel.swift; sourceTree = "<group>"; };
+		639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewViewModel.swift; sourceTree = "<group>"; };
 		639FAF502B6057030056EC89 /* DishOrderCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartViewController.swift; sourceTree = "<group>"; };
 		639FAF522B60571F0056EC89 /* DishOrderCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartView.swift; sourceTree = "<group>"; };
 		639FAF542B605B540056EC89 /* DishOrderCartViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartViewVM.swift; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 		63CF92F12B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		63D417952B20886B00E64CA6 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		63F340352B3321080065AFBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		63F680012B4AE6FC000FB1A5 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
-		63F680032B4AE720000FB1A5 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
+		63F680012B4AE6FC000FB1A5 /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
+		63F680032B4AE720000FB1A5 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
 		CBDE5121B4EECB54EF15112D /* Pods-Delicie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delicie.debug.xcconfig"; path = "Target Support Files/Pods-Delicie/Pods-Delicie.debug.xcconfig"; sourceTree = "<group>"; };
 		DBFED603BA8E7F0E59139606 /* Pods_Delicie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delicie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEAF68A3F4A0FE75432624B /* Pods-Delicie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delicie.release.xcconfig"; path = "Target Support Files/Pods-Delicie/Pods-Delicie.release.xcconfig"; sourceTree = "<group>"; };
@@ -299,9 +299,9 @@
 		63F680002B4AE6CE000FB1A5 /* DishDetail */ = {
 			isa = PBXGroup;
 			children = (
-				63F680012B4AE6FC000FB1A5 /* HomeDetailViewController.swift */,
-				63F680032B4AE720000FB1A5 /* HomeDetailView.swift */,
-				639CC4752B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift */,
+				63F680012B4AE6FC000FB1A5 /* DishDetailViewController.swift */,
+				63F680032B4AE720000FB1A5 /* DishDetailView.swift */,
+				639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */,
 			);
 			path = DishDetail;
 			sourceTree = "<group>";
@@ -442,11 +442,11 @@
 				639FAF5B2B605FFB0056EC89 /* DishOrderCartTableViewCellVM.swift in Sources */,
 				63F340362B3321080065AFBA /* HomeViewController.swift in Sources */,
 				6341A0072B556AEC00DC2A1D /* DishListView.swift in Sources */,
-				639CC4762B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift in Sources */,
+				639CC4762B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift in Sources */,
 				63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */,
-				63F680022B4AE6FC000FB1A5 /* HomeDetailViewController.swift in Sources */,
+				63F680022B4AE6FC000FB1A5 /* DishDetailViewController.swift in Sources */,
 				63A031A42B335BD000B325C8 /* LocalState.swift in Sources */,
-				63F680042B4AE720000FB1A5 /* HomeDetailView.swift in Sources */,
+				63F680042B4AE720000FB1A5 /* DishDetailView.swift in Sources */,
 				639FAF552B605B540056EC89 /* DishOrderCartViewVM.swift in Sources */,
 				632B05F92B2262A300D364B4 /* OnBoardingVC2.swift in Sources */,
 				63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */,

@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class HomeDetailView: UIView {
+final class DishDetailView: UIView {
     
-    private let viewModel : HomeDetailViewViewModel
+    private let viewModel : DishDetailViewViewModel
     
     let detailedImageView : UIImageView = {
         let imageView = UIImageView()
@@ -87,7 +87,7 @@ final class HomeDetailView: UIView {
     }()
     // MARK: - Init
 
-    init(frame: CGRect, viewModel: HomeDetailViewViewModel) {
+    init(frame: CGRect, viewModel: DishDetailViewViewModel) {
         self.viewModel = viewModel
         
         super.init(frame: frame)
@@ -151,7 +151,7 @@ final class HomeDetailView: UIView {
         ])
     }
     
-    func configure(viewModel: HomeDetailViewViewModel){
+    func configure(viewModel: DishDetailViewViewModel){
         
         titleLabel.text = viewModel.dish.name
         caloryLabel.text = viewModel.dish.formattedCalories
@@ -177,7 +177,7 @@ final class HomeDetailView: UIView {
 }
 // MARK: - Action
 
-extension HomeDetailView{
+extension DishDetailView{
     private func createNextButtonAction(){
         let action = UIAction{[weak self] _ in
             self?.orderButtonTapped()
