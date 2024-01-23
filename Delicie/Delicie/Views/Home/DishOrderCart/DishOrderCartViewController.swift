@@ -7,23 +7,29 @@
 
 import UIKit
 
-class DishOrderCartViewController: UIViewController {
+final class DishOrderCartViewController: UIViewController {
 
+    private let dishOrderCartView = DishOrderCartView()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        layout()
+    }
+    private func setup() {
+        view.addSubview(dishOrderCartView)
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func layout() {
+        // characterListView
+        NSLayoutConstraint.activate([
+            dishOrderCartView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            dishOrderCartView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            dishOrderCartView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            dishOrderCartView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
-    */
 
 }

@@ -74,7 +74,7 @@ final class DishListView: UIView {
     }
     
     private func animationSpinnerAndTableView(){
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.3){
             self.spinner.stopAnimating()
             self.tableView.isHidden = false
             self.tableView.reloadData()
