@@ -43,11 +43,13 @@ final class HomeViewController: UIViewController {
         let cardItem = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cardButtonTapped))
         cardItem.tintColor = .systemRed
         navigationItem.rightBarButtonItem = cardItem
+        navigationItem.backButtonTitle = ""  // delete to backbuttontitle at pushed screen
     }
     
     // MARK: - Action Functions
     @objc private func cardButtonTapped(){
-        
+        let orderCartViewController = DishOrderCartViewController()
+        navigationController?.pushViewController(orderCartViewController, animated: true)
     }
 }
 extension HomeViewController: HomeViewDelegate{

@@ -17,6 +17,8 @@ final class DishOrderCartViewController: UIViewController {
         layout()
     }
     private func setup() {
+        
+        title = "Order"
         view.addSubview(dishOrderCartView)
 
         view.backgroundColor = .systemBackground

@@ -9,12 +9,14 @@ import UIKit
 
 final class DishOrderCartView: UIView {
     
+    private let viewModel = DishOrderCartViewVM()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(DishListTableViewCell.self, forCellReuseIdentifier: DishListTableViewCell.cellIdentifier)
         tableView.rowHeight = DishListTableViewCell.rowHeight
-        tableView.separatorColor = .none
+        tableView.separatorStyle = .none
         tableView.isHidden = true
         tableView.alpha = 0
         
@@ -67,8 +69,8 @@ final class DishOrderCartView: UIView {
         ])
     }
     private func configureTableView(){
-//        tableView.dataSource = viewModel
-//        tableView.delegate = viewModel
+        tableView.dataSource = viewModel
+        tableView.delegate = viewModel
     }
     
     private func animationSpinnerAndTableView(){
