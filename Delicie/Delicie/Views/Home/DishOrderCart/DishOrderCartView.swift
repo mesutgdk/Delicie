@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol DishOrderCartViewDelegate: AnyObject{
+    func dishOrderCartView(_ dishOrderCartView: DishOrderCartView, didSelectOrder order: Order)
+}
+
 final class DishOrderCartView: UIView {
+    
+    public weak var delegate: DishOrderCartViewDelegate?
     
     private let viewModel = DishOrderCartViewVM()
     
@@ -50,6 +56,8 @@ final class DishOrderCartView: UIView {
         spinner.startAnimating()
 
         animationSpinnerAndTableView()
+        
+        viewModel.delegate = self
     }
     private func layout(){
         // spinner
@@ -84,5 +92,12 @@ final class DishOrderCartView: UIView {
         }
 
     }
-
 }
+// MARK: - DishOrderCartTableViewVMDelegate
+extension DishOrderCartView: DishOrderCartViewVMDelegate{
+    func didSelectOrder(_ order: Order) {
+        delegate?.dishOrderCartView(self, didSelectOrder: order)
+    }
+    
+}
+

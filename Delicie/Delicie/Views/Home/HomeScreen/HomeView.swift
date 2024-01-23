@@ -142,6 +142,7 @@ final class HomeView: UIView {
         chefCollectionView3.dataSource = chefViewModel
         
         popularViewModel.delegate = self
+        
         chefViewModel.delegate = self
         
         foodViewModel.delegate = self

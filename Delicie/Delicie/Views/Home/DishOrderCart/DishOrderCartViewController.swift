@@ -18,10 +18,11 @@ final class DishOrderCartViewController: UIViewController {
     }
     private func setup() {
         
-        title = "Order"
+        title = "Orders"
         view.addSubview(dishOrderCartView)
 
         view.backgroundColor = .systemBackground
+        dishOrderCartView.delegate = self
     }
     
     private func layout() {
@@ -33,5 +34,19 @@ final class DishOrderCartViewController: UIViewController {
             dishOrderCartView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-
 }
+// MARK: - DishOrderCartViewDelegate
+extension DishOrderCartViewController: DishOrderCartViewDelegate{
+    func dishOrderCartView(_ dishOrderCartView: DishOrderCartView, didSelectOrder order: Order) {
+        guard let orderDish = order.dish else {
+            return
+        }
+        let viewModel = HomeDetailViewViewModel(dish: orderDish)
+        let detailedVC = HomeDetailViewController(viewModel: viewModel)
+//        print(orderDish)
+        
+        detailedVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(detailedVC, animated: true)
+    }
+}
+
