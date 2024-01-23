@@ -19,7 +19,7 @@ final class HomeView: UIView {
     private let foodViewModel = FoodCollectionViewViewModel()
     private let popularViewModel = PopularCollectionViewViewModel()
     private let chefViewModel = ChefCollectionViewViewModel()
-        
+    
     private let foodLabel1 : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ final class HomeView: UIView {
         label.textAlignment = .left
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-//        label.backgroundColor = .systemGray5
+        //        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -43,7 +43,7 @@ final class HomeView: UIView {
         label.textAlignment = .left
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-//        label.backgroundColor = .systemGray5
+        //        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -57,7 +57,7 @@ final class HomeView: UIView {
         label.textAlignment = .left
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-//        label.backgroundColor = .systemGray5
+        //        label.backgroundColor = .systemGray5
         
         return label
     }()
@@ -87,7 +87,7 @@ final class HomeView: UIView {
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-//        collectionView.isPagingEnabled = true
+        //        collectionView.isPagingEnabled = true
         collectionView.clipsToBounds = true
         collectionView.register(PopularCollectionViewCell.self, forCellWithReuseIdentifier: PopularCollectionViewCell.cellIdentifier)
         
@@ -193,18 +193,18 @@ final class HomeView: UIView {
     }
     
 }
-// MARK: - Popular/ChefCVVMDelegate
-// selection
 
-extension HomeView: PopularCollectionViewViewModelDelegate,ChefCollectionViewViewModelDelegate {
-
-    func didSelectDish(_ dish: Dish) {
-        delegate?.homeDetailedView(self, didSelectDish: dish)
-    }
-}
+// MARK: - FoodCollectionViewVMDelegate
 extension HomeView: FoodCollectionViewViewModelDelegate{
     func didSelectCategory(_ dishCategory: DishCategory) {
         delegate?.homeToDishCategory(self, didSelectCategory: dishCategory)
     }
 }
 
+// MARK: - Popular/ChefCollectionViewVMDelegate
+extension HomeView: PopularCollectionViewViewModelDelegate,ChefCollectionViewViewModelDelegate {
+    
+    func didSelectDish(_ dish: Dish) {
+        delegate?.homeDetailedView(self, didSelectDish: dish)
+    }
+}

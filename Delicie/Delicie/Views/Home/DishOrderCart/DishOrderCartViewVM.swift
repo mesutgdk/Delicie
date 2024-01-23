@@ -42,5 +42,4 @@ extension DishOrderCartViewVM: UITableViewDelegate, UITableViewDataSource{
         let selectedCell = orderCellViewModels[indexPath.row]
         delegate?.didSelectOrder(selectedCell.order)
     }
-    
 }

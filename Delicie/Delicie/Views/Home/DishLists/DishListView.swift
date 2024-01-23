@@ -30,7 +30,7 @@ final class DishListView: UIView {
         return spinner
     } ()
     // MARK: - Init
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -48,9 +48,10 @@ final class DishListView: UIView {
         backgroundColor = .systemBackground
         addSubviews(tableView,spinner)
         spinner.startAnimating()
-
+        
         animationSpinnerAndTableView()
     }
+    
     private func layout(){
         // spinner
         NSLayoutConstraint.activate([
@@ -68,6 +69,7 @@ final class DishListView: UIView {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
     private func configureTableView(){
         tableView.dataSource = viewModel
         tableView.delegate = viewModel
@@ -82,6 +84,5 @@ final class DishListView: UIView {
                 self.tableView.alpha = 1
             }
         }
-
     }
 }

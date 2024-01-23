@@ -11,8 +11,8 @@ import Kingfisher
 final class ChefCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = String(describing: ChefCollectionViewCell.self)
     
-    let dishImageView: UIImageView = {
-       let imageView = UIImageView()
+    private let dishImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemPink
@@ -21,40 +21,42 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let stackView: UIStackView = {
+    private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-//        stackView.spacing = 8
+        //        stackView.spacing = 8
         stackView.distribution = .fillEqually
-//        stackView.backgroundColor = .cyan
+        //        stackView.backgroundColor = .cyan
         
         return stackView
     }()
     
-    let dishTitleLabel: UILabel = {
-       let label = UILabel()
+    private let dishTitleLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 19, weight: .semibold)
         return label
     }()
-    let dishDescriptionLabel: UILabel = {
-       let label = UILabel()
+    
+    private let dishDescriptionLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
-    let dishCaloryLabel: UILabel = {
-       let label = UILabel()
+    
+    private let dishCaloryLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .systemRed
         label.font = .systemFont(ofSize: 12, weight: .regular)
-//        label.adjustsFontForContentSizeCategory = true
-//        label.numberOfLines = 1
+        //        label.adjustsFontForContentSizeCategory = true
+        //        label.numberOfLines = 1
         return label
     }()
     
@@ -68,6 +70,7 @@ final class ChefCollectionViewCell: UICollectionViewCell {
         super.init(coder: coder)
     }
     
+    // MARK: - setup&layout
     private func setup(){
         stackView.addArrangedSubview(dishTitleLabel)
         stackView.addArrangedSubview(dishDescriptionLabel)
@@ -95,8 +98,8 @@ final class ChefCollectionViewCell: UICollectionViewCell {
             stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
         ])
     }
-    
-    override func prepareForReuse() {  // hücreleri tekrar kullanabilmek için nille
+    // hücreleri tekrar kullanabilmek için nille
+    override func prepareForReuse() {
         super.prepareForReuse()
         dishTitleLabel.text = nil
         dishDescriptionLabel.text = nil

@@ -11,7 +11,7 @@ final class DishDetailView: UIView {
     
     private let viewModel : DishDetailViewViewModel
     
-    let detailedImageView : UIImageView = {
+    private let detailedImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .red
@@ -86,7 +86,7 @@ final class DishDetailView: UIView {
         return button
     }()
     // MARK: - Init
-
+    
     init(frame: CGRect, viewModel: DishDetailViewViewModel) {
         self.viewModel = viewModel
         
@@ -100,7 +100,7 @@ final class DishDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Setup & Layout
-
+    
     
     private func setup(){
         translatesAutoresizingMaskIntoConstraints = false
@@ -157,7 +157,7 @@ final class DishDetailView: UIView {
         caloryLabel.text = viewModel.dish.formattedCalories
         descriptionLabel.text = viewModel.dish.description
         
-
+        
         viewModel.fetchImage { [weak self] result in
             switch result {
             case .success(let data):
@@ -173,7 +173,7 @@ final class DishDetailView: UIView {
         //            self?.detailedImageView.image = image
         //        }
     }
-
+    
 }
 // MARK: - Action
 
@@ -183,7 +183,7 @@ extension DishDetailView{
             self?.orderButtonTapped()
         }
         orderButton.addAction(action, for: .primaryActionTriggered)
-
+        
     }
     
     private func orderButtonTapped(){

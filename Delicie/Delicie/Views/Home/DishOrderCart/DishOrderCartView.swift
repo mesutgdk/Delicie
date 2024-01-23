@@ -36,7 +36,6 @@ final class DishOrderCartView: UIView {
         return spinner
     } ()
     // MARK: - Init
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -54,11 +53,12 @@ final class DishOrderCartView: UIView {
         backgroundColor = .systemBackground
         addSubviews(tableView,spinner)
         spinner.startAnimating()
-
+        
         animationSpinnerAndTableView()
         
         viewModel.delegate = self
     }
+    
     private func layout(){
         // spinner
         NSLayoutConstraint.activate([
@@ -76,6 +76,7 @@ final class DishOrderCartView: UIView {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
     private func configureTableView(){
         tableView.dataSource = viewModel
         tableView.delegate = viewModel
@@ -90,7 +91,6 @@ final class DishOrderCartView: UIView {
                 self.tableView.alpha = 1
             }
         }
-
     }
 }
 // MARK: - DishOrderCartTableViewVMDelegate

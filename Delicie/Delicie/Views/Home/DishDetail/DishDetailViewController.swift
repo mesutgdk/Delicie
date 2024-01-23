@@ -14,7 +14,7 @@ final class DishDetailViewController: UIViewController {
     private let dishDetailedView : DishDetailView
     
     // MARK: - Init
-//         to pass data with view model, it displays which cell we choose
+    //  to pass data with view model, it displays which cell we choose
     init(viewModel: DishDetailViewViewModel ) {
         self.viewModel = viewModel
         self.dishDetailedView = DishDetailView(frame: .zero, viewModel: viewModel)
@@ -25,15 +25,15 @@ final class DishDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - LifeCycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setup()
         layout()
     }
     // MARK: - Setup & Layout
-
+    
     private func setup(){
         view.backgroundColor = .systemBackground
         view.addSubview(dishDetailedView)

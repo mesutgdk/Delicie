@@ -11,19 +11,19 @@ import Kingfisher
 final class DishDetailViewViewModel{
     
     let dish : Dish
-        
+    
     // MARK: - init
-
+    
     init(dish : Dish){
         self.dish = dish
     }
     
-   
+    
     public func fetchImage(imageCompletionHandler: @escaping (Result<RetrieveImageResult, KingfisherError>) -> Void){
         
         guard let url = dish.image?.asUrl else {
             return imageCompletionHandler(.failure(.requestError(reason: .emptyRequest)))
-                }
+        }
         let resource = KF.ImageResource(downloadURL: url)
         
         KingfisherManager.shared.retrieveImage(with: resource, completionHandler: imageCompletionHandler)
@@ -32,20 +32,20 @@ final class DishDetailViewViewModel{
     
     public func fetchImage2(imageCompletionHandler: @escaping (UIImage?) -> Void){
         guard let url = dish.image?.asUrl else {
-                    return  imageCompletionHandler(nil)
-                }
+            return  imageCompletionHandler(nil)
+        }
         let resource = KF.ImageResource(downloadURL: url)
         
         KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
-                   switch result {
-                   case .success(let value):
-                       imageCompletionHandler(value.image)
-                       print("image is downloaded")
-                   case .failure:
-                       imageCompletionHandler(nil)
-                       print("image is not downloaded")
-                   }
-               }
+            switch result {
+            case .success(let value):
+                imageCompletionHandler(value.image)
+                print("image is downloaded")
+            case .failure:
+                imageCompletionHandler(nil)
+                print("image is not downloaded")
+            }
+        }
     }
     
 }

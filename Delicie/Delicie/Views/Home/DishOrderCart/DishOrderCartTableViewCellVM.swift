@@ -10,9 +10,9 @@ import Kingfisher
 final class DishOrderCartTableViewCellVM{
     
     let order : Order
-        
+    
     // MARK: - init
-
+    
     init(order : Order){
         self.order = order
     }
@@ -21,7 +21,7 @@ final class DishOrderCartTableViewCellVM{
         
         guard let url = order.dish?.image?.asUrl else {
             return imageCompletionHandler(.failure(.requestError(reason: .emptyRequest)))
-                }
+        }
         let resource = KF.ImageResource(downloadURL: url)
         
         KingfisherManager.shared.retrieveImage(with: resource, completionHandler: imageCompletionHandler)

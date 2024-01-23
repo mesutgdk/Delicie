@@ -10,9 +10,9 @@ import Kingfisher
 final class DishTableViewCellViewModel{
     
     let dish : Dish
-        
+    
     // MARK: - init
-
+    
     init(dish : Dish){
         self.dish = dish
     }
@@ -21,7 +21,7 @@ final class DishTableViewCellViewModel{
         
         guard let url = dish.image?.asUrl else {
             return imageCompletionHandler(.failure(.requestError(reason: .emptyRequest)))
-                }
+        }
         let resource = KF.ImageResource(downloadURL: url)
         
         KingfisherManager.shared.retrieveImage(with: resource, completionHandler: imageCompletionHandler)

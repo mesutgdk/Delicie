@@ -10,13 +10,14 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
         layout()
     }
+    // MARK: - setup&layout
     private func setup(){
         title = "Delicie"
         view.backgroundColor = .systemGray6
@@ -26,8 +27,8 @@ final class HomeViewController: UIViewController {
         view.addSubview(homeView)
         
         homeView.delegate = self
-        
     }
+    
     
     private func layout(){
         //homeView
@@ -52,17 +53,16 @@ final class HomeViewController: UIViewController {
         navigationController?.pushViewController(orderCartViewController, animated: true)
     }
 }
-extension HomeViewController: HomeViewDelegate{
 
+// MARK: - HomeViewDelegate
+extension HomeViewController: HomeViewDelegate{
     
     func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish dish: Dish) {
         let viewModel = DishDetailViewViewModel(dish: dish)
         let detailedVC = DishDetailViewController(viewModel: viewModel)
-//        print(dish)
-        
+        //        print(dish)
         detailedVC.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(detailedVC, animated: true)  // homeVC is a rootVC with navC, so navC will push
-        
+        navigationController?.pushViewController(detailedVC, animated: true)
     }
     
     func homeToDishCategory(_ dishDetailedView: HomeView, didSelectCategory dishCategory: DishCategory) {
@@ -74,5 +74,4 @@ extension HomeViewController: HomeViewDelegate{
         
         navigationController?.pushViewController(vc, animated: true)  // homeVC is a rootVC with navC, so navC will push
     }
-    
 }

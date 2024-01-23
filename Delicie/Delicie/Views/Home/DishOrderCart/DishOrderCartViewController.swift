@@ -8,9 +8,9 @@
 import UIKit
 
 final class DishOrderCartViewController: UIViewController {
-
+    
     private let dishOrderCartView = DishOrderCartView()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -20,7 +20,7 @@ final class DishOrderCartViewController: UIViewController {
         
         title = "Orders"
         view.addSubview(dishOrderCartView)
-
+        
         view.backgroundColor = .systemBackground
         dishOrderCartView.delegate = self
     }
@@ -43,7 +43,7 @@ extension DishOrderCartViewController: DishOrderCartViewDelegate{
         }
         let viewModel = DishDetailViewViewModel(dish: orderDish)
         let detailedVC = DishDetailViewController(viewModel: viewModel)
-//        print(orderDish)
+        //        print(orderDish)
         
         detailedVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(detailedVC, animated: true)

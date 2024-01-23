@@ -11,7 +11,7 @@ import Kingfisher
 final class PopularCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = String(describing: PopularCollectionViewCell.self)
     
-    let stackView: UIStackView = {
+    private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -20,8 +20,8 @@ final class PopularCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    let popularImageView: UIImageView = {
-       let imageView = UIImageView()
+    private let popularImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "globe.americas")
@@ -31,29 +31,29 @@ final class PopularCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let popularTitleLabel: UILabel = {
-       let label = UILabel()
+    private let popularTitleLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
     }()
-    let popularCaloriesLabel: UILabel = {
-       let label = UILabel()
+    private let popularCaloriesLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .systemRed
         label.font = .systemFont(ofSize: 13, weight: .regular)
         return label
     }()
-    let popularDescriptionLabel: UILabel = {
-       let label = UILabel()
+    private let popularDescriptionLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 17, weight: .regular)
-//        label.adjustsFontForContentSizeCategory = true
-//        label.numberOfLines = 1
+        //        label.adjustsFontForContentSizeCategory = true
+        //        label.numberOfLines = 1
         return label
     }()
     
@@ -69,6 +69,7 @@ final class PopularCollectionViewCell: UICollectionViewCell {
         super.init(coder: coder)
     }
     
+    // MARK: - setup&layout
     private func setup(){
         stackView.addArrangedSubview(popularTitleLabel)
         stackView.addArrangedSubview(popularImageView)
@@ -94,8 +95,8 @@ final class PopularCollectionViewCell: UICollectionViewCell {
             stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
     }
-    
-    override func prepareForReuse() {  // hücreleri tekrar kullanabilmek için nille
+    // hücreleri tekrar kullanabilmek için nille
+    override func prepareForReuse() {
         super.prepareForReuse()
         popularTitleLabel.text = nil
         popularDescriptionLabel.text = nil

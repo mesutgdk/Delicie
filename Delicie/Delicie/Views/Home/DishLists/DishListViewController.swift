@@ -8,9 +8,9 @@
 import UIKit
 
 final class DishListViewController: UIViewController {
-
+    
     private let dishLishView = DishListView()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -18,7 +18,7 @@ final class DishListViewController: UIViewController {
     }
     private func setup() {
         view.addSubview(dishLishView)
-
+        
         view.backgroundColor = .systemBackground        
     }
     

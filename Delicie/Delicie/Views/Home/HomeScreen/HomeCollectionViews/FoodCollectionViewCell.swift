@@ -11,9 +11,9 @@ import Kingfisher
 final class FoodCollectionViewCell: UICollectionViewCell {
     
     static let cellIdentifier = String(describing: FoodCollectionViewCell.self)
-        
-    let foodImageView: UIImageView = {
-       let imageView = UIImageView()
+    
+    private let foodImageView: UIImageView = {
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "globe.americas")
@@ -23,8 +23,8 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let foodLabel: UILabel = {
-       let label = UILabel()
+    private let foodLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food"
         label.textAlignment = .center
@@ -44,14 +44,16 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - setup&layout
     private func setup(){
         contentView.backgroundColor = .systemBackground
         
         contentView.addSubviews(foodImageView,foodLabel)
-
+        
         contentView.addShadow(self) // extensionda tanımladım
-
+        
     }
+    
     private func layout(){
         
         // foodImageView
@@ -69,7 +71,8 @@ final class FoodCollectionViewCell: UICollectionViewCell {
             foodLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
     }
-    override func prepareForReuse() {  // hücreleri tekrar kullanabilmek için nille
+    // hücreleri tekrar kullanabilmek için nille
+    override func prepareForReuse() {
         super.prepareForReuse()
         foodLabel.text = nil
         foodImageView.image = nil

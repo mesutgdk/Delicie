@@ -8,13 +8,13 @@
 import UIKit
 
 final class DishOrderCartTableViewCell: UITableViewCell {
-
+    
     static let cellIdentifier = String(describing: DishOrderCartTableViewCell.self)
     
     static let rowHeight : CGFloat = 112
-        
+    
     private let dishImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.cornerRadius = 5
@@ -33,14 +33,15 @@ final class DishOrderCartTableViewCell: UITableViewCell {
     }()
     
     private let titleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
     }()
+    
     private let descriptionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .systemGray
@@ -72,10 +73,11 @@ final class DishOrderCartTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(descriptionLabel)
         
         contentView.addSubviews(dishImageView,stackView)
-
-//        contentView.addShadow(self) // extensionda tanımladım
-
+        
+        //        contentView.addShadow(self) // extensionda tanımladım
+        
     }
+    
     private func layout(){
         //imageView
         NSLayoutConstraint.activate([

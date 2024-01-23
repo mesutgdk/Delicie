@@ -8,13 +8,13 @@
 import UIKit
 
 final class DishListTableViewCell: UITableViewCell {
-
+    
     static let cellIdentifier = String(describing: DishListTableViewCell.self)
     
     static let rowHeight : CGFloat = 112
-        
+    
     private let dishImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.cornerRadius = 5
@@ -27,15 +27,15 @@ final class DishListTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-//        stackView.spacing = 8
+        //        stackView.spacing = 8
         stackView.distribution = .fillEqually
-//        stackView.backgroundColor = .cyan
+        //        stackView.backgroundColor = .cyan
         
         return stackView
     }()
     
     private let titleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 17, weight: .medium)
@@ -43,7 +43,7 @@ final class DishListTableViewCell: UITableViewCell {
     }()
     
     private let descriptionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .systemGray
@@ -75,9 +75,9 @@ final class DishListTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(descriptionLabel)
         
         contentView.addSubviews(dishImageView,stackView)
-
-//        contentView.addShadow(self) // extensionda tanımladım
-
+        
+        //        contentView.addShadow(self) // extensionda tanımladım
+        
     }
     private func layout(){
         //imageView
@@ -86,7 +86,7 @@ final class DishListTableViewCell: UITableViewCell {
             dishImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
             dishImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
-//            dishImageView.widthAnchor.constraint(equalToConstant: 50),
+            //            dishImageView.widthAnchor.constraint(equalToConstant: 50),
             dishImageView.widthAnchor.constraint(equalTo: dishImageView.heightAnchor)
         ])
         
