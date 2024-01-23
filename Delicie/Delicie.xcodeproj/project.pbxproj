@@ -32,6 +32,8 @@
 		639FAF532B60571F0056EC89 /* DishOrderCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF522B60571F0056EC89 /* DishOrderCartView.swift */; };
 		639FAF552B605B540056EC89 /* DishOrderCartViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF542B605B540056EC89 /* DishOrderCartViewVM.swift */; };
 		639FAF572B605C7A0056EC89 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF562B605C7A0056EC89 /* Order.swift */; };
+		639FAF592B605FF10056EC89 /* DishOrderCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF582B605FF10056EC89 /* DishOrderCartTableViewCell.swift */; };
+		639FAF5B2B605FFB0056EC89 /* DishOrderCartTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF5A2B605FFB0056EC89 /* DishOrderCartTableViewCellVM.swift */; };
 		63A031A42B335BD000B325C8 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A32B335BD000B325C8 /* LocalState.swift */; };
 		63A031A62B337C3C00B325C8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A52B337C3C00B325C8 /* HomeView.swift */; };
 		63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */; };
@@ -79,6 +81,8 @@
 		639FAF522B60571F0056EC89 /* DishOrderCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartView.swift; sourceTree = "<group>"; };
 		639FAF542B605B540056EC89 /* DishOrderCartViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartViewVM.swift; sourceTree = "<group>"; };
 		639FAF562B605C7A0056EC89 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		639FAF582B605FF10056EC89 /* DishOrderCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartTableViewCell.swift; sourceTree = "<group>"; };
+		639FAF5A2B605FFB0056EC89 /* DishOrderCartTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartTableViewCellVM.swift; sourceTree = "<group>"; };
 		63A031A32B335BD000B325C8 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		63A031A52B337C3C00B325C8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		63A031A82B34511C00B325C8 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				639FAF502B6057030056EC89 /* DishOrderCartViewController.swift */,
 				639FAF522B60571F0056EC89 /* DishOrderCartView.swift */,
 				639FAF542B605B540056EC89 /* DishOrderCartViewVM.swift */,
+				639FAF582B605FF10056EC89 /* DishOrderCartTableViewCell.swift */,
+				639FAF5A2B605FFB0056EC89 /* DishOrderCartTableViewCellVM.swift */,
 			);
 			path = DishOrderCart;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				63A031AD2B34519000B325C8 /* ChefCollectionViewCell.swift in Sources */,
 				634A76A42AFBAE4100636975 /* ViewController.swift in Sources */,
 				63A031A62B337C3C00B325C8 /* HomeView.swift in Sources */,
+				639FAF5B2B605FFB0056EC89 /* DishOrderCartTableViewCellVM.swift in Sources */,
 				63F340362B3321080065AFBA /* HomeViewController.swift in Sources */,
 				6341A0072B556AEC00DC2A1D /* DishListView.swift in Sources */,
 				639CC4762B4D3AEB00D2DD0D /* HomeDetailViewViewModel.swift in Sources */,
@@ -454,6 +461,7 @@
 				639FAF532B60571F0056EC89 /* DishOrderCartView.swift in Sources */,
 				634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */,
 				632B05FD2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift in Sources */,
+				639FAF592B605FF10056EC89 /* DishOrderCartTableViewCell.swift in Sources */,
 				63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */,
 				63A031AF2B35AF3400B325C8 /* DishCategory.swift in Sources */,
 				6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */,

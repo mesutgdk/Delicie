@@ -14,8 +14,8 @@ final class DishOrderCartView: UIView {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(DishListTableViewCell.self, forCellReuseIdentifier: DishListTableViewCell.cellIdentifier)
-        tableView.rowHeight = DishListTableViewCell.rowHeight
+        tableView.register(DishOrderCartTableViewCell.self, forCellReuseIdentifier: DishOrderCartTableViewCell.cellIdentifier)
+        tableView.rowHeight = DishOrderCartTableViewCell.rowHeight
         tableView.separatorStyle = .none
         tableView.isHidden = true
         tableView.alpha = 0
