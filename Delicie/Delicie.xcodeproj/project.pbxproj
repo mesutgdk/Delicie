@@ -42,6 +42,9 @@
 		63A031AF2B35AF3400B325C8 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031AE2B35AF3400B325C8 /* DishCategory.swift */; };
 		63A031B12B35B2F900B325C8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031B02B35B2F900B325C8 /* String+Extension.swift */; };
 		63A031B32B3600B100B325C8 /* FoodCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A031B22B3600B100B325C8 /* FoodCollectionViewViewModel.swift */; };
+		63A7D4302B60E0CD008494AA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7D42F2B60E0CD008494AA /* NetworkService.swift */; };
+		63A7D4322B61374A008494AA /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7D4312B61374A008494AA /* Route.swift */; };
+		63A7D4342B613888008494AA /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7D4332B613888008494AA /* Method.swift */; };
 		63BC25E12B30161D00832E5B /* OnBoarding1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */; };
 		63BC25E32B3016D700832E5B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */; };
 		63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */; };
@@ -91,6 +94,9 @@
 		63A031AE2B35AF3400B325C8 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		63A031B02B35B2F900B325C8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		63A031B22B3600B100B325C8 /* FoodCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		63A7D42F2B60E0CD008494AA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		63A7D4312B61374A008494AA /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		63A7D4332B613888008494AA /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		63BC25E02B30161D00832E5B /* OnBoarding1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1CollectionViewCell.swift; sourceTree = "<group>"; };
 		63BC25E22B3016D700832E5B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		63BC25E42B301A4B00832E5B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 		634A769E2AFBAE4100636975 /* Delicie */ = {
 			isa = PBXGroup;
 			children = (
+				63A7D42E2B60E0AA008494AA /* Networking */,
 				63A031A22B335BA200B325C8 /* Utilities */,
 				634A76B42AFBBC0500636975 /* Views */,
 				634A76B32AFBBBFB00636975 /* Models */,
@@ -264,6 +271,16 @@
 				639FAF4E2B6056470056EC89 /* HomeCollectionViews */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		63A7D42E2B60E0AA008494AA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				63A7D42F2B60E0CD008494AA /* NetworkService.swift */,
+				63A7D4312B61374A008494AA /* Route.swift */,
+				63A7D4332B613888008494AA /* Method.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		63BC25DF2B30152300832E5B /* OnBoardingEmma */ = {
@@ -460,12 +477,15 @@
 				6366DE8B2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift in Sources */,
 				639FAF532B60571F0056EC89 /* DishOrderCartView.swift in Sources */,
 				634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */,
+				63A7D4342B613888008494AA /* Method.swift in Sources */,
 				632B05FD2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift in Sources */,
 				639FAF592B605FF10056EC89 /* DishOrderCartTableViewCell.swift in Sources */,
+				63A7D4302B60E0CD008494AA /* NetworkService.swift in Sources */,
 				63A031A92B34511C00B325C8 /* FoodCollectionViewCell.swift in Sources */,
 				63A031AF2B35AF3400B325C8 /* DishCategory.swift in Sources */,
 				6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */,
 				6341A0092B56520600DC2A1D /* DishListViewViewModel.swift in Sources */,
+				63A7D4322B61374A008494AA /* Route.swift in Sources */,
 				639FAF572B605C7A0056EC89 /* Order.swift in Sources */,
 				63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */,
 				639FAF512B6057030056EC89 /* DishOrderCartViewController.swift in Sources */,
