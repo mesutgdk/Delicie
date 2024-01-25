@@ -9,10 +9,41 @@ import Foundation
 
 struct NetworkService{
     
-    /// CreatingRequest
-    /// route: path to endpoint
-    /// method: type of request
-    private func createRequest(route: Route, 
+    private func request<T: Codable>(route: Route,
+                                     method: Method,
+                                     parameters: [String: Any]? = nil,
+                                     type: T.Type,
+                                     completion: (Result<T,Error>) -> Void){
+        
+        guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+            completion(.failure(AppError.unknownError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            var result: Result<Data, Error>?
+            if let data = data {
+                result = .success(data)
+                let responseString = String(data: data, encoding: .utf8) ?? "Could Not Stringfy Your Data"
+                print("Responce is : \(responseString)")
+            } else if let error = error {
+                result = .failure(error)
+                print("The Error is : \(error.localizedDescription)")
+            }
+            DispatchQueue.main.async {
+                //TODO decode our result and send back to the user
+            }
+        }.resume()
+        
+    }
+    
+    /// CreatingRequest: this func helps to generate an urlRequest
+    /// - Parameter:
+    ///   - route: path to endpoint
+    ///   - method: type of request
+    ///   - parameters: extra information
+    ///  - Returns URLRequest
+    private func createRequest(route: Route,
                                method: Method,
                                parameters: [String:Any]? = nil) -> URLRequest? {
         

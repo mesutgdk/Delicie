@@ -27,6 +27,7 @@
 		6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D28F2B3AE5C500C20E9F /* CardView.swift */; };
 		6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D2912B3B0C0000C20E9F /* Dish.swift */; };
 		6366DE8B2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */; };
+		6399FD5F2B624FC5000FFFA5 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399FD5E2B624FC5000FFFA5 /* AppError.swift */; };
 		639CC4762B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */; };
 		639FAF512B6057030056EC89 /* DishOrderCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF502B6057030056EC89 /* DishOrderCartViewController.swift */; };
 		639FAF532B60571F0056EC89 /* DishOrderCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FAF522B60571F0056EC89 /* DishOrderCartView.swift */; };
@@ -79,6 +80,7 @@
 		6359D28F2B3AE5C500C20E9F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6359D2912B3B0C0000C20E9F /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		6399FD5E2B624FC5000FFFA5 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewViewModel.swift; sourceTree = "<group>"; };
 		639FAF502B6057030056EC89 /* DishOrderCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartViewController.swift; sourceTree = "<group>"; };
 		639FAF522B60571F0056EC89 /* DishOrderCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishOrderCartView.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				63A7D42F2B60E0CD008494AA /* NetworkService.swift */,
 				63A7D4312B61374A008494AA /* Route.swift */,
 				63A7D4332B613888008494AA /* Method.swift */,
+				6399FD5E2B624FC5000FFFA5 /* AppError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			files = (
 				63BC25E52B301A4B00832E5B /* OnboardingSlide.swift in Sources */,
 				6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */,
+				6399FD5F2B624FC5000FFFA5 /* AppError.swift in Sources */,
 				63A031B32B3600B100B325C8 /* FoodCollectionViewViewModel.swift in Sources */,
 				63CF92F22B3D4C31009C4E98 /* ChefCollectionViewViewModel.swift in Sources */,
 				6341A0052B55633A00DC2A1D /* DishTableViewCellViewModel.swift in Sources */,
