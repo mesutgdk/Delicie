@@ -9,6 +9,15 @@ import Foundation
 
 struct NetworkService{
     
+    static let shared = NetworkService()
+    
+    private init(){}
+    
+    func myFirstRequest(){
+        request(route: .temp, method: .get, type: String.self) { _ in
+        }
+    }
+    
     private func request<T: Codable>(route: Route,
                                      method: Method,
                                      parameters: [String: Any]? = nil,
