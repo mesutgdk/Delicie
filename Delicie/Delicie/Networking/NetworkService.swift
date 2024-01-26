@@ -46,6 +46,24 @@ struct NetworkService{
         
     }
     
+    private func handleResponse<T: Decodable>(result: Result<Data,Error>?,
+                                              comletion: (Result<T,Error>) -> Void){
+        guard let result = result else {
+            comletion(.failure(AppError.unknownError))
+            return
+        }
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            guard let responce = try? decoder.decode(APIResponse<T>.self, from: data) else {
+                comletion(.failure(AppError.errorDecoding))
+                return
+            }
+        case .failure(let error):
+            comletion(.failure(error))
+        }
+    }
+    
     /// CreatingRequest: this func helps to generate an urlRequest
     /// - Parameter:
     ///   - route: path to endpoint
