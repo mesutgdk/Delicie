@@ -13,7 +13,7 @@ struct NetworkService{
     
     private init(){}
     
-    func myFirstRequest(){
+    func myFirstRequest(complition: @escaping (Result<String,Error>) -> Void){
         request(route: .temp, method: .get, type: String.self) { _ in
         }
     }
@@ -22,7 +22,7 @@ struct NetworkService{
                                      method: Method,
                                      parameters: [String: Any]? = nil,
                                      type: T.Type,
-                                     completion: (Result<T,Error>) -> Void){
+                                     completion: @escaping (Result<T, Error>) -> Void){
         
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))
@@ -41,26 +41,39 @@ struct NetworkService{
             }
             DispatchQueue.main.async {
                 //TODO decode our result and send back to the user
+                self.handleResponse(result: result,
+                                    completion: completion)
             }
         }.resume()
         
     }
     
     private func handleResponse<T: Decodable>(result: Result<Data,Error>?,
-                                              comletion: (Result<T,Error>) -> Void){
+                                              completion: (Result<T,Error>) -> Void) {
         guard let result = result else {
-            comletion(.failure(AppError.unknownError))
+            completion(.failure(AppError.unknownError))
             return
         }
         switch result {
         case .success(let data):
             let decoder = JSONDecoder()
             guard let responce = try? decoder.decode(APIResponse<T>.self, from: data) else {
-                comletion(.failure(AppError.errorDecoding))
+                completion(.failure(AppError.errorDecoding))
                 return
             }
+            
+            if let error = responce.error {
+                completion(.failure(AppError.serverError(error)))
+                return
+            }
+            
+            if let decodedData = responce.data {
+                completion(.success(decodedData))
+            } else {
+                completion(.failure(AppError.errorDecoding))
+            }
         case .failure(let error):
-            comletion(.failure(error))
+            completion(.failure(error))
         }
     }
     
