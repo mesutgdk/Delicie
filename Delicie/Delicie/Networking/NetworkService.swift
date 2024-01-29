@@ -13,15 +13,14 @@ struct NetworkService{
     
     private init(){}
     
-    func myFirstRequest(complition: @escaping (Result<String,Error>) -> Void){
-        request(route: .temp, method: .get, type: String.self) { _ in
-        }
+    func myFirstRequest(complition: @escaping (Result<[Dish],Error>) -> Void){
+        request(route: .temp, method: .get, completion: complition)
     }
     
-    private func request<T: Codable>(route: Route,
+    private func request<T: Decodable>(route: Route,
                                      method: Method,
                                      parameters: [String: Any]? = nil,
-                                     type: T.Type,
+                                     
                                      completion: @escaping (Result<T, Error>) -> Void){
         
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
@@ -34,7 +33,7 @@ struct NetworkService{
             if let data = data {
                 result = .success(data)
                 let responseString = String(data: data, encoding: .utf8) ?? "Could Not Stringfy Your Data"
-                print("Responce is : \(responseString)")
+//                print("Responce is : \(responseString)")
             } else if let error = error {
                 result = .failure(error)
                 print("The Error is : \(error.localizedDescription)")

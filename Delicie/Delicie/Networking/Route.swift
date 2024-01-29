@@ -16,7 +16,7 @@ enum Route{
     var descripton : String {
         switch self {
         case .temp:
-            return "/dishes/1"
+            return "/dishes/cat1"
         }
     }
     
