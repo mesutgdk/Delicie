@@ -27,6 +27,7 @@
 		6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D28F2B3AE5C500C20E9F /* CardView.swift */; };
 		6359D2922B3B0C0000C20E9F /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359D2912B3B0C0000C20E9F /* Dish.swift */; };
 		6366DE8B2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */; };
+		637CC93E2B68C81600BCB14A /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CC93D2B68C81600BCB14A /* AllDishes.swift */; };
 		639218942B63DA65006B579F /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639218932B63DA65006B579F /* APIResponse.swift */; };
 		6399FD5F2B624FC5000FFFA5 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399FD5E2B624FC5000FFFA5 /* AppError.swift */; };
 		639CC4762B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */; };
@@ -81,6 +82,7 @@
 		6359D28F2B3AE5C500C20E9F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6359D2912B3B0C0000C20E9F /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		6366DE8A2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		637CC93D2B68C81600BCB14A /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 		639218932B63DA65006B579F /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		6399FD5E2B624FC5000FFFA5 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		639CC4752B4D3AEB00D2DD0D /* DishDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewViewModel.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				63A031AE2B35AF3400B325C8 /* DishCategory.swift */,
 				6359D2912B3B0C0000C20E9F /* Dish.swift */,
 				639FAF562B605C7A0056EC89 /* Order.swift */,
+				637CC93D2B68C81600BCB14A /* AllDishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				6359D2902B3AE5C500C20E9F /* CardView.swift in Sources */,
 				6341A0092B56520600DC2A1D /* DishListViewViewModel.swift in Sources */,
 				63A7D4322B61374A008494AA /* Route.swift in Sources */,
+				637CC93E2B68C81600BCB14A /* AllDishes.swift in Sources */,
 				639FAF572B605C7A0056EC89 /* Order.swift in Sources */,
 				63D417962B20886B00E64CA6 /* OnboardingContainerViewController.swift in Sources */,
 				639FAF512B6057030056EC89 /* DishOrderCartViewController.swift in Sources */,
