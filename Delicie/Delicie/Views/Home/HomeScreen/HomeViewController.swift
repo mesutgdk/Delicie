@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 final class HomeViewController: UIViewController {
     
@@ -14,16 +15,14 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkService.shared.myFirstRequest { result in
+        NetworkService.shared.fetchAllCategories { [weak self] (result) in
             switch result {
-            case .success(let data):
-                for dish in data {
-                    print(dish.name ?? "")
-                }
+            case .success(let allDishes):
+                print("it is successfull")
             case .failure(let error):
-                print("The error is \(error.localizedDescription)")
+                print("The Error is \(error.localizedDescription)")
+                ProgressHUD.error()
             }
-            
         }
         
         setup()

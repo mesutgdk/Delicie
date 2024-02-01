@@ -8,4 +8,5 @@ target 'Delicie' do
   # Pods for Delicie
 pod "Kingfisher"
 
+pod "ProgressHUD"
 end

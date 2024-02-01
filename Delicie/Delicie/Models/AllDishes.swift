@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct AllDishes{
-    
+struct AllDishes: Decodable{
+    let categories: [DishCategory]?
+    let dishes: [Dish]?
+    let specials : [Dish]?
 }
