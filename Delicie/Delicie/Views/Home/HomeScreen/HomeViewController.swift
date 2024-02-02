@@ -12,18 +12,11 @@ final class HomeViewController: UIViewController {
     
     private let homeView = HomeView()
     
+    private let viewModel = HomeViewViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NetworkService.shared.fetchAllCategories { [weak self] (result) in
-            switch result {
-            case .success(let allDishes):
-                print("it is successfull")
-            case .failure(let error):
-                print("The Error is \(error.localizedDescription)")
-                ProgressHUD.error()
-            }
-        }
+
         
         setup()
         layout()

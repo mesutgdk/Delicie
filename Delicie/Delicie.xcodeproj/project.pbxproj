@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6323F0272B6CC18300A66938 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6323F0262B6CC18300A66938 /* HomeViewViewModel.swift */; };
 		632B05F42B21EFE300D364B4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05F32B21EFE300D364B4 /* UIView+Extension.swift */; };
 		632B05F62B21F45D00D364B4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05F52B21F45D00D364B4 /* OnboardingViewController.swift */; };
 		632B05F92B2262A300D364B4 /* OnBoardingVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B05F82B2262A300D364B4 /* OnBoardingVC2.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6323F0262B6CC18300A66938 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		632B05F32B21EFE300D364B4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		632B05F52B21F45D00D364B4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		632B05F82B2262A300D364B4 /* OnBoardingVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC2.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				63F340352B3321080065AFBA /* HomeViewController.swift */,
 				63A031A52B337C3C00B325C8 /* HomeView.swift */,
+				6323F0262B6CC18300A66938 /* HomeViewViewModel.swift */,
 				639FAF4E2B6056470056EC89 /* HomeCollectionViews */,
 			);
 			path = HomeScreen;
@@ -488,6 +491,7 @@
 				6366DE8B2B3C5F2A00B26F85 /* PopularCollectionViewViewModel.swift in Sources */,
 				639FAF532B60571F0056EC89 /* DishOrderCartView.swift in Sources */,
 				634A76A22AFBAE4100636975 /* SceneDelegate.swift in Sources */,
+				6323F0272B6CC18300A66938 /* HomeViewViewModel.swift in Sources */,
 				63A7D4342B613888008494AA /* Method.swift in Sources */,
 				632B05FD2B22645700D364B4 /* OnBoarding2CollectionViewCell.swift in Sources */,
 				639FAF592B605FF10056EC89 /* DishOrderCartTableViewCell.swift in Sources */,
