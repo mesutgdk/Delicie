@@ -77,9 +77,6 @@ struct NetworkService{
                 completion(.failure(AppError.errorDecoding))
             }
             
-            
-            
-            
         case .failure(let error):
             completion(.failure(error))
         }

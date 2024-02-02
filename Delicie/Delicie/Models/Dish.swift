@@ -8,7 +8,7 @@
 import Foundation
 
 struct Dish: Decodable{
-    let id,name,image,description : String?
+    let id, name, image, description : String?
     let calories: Int?
     
     var formattedCalories: String {

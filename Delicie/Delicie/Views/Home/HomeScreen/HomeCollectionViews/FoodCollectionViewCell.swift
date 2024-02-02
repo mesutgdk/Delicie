@@ -80,6 +80,6 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     
     func configure(category: DishCategory){
         foodLabel.text = category.name
-        foodImageView.kf.setImage(with: category.image.asUrl)
+        foodImageView.kf.setImage(with: category.image?.asUrl)
     }
 }
