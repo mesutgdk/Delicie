@@ -16,6 +16,8 @@ final class HomeView: UIView {
     
     public weak var delegate: HomeViewDelegate?
     
+    private let viewModel = HomeViewViewModel()
+    
     private let foodViewModel = FoodCollectionViewViewModel()
     private let popularViewModel = PopularCollectionViewViewModel()
     private let chefViewModel = ChefCollectionViewViewModel()
@@ -132,14 +134,14 @@ final class HomeView: UIView {
         )
         translatesAutoresizingMaskIntoConstraints = false
         
-        foodCollectionView1.delegate = foodViewModel
-        foodCollectionView1.dataSource = foodViewModel
+                foodCollectionView1.delegate = foodViewModel
+                foodCollectionView1.dataSource = foodViewModel
         
-        popularCollectionView2.delegate = popularViewModel
-        popularCollectionView2.dataSource = popularViewModel
+                popularCollectionView2.delegate = popularViewModel
+                popularCollectionView2.dataSource = popularViewModel
         
-        chefCollectionView3.delegate = chefViewModel
-        chefCollectionView3.dataSource = chefViewModel
+                chefCollectionView3.delegate = chefViewModel
+                chefCollectionView3.dataSource = chefViewModel
         
         popularViewModel.delegate = self
         

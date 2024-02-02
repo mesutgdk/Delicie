@@ -18,10 +18,10 @@ struct NetworkService{
     }
     
     private func request<T: Decodable>(route: Route,
-                                     method: Method,
-                                     parameters: [String: Any]? = nil,
-                                     
-                                     completion: @escaping (Result<T, Error>) -> Void){
+                                       method: Method,
+                                       parameters: [String: Any]? = nil,
+                                       
+                                       completion: @escaping (Result<T, Error>) -> Void){
         
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))
@@ -32,8 +32,9 @@ struct NetworkService{
             var result: Result<Data, Error>?
             if let data = data {
                 result = .success(data)
-                let responseString = String(data: data, encoding: .utf8) ?? "Could Not Stringfy Your Data"
-//                print("Responce is : \(responseString)")
+                //                let responseString = String(data: data, encoding: .utf8) ?? "Could Not Stringfy Your Data"
+                //                print("Responce is : \(responseString)")
+                
             } else if let error = error {
                 result = .failure(error)
                 print("The Error is : \(error.localizedDescription)")
@@ -55,11 +56,15 @@ struct NetworkService{
         }
         switch result {
         case .success(let data):
+            //            print(try? JSONSerialization.jsonObject(with: data))
+            
             let decoder = JSONDecoder()
-            guard let responce = try? decoder.decode(APIResponse<T>.self, from: data) else {
+            
+            guard let responce = try? decoder.decode(ApiResponse<T>.self, from: data) else {
                 completion(.failure(AppError.errorDecoding))
                 return
             }
+            
             
             if let error = responce.error {
                 completion(.failure(AppError.serverError(error)))
@@ -71,6 +76,10 @@ struct NetworkService{
             } else {
                 completion(.failure(AppError.errorDecoding))
             }
+            
+            
+            
+            
         case .failure(let error):
             completion(.failure(error))
         }
