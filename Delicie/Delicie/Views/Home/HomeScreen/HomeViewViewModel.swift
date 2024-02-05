@@ -21,6 +21,7 @@ final class HomeViewViewModel: NSObject {
             case .success(let allDishes):
 //                print("it is successfull")
                 ProgressHUD.dismiss()
+                print(allDishes.categories)
                 self?.foodViewModel.categories = allDishes.categories ?? []
                 self?.popularViewModel.populars = allDishes.dishes ?? []
                 self?.chefViewModel.specials = allDishes.specials ?? []

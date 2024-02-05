@@ -194,6 +194,13 @@ final class HomeView: UIView {
         ])
     }
     
+    
+    func reloadCollectionViews(){
+        foodCollectionView1.reloadData()
+        popularCollectionView2.reloadData()
+        chefCollectionView3.reloadData()
+    }
+
 }
 
 // MARK: - FoodCollectionViewVMDelegate
