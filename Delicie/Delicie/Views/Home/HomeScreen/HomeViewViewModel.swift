@@ -10,10 +10,6 @@ import ProgressHUD
 
 final class HomeViewViewModel: NSObject {
     
-    private let foodViewModel = FoodCollectionViewViewModel()
-    private let popularViewModel = PopularCollectionViewViewModel()
-    private let chefViewModel = ChefCollectionViewViewModel()
-    
     func fetchData(){
 
         NetworkService.shared.fetchAllCategories { [weak self] (result) in
@@ -21,10 +17,35 @@ final class HomeViewViewModel: NSObject {
             case .success(let allDishes):
 //                print("it is successfull")
                 ProgressHUD.dismiss()
-                print(allDishes.categories)
-                self?.foodViewModel.categories = allDishes.categories ?? []
-                self?.popularViewModel.populars = allDishes.dishes ?? []
-                self?.chefViewModel.specials = allDishes.specials ?? []
+//                print(allDishes.categories)
+                
+                let foodViewModel = FoodCollectionViewViewModel()
+                let popularViewModel = PopularCollectionViewViewModel()
+                let chefViewModel = ChefCollectionViewViewModel()
+                
+                let foods = allDishes.categories
+                let populars = allDishes.dishes
+                let chefs = allDishes.specials
+                
+                guard let foods = foods else {
+                    print( "somethimg went woring, nillness1 happended")
+                    return 
+                }
+                guard let populars = populars else {
+                    print( "somethimg went woring, nillness2 happended")
+                    
+                }
+                guard let chefs = chefs else {
+                    print( "somethimg went woring, nillness3 happended")
+                    
+                }
+                print("food2 is : \(foods)")
+                print("popular is : \(populars)")
+                print("cheff is : \(chefs)")
+                
+                foodViewModel.categories = foods
+                popularViewModel.populars = allDishes.dishes ?? []
+                chefViewModel.specials = allDishes.specials ?? []
             case .failure(let error):
                 print("The Error is \(error.localizedDescription)")
                 ProgressHUD.error()

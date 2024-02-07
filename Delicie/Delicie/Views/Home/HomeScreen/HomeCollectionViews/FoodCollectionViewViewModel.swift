@@ -15,7 +15,11 @@ final class FoodCollectionViewViewModel: NSObject{
     
     public weak var delegate : FoodCollectionViewViewModelDelegate?
     
-    lazy var categories : [DishCategory] = []
+    lazy var categories : [DishCategory] = [] {
+        didSet {
+            
+        }
+    }
 //    private lazy var categories : [DishCategory] = [
 //        .init(id: "id1", name: "Africa Dish", image: "https://source.unsplash.com/random/200x200?sig=1"),
 //        .init(id: "id1", name: "Africa Dish 2", image: "https://source.unsplash.com/random/200x200?sig=2"),

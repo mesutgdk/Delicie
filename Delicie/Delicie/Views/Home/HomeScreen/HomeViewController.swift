@@ -14,14 +14,23 @@ final class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewViewModel()
     
+    let foodViewModel = FoodCollectionViewViewModel()
+    let popularViewModel = PopularCollectionViewViewModel()
+    let chefViewModel = ChefCollectionViewViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.fetchData()
-        homeView.reloadCollectionViews()
-        
+       
         setup()
         layout()
+        homeView.reloadCollectionViews()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            print(self.foodViewModel.categories)
+        }
+        
     }
     // MARK: - setup&layout
     private func setup(){
