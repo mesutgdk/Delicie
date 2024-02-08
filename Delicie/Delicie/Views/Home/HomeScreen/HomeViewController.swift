@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
         homeView.reloadCollectionViews()
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            print(self.foodViewModel.categories)
+//            print(self.viewModel.allDishes?.categories)
         }
         
     }
