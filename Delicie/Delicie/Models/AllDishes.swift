@@ -9,6 +9,6 @@ import Foundation
 
 struct AllDishes: Decodable{
     let categories: [DishCategory]?
-    let dishes: [Dish]?
+    let populars: [Dish]?
     let specials : [Dish]?
 }

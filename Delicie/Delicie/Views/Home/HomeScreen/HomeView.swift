@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 protocol HomeViewDelegate: AnyObject {
     func homeDetailedView(_ dishDetailedView: HomeView, didSelectDish dish: Dish)
@@ -15,31 +16,12 @@ protocol HomeViewDelegate: AnyObject {
 final class HomeView: UIView {
     
     public weak var delegate: HomeViewDelegate?
+        
+    var categories : [DishCategory] = [] 
     
-    private let viewModel = HomeViewViewModel()
+    var populars: [Dish] = []
     
-    private lazy var categories : [DishCategory] = [
-        .init(id: "id1", name: "Africa Dish", image: "https://source.unsplash.com/random/200x200?sig=1"),
-        .init(id: "id1", name: "Africa Dish 2", image: "https://source.unsplash.com/random/200x200?sig=2"),
-        .init(id: "id1", name: "Africa Dish 3", image: "https://source.unsplash.com/random/200x200?sig=3"),
-        .init(id: "id1", name: "Africa Dish 4", image: "https://source.unsplash.com/random/200x200?sig=2"),
-        .init(id: "id1", name: "Africa Dish 5", image: "https://source.unsplash.com/random/200x200?sig=1")
-    ]
-    
-    private lazy var populars: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34),
-        .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214),
-        .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=3", description: "This is the best I ever had", calories: 1006)
-    ]
-    
-    private lazy var specials: [Dish] = [
-        .init(id: "id1", name: "Fried Plantain", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is my favorite dish.", calories: 34),
-        .init(id: "id1", name: "Beans and Garri", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214),
-        .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=3", description: "This is the best I ever had", calories: 1006),
-        .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34),
-        .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 214),
-        .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 1006)
-    ]
+    var specials: [Dish] = []
     
     private let foodLabel1 : UILabel = {
         let label = UILabel()
@@ -207,7 +189,6 @@ final class HomeView: UIView {
         ])
     }
     
-    
     func reloadCollectionViews(){
         foodCollectionView1.reloadData()
         popularCollectionView2.reloadData()
@@ -218,6 +199,7 @@ final class HomeView: UIView {
 // MARK: - CollectionView DataSource & Delegate
 extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
         switch collectionView {
         case foodCollectionView1:
             return categories.count
@@ -315,6 +297,31 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
             return
         }
     }
-    
-    
+}
+
+extension HomeView{
+    func fetchData(){
+
+        NetworkService.shared.fetchAllCategories { [weak self] (result) in
+            switch result {
+            case .success(let allDishes):
+//                print("it is successfull")
+                ProgressHUD.dismiss()
+//                print(allDishes.categories)
+
+                self?.categories = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                
+                self?.foodCollectionView1.reloadData()
+                self?.popularCollectionView2.reloadData()
+                self?.chefCollectionView3.reloadData()
+
+                
+            case .failure(let error):
+                print("The Error is \(error.localizedDescription)")
+                ProgressHUD.error()
+            }
+        }
+    }
 }

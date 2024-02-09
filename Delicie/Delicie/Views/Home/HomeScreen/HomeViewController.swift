@@ -14,22 +14,11 @@ final class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewViewModel()
     
-    let foodViewModel = FoodCollectionViewViewModel()
-    let popularViewModel = PopularCollectionViewViewModel()
-    let chefViewModel = ChefCollectionViewViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.fetchData()
-        
         setup()
         layout()
-        homeView.reloadCollectionViews()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            //            print(self.viewModel.allDishes?.categories)
-        }
         
     }
     // MARK: - setup&layout
@@ -42,6 +31,7 @@ final class HomeViewController: UIViewController {
         view.addSubview(homeView)
         
         homeView.delegate = self
+        homeView.fetchData()
     }
     
     
