@@ -22,13 +22,13 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.fetchData()
-       
+        
         setup()
         layout()
         homeView.reloadCollectionViews()
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-//            print(self.viewModel.allDishes?.categories)
+            //            print(self.viewModel.allDishes?.categories)
         }
         
     }

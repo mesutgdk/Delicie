@@ -18,9 +18,28 @@ final class HomeView: UIView {
     
     private let viewModel = HomeViewViewModel()
     
-    private let foodViewModel = FoodCollectionViewViewModel()
-    private let popularViewModel = PopularCollectionViewViewModel()
-    private let chefViewModel = ChefCollectionViewViewModel()
+    private lazy var categories : [DishCategory] = [
+        .init(id: "id1", name: "Africa Dish", image: "https://source.unsplash.com/random/200x200?sig=1"),
+        .init(id: "id1", name: "Africa Dish 2", image: "https://source.unsplash.com/random/200x200?sig=2"),
+        .init(id: "id1", name: "Africa Dish 3", image: "https://source.unsplash.com/random/200x200?sig=3"),
+        .init(id: "id1", name: "Africa Dish 4", image: "https://source.unsplash.com/random/200x200?sig=2"),
+        .init(id: "id1", name: "Africa Dish 5", image: "https://source.unsplash.com/random/200x200?sig=1")
+    ]
+    
+    private lazy var populars: [Dish] = [
+        .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34),
+        .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214),
+        .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=3", description: "This is the best I ever had", calories: 1006)
+    ]
+    
+    private lazy var specials: [Dish] = [
+        .init(id: "id1", name: "Fried Plantain", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is my favorite dish.", calories: 34),
+        .init(id: "id1", name: "Beans and Garri", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214),
+        .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=3", description: "This is the best I ever had", calories: 1006),
+        .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34),
+        .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 214),
+        .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 1006)
+    ]
     
     private let foodLabel1 : UILabel = {
         let label = UILabel()
@@ -134,20 +153,14 @@ final class HomeView: UIView {
         )
         translatesAutoresizingMaskIntoConstraints = false
         
-                foodCollectionView1.delegate = foodViewModel
-                foodCollectionView1.dataSource = foodViewModel
+                foodCollectionView1.delegate = self
+                foodCollectionView1.dataSource = self
         
-                popularCollectionView2.delegate = popularViewModel
-                popularCollectionView2.dataSource = popularViewModel
+                popularCollectionView2.delegate = self
+                popularCollectionView2.dataSource = self
         
-                chefCollectionView3.delegate = chefViewModel
-                chefCollectionView3.dataSource = chefViewModel
-        
-        popularViewModel.delegate = self
-        
-        chefViewModel.delegate = self
-        
-        foodViewModel.delegate = self
+                chefCollectionView3.delegate = self
+                chefCollectionView3.dataSource = self
         
     }
     
@@ -202,18 +215,106 @@ final class HomeView: UIView {
     }
 
 }
-
-// MARK: - FoodCollectionViewVMDelegate
-extension HomeView: FoodCollectionViewViewModelDelegate{
-    func didSelectCategory(_ dishCategory: DishCategory) {
-        delegate?.homeToDishCategory(self, didSelectCategory: dishCategory)
+// MARK: - CollectionView DataSource & Delegate
+extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch collectionView {
+        case foodCollectionView1:
+            return categories.count
+        case popularCollectionView2:
+            return populars.count
+        case chefCollectionView3:
+            return specials.count
+        default:
+            return 0
+        }
     }
-}
-
-// MARK: - Popular/ChefCollectionViewVMDelegate
-extension HomeView: PopularCollectionViewViewModelDelegate,ChefCollectionViewViewModelDelegate {
     
-    func didSelectDish(_ dish: Dish) {
-        delegate?.homeDetailedView(self, didSelectDish: dish)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch collectionView {
+        case foodCollectionView1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.cellIdentifier , for: indexPath) as? FoodCollectionViewCell else {
+                fatalError("hard error to deque Food Cell")
+            }
+            cell.configure(category: categories[indexPath.row])
+            return cell
+        case popularCollectionView2:
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIdentifier , for: indexPath) as? PopularCollectionViewCell else {
+                fatalError("hard error to deque Food Cell")
+            }
+            cell.configure(dish: populars[indexPath.row])
+            return cell
+        case chefCollectionView3:
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefCollectionViewCell.cellIdentifier , for: indexPath) as? ChefCollectionViewCell else {
+                fatalError("hard error to deque Food Cell")
+            }
+            cell.configureCell(dish: specials[indexPath.row])
+            return cell
+            
+        default:
+            return UICollectionViewCell()
+        }
     }
+    // MARK: - CollectionView LayOut
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView {
+        case foodCollectionView1:
+            let bounds = collectionView.bounds
+            let width, height: CGFloat
+            
+            width = (bounds.width-40)/2
+            height = (bounds.height-20)/2
+            
+            return CGSize(
+                width: width,
+                height: height
+            )
+        case popularCollectionView2:
+            
+            let bounds = collectionView.bounds
+            let width, height: CGFloat
+            
+            width = (bounds.width-20)/2
+            height = (bounds.height-10)
+            
+            return CGSize(
+                width: width,
+                height: height
+            )
+  
+        default:
+            let bounds = collectionView.bounds
+            let width, height: CGFloat
+            
+            width = (bounds.width-20)/2
+            height = (bounds.height-10)
+            
+            return CGSize(
+                width: width,
+                height: height
+            )
+        }
+      
+    }
+// MARK: - CollectionViewLayOut
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case foodCollectionView1:
+            let dishCategory = categories[indexPath.row]
+            delegate?.homeToDishCategory(self, didSelectCategory: dishCategory)
+        case popularCollectionView2:
+            let dish = populars[indexPath.row]
+            delegate?.homeDetailedView(self, didSelectDish: dish)
+        case chefCollectionView3:
+            let dish = specials[indexPath.row]
+            delegate?.homeDetailedView(self, didSelectDish: dish)
+        default:
+            return
+        }
+    }
+    
+    
 }
