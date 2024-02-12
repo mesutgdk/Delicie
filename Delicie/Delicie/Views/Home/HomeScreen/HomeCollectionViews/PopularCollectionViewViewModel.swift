@@ -10,8 +10,6 @@ import UIKit
 
 final class PopularCollectionViewViewModel: NSObject{
     
-  
-    
 //    lazy var populars: [Dish] = []
     private lazy var populars: [Dish] = [
         .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34),

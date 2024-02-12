@@ -17,11 +17,11 @@ final class HomeView: UIView {
     
     public weak var delegate: HomeViewDelegate?
         
-    var categories : [DishCategory] = [] 
+    private lazy var categories : [DishCategory] = []
     
-    var populars: [Dish] = []
+    private lazy var populars: [Dish] = []
     
-    var specials: [Dish] = []
+    private lazy var specials: [Dish] = []
     
     private let foodLabel1 : UILabel = {
         let label = UILabel()

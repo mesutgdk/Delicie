@@ -29,6 +29,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         label.text = "Food"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.backgroundColor = .red
         return label
     }()
     
