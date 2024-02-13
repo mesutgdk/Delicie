@@ -72,6 +72,7 @@ final class DishDetailView: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter your name"
+        textField.borderStyle = .roundedRect
         
         return textField
     }()

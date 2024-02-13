@@ -27,7 +27,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food"
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 13, weight: .semibold)
 //        label.backgroundColor = .red
@@ -60,7 +60,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         
         // foodImageView
         NSLayoutConstraint.activate([
-            foodImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            foodImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
             foodImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
             foodImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
@@ -70,7 +70,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
 //            foodLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             foodLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            foodLabel.leftAnchor.constraint(equalTo: foodImageView.rightAnchor, constant: 4),
+            foodLabel.leftAnchor.constraint(equalTo: foodImageView.rightAnchor, constant: 8),
             foodLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
     }

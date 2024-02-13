@@ -9,4 +9,6 @@ target 'Delicie' do
 pod "Kingfisher"
 
 pod "ProgressHUD"
+
+pod "IQKeyboardManagerSwift"
 end
