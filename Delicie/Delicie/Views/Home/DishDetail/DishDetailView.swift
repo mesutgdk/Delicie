@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 final class DishDetailView: UIView {
     
@@ -190,6 +191,13 @@ extension DishDetailView{
     }
     
     private func orderButtonTapped(){
+        guard let name = textField.text?.trimmingCharacters(in: .whitespaces),
+        !name.isEmpty else {
+            
+            ProgressHUD.failed("Please Enter Your Name", interaction: false)
+            return
+        }
         
+        print("Hello \(name)")
     }
 }

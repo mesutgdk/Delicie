@@ -125,6 +125,8 @@ final class HomeView: UIView {
     }
     
     private func setup(){
+        translatesAutoresizingMaskIntoConstraints = false
+        
         addSubviews(
             foodLabel1,
             foodCollectionView1,
@@ -133,18 +135,8 @@ final class HomeView: UIView {
             chefLabel3,
             chefCollectionView3
         )
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        foodCollectionView1.delegate = self
-        foodCollectionView1.dataSource = self
-        
-        popularCollectionView2.delegate = self
-        popularCollectionView2.dataSource = self
-        
-        chefCollectionView3.delegate = self
-        chefCollectionView3.dataSource = self
-        
-        ProgressHUD.animate()
+        collectionViewDelegate()
+        reloadActionProgressHud()
     }
     
     private func layout(){
@@ -189,11 +181,32 @@ final class HomeView: UIView {
             popularCollectionView2.bottomAnchor.constraint(equalTo: chefLabel3.topAnchor, constant: -8)
         ])
     }
+    // MARK: - Actions
     
-    func reloadCollectionViews(){
+    private func collectionViewDelegate(){
+        
+        foodCollectionView1.delegate = self
+        foodCollectionView1.dataSource = self
+        
+        popularCollectionView2.delegate = self
+        popularCollectionView2.dataSource = self
+        
+        chefCollectionView3.delegate = self
+        chefCollectionView3.dataSource = self
+        
+    }
+    
+    private func reloadCollectionViews(){
         foodCollectionView1.reloadData()
         popularCollectionView2.reloadData()
         chefCollectionView3.reloadData()
+    }
+    
+    private func reloadActionProgressHud(){
+        ProgressHUD.colorHUD.setStroke()
+        ProgressHUD.colorBackground.setStroke()
+        ProgressHUD.colorAnimation = .orange
+        ProgressHUD.animate("",.pacmanProgress)
     }
     
 }
@@ -299,6 +312,7 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
         }
     }
 }
+// MARK: - Fetching Data
 
 extension HomeView{
     func fetchData(){
