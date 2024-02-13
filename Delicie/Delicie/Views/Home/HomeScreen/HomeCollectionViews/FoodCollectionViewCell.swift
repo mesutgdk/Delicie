@@ -17,7 +17,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(systemName: "globe.americas")
-        imageView.backgroundColor = .blue
+//        imageView.backgroundColor = .blue
         imageView.cornerRadius = 5
         imageView.clipsToBounds = true
         return imageView
@@ -29,7 +29,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         label.text = "Food"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13, weight: .semibold)
-        label.backgroundColor = .red
+//        label.backgroundColor = .red
         return label
     }()
     
@@ -82,5 +82,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
     func configure(category: DishCategory){
         foodLabel.text = category.name
         foodImageView.kf.setImage(with: category.image?.asUrl)
+        
+//        print("Debug: \(category.name)  --- \(category.image)")
     }
 }
