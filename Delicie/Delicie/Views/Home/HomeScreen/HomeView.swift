@@ -16,7 +16,7 @@ protocol HomeViewDelegate: AnyObject {
 final class HomeView: UIView {
     
     public weak var delegate: HomeViewDelegate?
-        
+    
     private lazy var categories : [DishCategory] = []
     
     private lazy var populars: [Dish] = []
@@ -135,15 +135,16 @@ final class HomeView: UIView {
         )
         translatesAutoresizingMaskIntoConstraints = false
         
-                foodCollectionView1.delegate = self
-                foodCollectionView1.dataSource = self
+        foodCollectionView1.delegate = self
+        foodCollectionView1.dataSource = self
         
-                popularCollectionView2.delegate = self
-                popularCollectionView2.dataSource = self
+        popularCollectionView2.delegate = self
+        popularCollectionView2.dataSource = self
         
-                chefCollectionView3.delegate = self
-                chefCollectionView3.dataSource = self
+        chefCollectionView3.delegate = self
+        chefCollectionView3.dataSource = self
         
+        ProgressHUD.animate()
     }
     
     private func layout(){
@@ -194,12 +195,12 @@ final class HomeView: UIView {
         popularCollectionView2.reloadData()
         chefCollectionView3.reloadData()
     }
-
+    
 }
 // MARK: - CollectionView DataSource & Delegate
 extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         switch collectionView {
         case foodCollectionView1:
             return categories.count
@@ -240,7 +241,7 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
         }
     }
     // MARK: - CollectionView LayOut
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case foodCollectionView1:
@@ -266,7 +267,7 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
                 width: width,
                 height: height
             )
-  
+            
         default:
             let bounds = collectionView.bounds
             let width, height: CGFloat
@@ -279,9 +280,9 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
                 height: height
             )
         }
-      
+        
     }
-// MARK: - CollectionViewLayOut
+    // MARK: - CollectionViewLayOut
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case foodCollectionView1:
@@ -301,14 +302,14 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
 
 extension HomeView{
     func fetchData(){
-
+        
         NetworkService.shared.fetchAllCategories { [weak self] (result) in
             switch result {
             case .success(let allDishes):
-//                print("it is successfull")
+                //                print("it is successfull")
                 ProgressHUD.dismiss()
-//                print(allDishes.categories)
-
+                //                print(allDishes.categories)
+                
                 self?.categories = allDishes.categories ?? []
                 self?.populars = allDishes.populars ?? []
                 self?.specials = allDishes.specials ?? []
@@ -316,7 +317,7 @@ extension HomeView{
                 self?.foodCollectionView1.reloadData()
                 self?.popularCollectionView2.reloadData()
                 self?.chefCollectionView3.reloadData()
-
+                
                 
             case .failure(let error):
                 print("The Error is \(error.localizedDescription)")

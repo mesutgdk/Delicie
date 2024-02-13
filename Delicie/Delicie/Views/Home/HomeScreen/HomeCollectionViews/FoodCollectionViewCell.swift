@@ -28,6 +28,7 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Food"
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 13, weight: .semibold)
 //        label.backgroundColor = .red
         return label
@@ -67,8 +68,9 @@ final class FoodCollectionViewCell: UICollectionViewCell {
         ])
         //foodLAbel
         NSLayoutConstraint.activate([
-            foodLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            foodLabel.leftAnchor.constraint(equalTo: foodImageView.rightAnchor, constant: 8),
+//            foodLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            foodLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            foodLabel.leftAnchor.constraint(equalTo: foodImageView.rightAnchor, constant: 4),
             foodLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8)
         ])
     }

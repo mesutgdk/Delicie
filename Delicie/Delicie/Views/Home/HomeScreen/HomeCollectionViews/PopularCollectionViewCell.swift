@@ -25,7 +25,7 @@ final class PopularCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "globe.americas")
-        imageView.backgroundColor = .systemPink
+//        imageView.backgroundColor = .systemPink
         imageView.cornerRadius = 5
         imageView.clipsToBounds = true
         return imageView

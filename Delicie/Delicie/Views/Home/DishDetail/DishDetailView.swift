@@ -14,8 +14,9 @@ final class DishDetailView: UIView {
     private let detailedImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
-        imageView.contentMode = .scaleToFill
+        imageView.backgroundColor = .systemBackground
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         
         return imageView
     }()
@@ -104,6 +105,7 @@ final class DishDetailView: UIView {
     
     private func setup(){
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .systemBackground
         
         configure(viewModel: viewModel)
         
