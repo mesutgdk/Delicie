@@ -120,6 +120,7 @@ final class DishDetailView: UIView {
         verticalStackView.addArrangedSubview(orderButton)
         
         addSubviews(detailedImageView,verticalStackView)
+        createNextButtonAction()
         
     }
     private func layout(){
@@ -193,7 +194,7 @@ extension DishDetailView{
     private func orderButtonTapped(){
         guard let name = textField.text?.trimmingCharacters(in: .whitespaces),
         !name.isEmpty else {
-            
+//            print("it is returned as: \(textField.text)")
             ProgressHUD.failed("Please Enter Your Name", interaction: false)
             return
         }
