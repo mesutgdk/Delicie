@@ -30,7 +30,8 @@ final class HomeViewController: UIViewController {
         view.addSubview(homeView)
         
         homeView.delegate = self
-        homeView.fetchData()
+        viewModel.fetchData()
+//        homeView.fetchData()
     }
     
     

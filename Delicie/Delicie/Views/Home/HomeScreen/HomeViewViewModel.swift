@@ -8,21 +8,30 @@
 import Foundation
 import ProgressHUD
 
+protocol HomeViewViewModelDelegate: AnyObject{
+    
+}
+
 final class HomeViewViewModel: NSObject {
     
-    var allDishes: AllDishes?
+    private lazy var categories : [DishCategory] = []
+    
+    private lazy var populars: [Dish] = []
+    
+    private lazy var specials: [Dish] = []
     
     func fetchData(){
-
+        
         NetworkService.shared.fetchAllCategories { [weak self] (result) in
             switch result {
             case .success(let allDishes):
-//                print("it is successfull")
+                //                print("it is successfull")
                 ProgressHUD.dismiss()
-//                print(allDishes.categories)
-
-                self?.allDishes = allDishes
-//                print(self?.allDishes)
+                //                print(allDishes.categories)
+                
+                self?.categories = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
                 
             case .failure(let error):
                 print("The Error is \(error.localizedDescription)")
@@ -30,5 +39,5 @@ final class HomeViewViewModel: NSObject {
             }
         }
     }
+    
 }
-

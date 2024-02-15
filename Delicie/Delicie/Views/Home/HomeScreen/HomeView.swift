@@ -17,6 +17,8 @@ final class HomeView: UIView {
     
     public weak var delegate: HomeViewDelegate?
     
+    private let viewModel = HomeViewViewModel()
+    
     private lazy var categories : [DishCategory] = []
     
     private lazy var populars: [Dish] = []
@@ -234,6 +236,7 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
             }
             cell.configure(category: categories[indexPath.row])
             return cell
+            
         case popularCollectionView2:
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIdentifier , for: indexPath) as? PopularCollectionViewCell else {
