@@ -12,7 +12,7 @@ import Kingfisher
 final class ChefCollectionViewViewModel: NSObject{
     
     
-    private lazy var specials: [Dish] = []
+    lazy var specials: [Dish] = []
     
     
     public func fetchImage(url:URL?, imageCompletionHandler: @escaping (Result<RetrieveImageResult, KingfisherError>) -> Void){

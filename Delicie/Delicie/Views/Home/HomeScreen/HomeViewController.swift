@@ -30,7 +30,8 @@ final class HomeViewController: UIViewController {
         view.addSubview(homeView)
         
         homeView.delegate = self
-        viewModel.fetchData()
+        viewModel.delegate = self
+
 //        homeView.fetchData()
     }
     
@@ -80,3 +81,13 @@ extension HomeViewController: HomeViewDelegate{
         navigationController?.pushViewController(vc, animated: true)  // homeVC is a rootVC with navC, so navC will push
     }
 }
+
+extension HomeViewController: HomeViewViewModelDelegate{
+    func didFetchedData() {
+        homeView.reloadCollectionViews()
+        print("viewmodels category: \(viewModel.categories.count)")
+        print("viewmodels popular: \(viewModel.populars.count)")
+        print("viewmodels specials: \(viewModel.specials.count)")
+    }
+}
+

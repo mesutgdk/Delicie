@@ -127,6 +127,8 @@ final class HomeView: UIView {
     }
     
     private func setup(){
+        viewModel.fetchData()
+        
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubviews(
@@ -139,6 +141,7 @@ final class HomeView: UIView {
         )
         collectionViewDelegate()
         reloadActionProgressHud()
+        
     }
     
     private func layout(){
@@ -198,7 +201,7 @@ final class HomeView: UIView {
         
     }
     
-    private func reloadCollectionViews(){
+    func reloadCollectionViews(){
         foodCollectionView1.reloadData()
         popularCollectionView2.reloadData()
         chefCollectionView3.reloadData()
@@ -215,7 +218,7 @@ final class HomeView: UIView {
 // MARK: - CollectionView DataSource & Delegate
 extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+
         switch collectionView {
         case foodCollectionView1:
             return categories.count
@@ -300,6 +303,7 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
     }
     // MARK: - CollectionViewLayOut
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         switch collectionView {
         case foodCollectionView1:
             let dishCategory = categories[indexPath.row]
@@ -317,7 +321,8 @@ extension HomeView: UICollectionViewDataSource,UICollectionViewDelegate, UIColle
 }
 // MARK: - Fetching Data
 
-extension HomeView{
+extension HomeView {
+    
     func fetchData(){
         
         NetworkService.shared.fetchAllCategories { [weak self] (result) in

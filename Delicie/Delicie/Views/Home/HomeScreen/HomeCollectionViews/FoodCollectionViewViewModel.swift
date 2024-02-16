@@ -8,9 +8,9 @@
 import UIKit
 
 
-final class FoodCollectionViewViewModel{
+final class FoodCollectionViewViewModel: NSObject{
           
-    private lazy var categories : [DishCategory] = []
+    lazy var categories : [DishCategory] = []
     
 }
 

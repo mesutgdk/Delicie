@@ -10,7 +10,7 @@ import UIKit
 
 final class PopularCollectionViewViewModel: NSObject{
     
-    private lazy var populars: [Dish] = []
+    lazy var populars: [Dish] = []
     
 }
 

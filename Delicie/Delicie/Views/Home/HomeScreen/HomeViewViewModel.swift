@@ -9,16 +9,18 @@ import Foundation
 import ProgressHUD
 
 protocol HomeViewViewModelDelegate: AnyObject{
-    
+    func didFetchedData()
 }
 
 final class HomeViewViewModel: NSObject {
     
-    private lazy var categories : [DishCategory] = []
+    public weak var delegate : HomeViewViewModelDelegate?
     
-    private lazy var populars: [Dish] = []
+    lazy var categories : [DishCategory] = []
     
-    private lazy var specials: [Dish] = []
+    lazy var populars: [Dish] = []
+    
+    lazy var specials: [Dish] = []
     
     func fetchData(){
         
@@ -27,11 +29,13 @@ final class HomeViewViewModel: NSObject {
             case .success(let allDishes):
                 //                print("it is successfull")
                 ProgressHUD.dismiss()
-                //                print(allDishes.categories)
                 
                 self?.categories = allDishes.categories ?? []
                 self?.populars = allDishes.populars ?? []
                 self?.specials = allDishes.specials ?? []
+                
+                self?.delegate?.didFetchedData()
+//                print(self?.specials)
                 
             case .failure(let error):
                 print("The Error is \(error.localizedDescription)")
