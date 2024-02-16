@@ -17,6 +17,11 @@ struct NetworkService{
         request(route: .fecthAllCategories, method: .get, completion: complition)
     }
     
+    func placeOrder(dishID: String, name: String, comletion: @escaping((Result<Order, Error>) -> Void)){
+        let param = ["name": name]
+        request(route: .placeOrder(dishID), method: .post, completion: comletion)
+    }
+    
     private func request<T: Decodable>(route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,

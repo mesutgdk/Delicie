@@ -127,7 +127,7 @@ final class HomeView: UIView {
     }
     
     private func setup(){
-        viewModel.fetchData()
+//        viewModel.fetchData()
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -347,4 +347,6 @@ extension HomeView {
             }
         }
     }
+    
+    
 }

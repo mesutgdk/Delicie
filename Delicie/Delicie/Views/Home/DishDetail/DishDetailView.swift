@@ -200,5 +200,15 @@ extension DishDetailView{
         }
         
         print("Hello \(name)")
+        ProgressHUD.animate("Placing Order ...")
+        
+        NetworkService.shared.placeOrder(dishID: viewModel.dish.id ?? "", name: name) { [weak self] (result) in
+            switch result {
+            case .success(let order):
+                ProgressHUD.succeed("Your order has been received.🍽️"+(order.name ?? ""))
+            case .failure(let error):
+                ProgressHUD.error(error.localizedDescription)
+            }
+        }
     }
 }
