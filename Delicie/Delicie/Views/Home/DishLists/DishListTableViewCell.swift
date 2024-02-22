@@ -104,6 +104,8 @@ final class DishListTableViewCell: UITableViewCell {
         titleLabel.text = dish.name
         descriptionLabel.text = dish.description
         
+        let viewModel = DishTableViewCellViewModel(dish: dish)
+        
         viewModel.fetchImage { [weak self] result in
             switch result {
             case .success(let data):

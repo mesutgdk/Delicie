@@ -8,9 +8,14 @@
 import UIKit
 import ProgressHUD
 
+protocol DishListViewViewModelDelegate:AnyObject{
+    func didFetchDishCategory()
+}
 final class DishListViewViewModel:NSObject{
     
-    lazy var dishCategory: DishCategory? = nil
+    var dishCategory: DishCategory!
+    
+    weak var delegate: DishListViewViewModelDelegate?
     
     private lazy var cellViewModels: [Dish] = []
     
@@ -20,6 +25,8 @@ final class DishListViewViewModel:NSObject{
             case .success(let dishes):
                 ProgressHUD.dismiss()
                 self?.cellViewModels = dishes
+                self?.delegate?.didFetchDishCategory()
+                print(dishes)
             case .failure(let error):
                 ProgressHUD.error(error.localizedDescription)
             }
@@ -38,7 +45,7 @@ extension DishListViewViewModel: UITableViewDelegate, UITableViewDataSource{
             return UITableViewCell()
         }
         let viewModel = cellViewModels[indexPath.row]
-        cell.configure(viewModel: viewModel)
+        cell.configure(dish: viewModel)
         
         return cell
     }

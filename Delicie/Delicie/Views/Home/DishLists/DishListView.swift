@@ -35,7 +35,7 @@ final class DishListView: UIView {
         super.init(frame: frame)
         setup()
         layout()
-        configureTableView()
+       
         
     }
     
@@ -50,6 +50,11 @@ final class DishListView: UIView {
         spinner.startAnimating()
         
         animationSpinnerAndTableView()
+        
+        configureTableView()
+
+        viewModel.fetchDischCategories()
+        viewModel.delegate = self
     }
     
     private func layout(){
@@ -85,4 +90,10 @@ final class DishListView: UIView {
             }
         }
     }
+}
+extension DishListView: DishListViewViewModelDelegate{
+    func didFetchDishCategory() {
+        <#code#>
+    }
+    
 }

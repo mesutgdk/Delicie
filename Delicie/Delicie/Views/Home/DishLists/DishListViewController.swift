@@ -19,7 +19,8 @@ final class DishListViewController: UIViewController {
     private func setup() {
         view.addSubview(dishLishView)
         
-        view.backgroundColor = .systemBackground        
+        view.backgroundColor = .systemBackground  
+        
     }
     
     private func layout() {
@@ -31,4 +32,5 @@ final class DishListViewController: UIViewController {
             dishLishView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
 }
