@@ -6,17 +6,25 @@
 //
 
 import UIKit
+import ProgressHUD
 
 final class DishListViewViewModel:NSObject{
     
     lazy var dishCategory: DishCategory? = nil
     
-    private var cellViewModels: [DishTableViewCellViewModel] = [
-        .init(dish: .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34)),
-        .init(dish: .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214)),
-        .init(dish: .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=3", description: "This is the best I ever had", calories: 1006))
-        
-    ]
+    private lazy var cellViewModels: [Dish] = []
+    
+    func fetchDischCategories(){
+        NetworkService.shared.fetchCategoryDishs(categoryId: dishCategory?.id ?? "") { [weak self] (result) in
+            switch result {
+            case .success(let dishes):
+                ProgressHUD.dismiss()
+                self?.cellViewModels = dishes
+            case .failure(let error):
+                ProgressHUD.error(error.localizedDescription)
+            }
+        }
+    }
     
 }
 extension DishListViewViewModel: UITableViewDelegate, UITableViewDataSource{

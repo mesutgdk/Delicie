@@ -23,6 +23,10 @@ struct NetworkService{
         request(route: .placeOrder(dishID), method: .post, parameters: param, completion: comletion)
     }
     
+    func fetchCategoryDishs(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void){
+        request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
+    }
+    
     private func request<T: Decodable>(route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,

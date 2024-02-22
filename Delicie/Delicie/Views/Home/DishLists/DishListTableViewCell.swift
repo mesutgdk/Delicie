@@ -99,10 +99,10 @@ final class DishListTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(viewModel: DishTableViewCellViewModel){
+    func configure(dish: Dish){
         
-        titleLabel.text = viewModel.dish.name
-        descriptionLabel.text = viewModel.dish.description
+        titleLabel.text = dish.name
+        descriptionLabel.text = dish.description
         
         viewModel.fetchImage { [weak self] result in
             switch result {

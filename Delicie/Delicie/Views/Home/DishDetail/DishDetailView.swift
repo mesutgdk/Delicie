@@ -193,19 +193,17 @@ extension DishDetailView{
     private func orderButtonTapped(){
         guard let name = textField.text?.trimmingCharacters(in: .whitespaces),
         !name.isEmpty else {
-//            print("it is returned as: \(textField.text)")
             ProgressHUD.failed("Please Enter Your Name", interaction: false)
             return
         }
         
-//        print("Hello \(name)")
         ProgressHUD.animate("Placing Order ...")
         
         NetworkService.shared.placeOrder(dishID: viewModel.dish.id ?? "", name: name) { [weak self] (result) in
             switch result {
             case .success(let order):
                 ProgressHUD.succeed("Your order has been received.🍽️"+(order.name ?? ""))
-                print("Your order has been received.🍽️"+(order.name ?? ""))
+//                print("Your order has been received.🍽️"+(order.name ?? ""))
                 
             case .failure(let error):
                 ProgressHUD.error(error.localizedDescription)
