@@ -47,12 +47,9 @@ final class DishListView: UIView {
         backgroundColor = .systemBackground
         addSubviews(tableView,spinner)
         spinner.startAnimating()
-        
-        animationSpinnerAndTableView()
-        
-        configureTableView()
+                
+        configureTableViewDelegates()
 
-//        viewModel.fetchDischCategories()
         viewModel.delegate = self
     }
     
@@ -74,7 +71,7 @@ final class DishListView: UIView {
         ])
     }
     
-    private func configureTableView(){
+    private func configureTableViewDelegates(){
         tableView.dataSource = viewModel
         tableView.delegate = viewModel
     }
@@ -90,9 +87,12 @@ final class DishListView: UIView {
         }
     }
 }
+
+// MARK: - DishListViewViewModelDelegate : To load data and tableview
 extension DishListView: DishListViewViewModelDelegate{
     func didFetchDishCategory() {
-        self.tableView.reloadData()
+        animationSpinnerAndTableView()
+//        self.tableView.reloadData()
     }
     
 }
