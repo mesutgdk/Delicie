@@ -9,7 +9,21 @@ import UIKit
 
 final class DishListViewController: UIViewController {
     
-    private let dishLishView = DishListView()
+    private let dishLishView : DishListView
+    
+    private let viewModel : DishListViewViewModel
+    
+    // MARK: - Init
+    //  to pass data with view model, it displays which cell we choose
+    init(viewModel: DishListViewViewModel ) {
+        self.viewModel = viewModel
+        self.dishLishView = DishListView(frame: .zero, viewModel: viewModel)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +33,7 @@ final class DishListViewController: UIViewController {
     private func setup() {
         view.addSubview(dishLishView)
         
-        view.backgroundColor = .systemBackground  
-        
+        view.backgroundColor = .systemBackground
     }
     
     private func layout() {

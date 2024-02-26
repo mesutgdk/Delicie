@@ -13,19 +13,28 @@ protocol DishListViewViewModelDelegate:AnyObject{
 }
 final class DishListViewViewModel:NSObject{
     
-    var dishCategory: DishCategory!
+    var dishCategory: DishCategory? 
     
     weak var delegate: DishListViewViewModelDelegate?
     
-    private lazy var cellViewModels: [Dish] = []
+    private var dishes: [Dish] = []
+        
+    // MARK: - init
+    
+    init(dishCategory : DishCategory){
+        self.dishCategory = dishCategory
+    }
     
     func fetchDischCategories(){
-        NetworkService.shared.fetchCategoryDishs(categoryId: dishCategory?.id ?? "") { [weak self] (result) in
+        
+        NetworkService.shared.fetchCategoryDishes(categoryId: dishCategory?.id ?? "") { [weak self] (result) in
             switch result {
             case .success(let dishes):
                 ProgressHUD.dismiss()
-                self?.cellViewModels = dishes
-                self?.delegate?.didFetchDishCategory()
+                self?.dishes = dishes
+                DispatchQueue.main.async {
+                    self?.delegate?.didFetchDishCategory()
+                }
                 print(dishes)
             case .failure(let error):
                 ProgressHUD.error(error.localizedDescription)
@@ -36,16 +45,17 @@ final class DishListViewViewModel:NSObject{
 }
 extension DishListViewViewModel: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return cellViewModels.count
+//        print("tableView viewModelDishes counts: \(dishes.count)")
+        return dishes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DishListTableViewCell.cellIdentifier, for: indexPath) as? DishListTableViewCell else {
             return UITableViewCell()
         }
-        let viewModel = cellViewModels[indexPath.row]
+        let viewModel = dishes[indexPath.row]
         cell.configure(dish: viewModel)
+//        cell.textLabel?.text = viewModel.name
         
         return cell
     }

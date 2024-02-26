@@ -9,7 +9,7 @@ import UIKit
 
 final class DishListView: UIView {
     
-    private let viewModel = DishListViewViewModel()
+    private let viewModel : DishListViewViewModel
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -31,12 +31,11 @@ final class DishListView: UIView {
     } ()
     // MARK: - Init
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, viewModel: DishListViewViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
         setup()
         layout()
-       
-        
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +52,7 @@ final class DishListView: UIView {
         
         configureTableView()
 
-        viewModel.fetchDischCategories()
+//        viewModel.fetchDischCategories()
         viewModel.delegate = self
     }
     
@@ -93,7 +92,7 @@ final class DishListView: UIView {
 }
 extension DishListView: DishListViewViewModelDelegate{
     func didFetchDishCategory() {
-        <#code#>
+        self.tableView.reloadData()
     }
     
 }

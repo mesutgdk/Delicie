@@ -23,7 +23,7 @@ struct NetworkService{
         request(route: .placeOrder(dishID), method: .post, parameters: param, completion: comletion)
     }
     
-    func fetchCategoryDishs(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void){
+    func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void){
         request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
     }
     
@@ -70,7 +70,7 @@ struct NetworkService{
         }
         switch result {
         case .success(let data):
-            //            print(try? JSONSerialization.jsonObject(with: data))
+//                        print(try? JSONSerialization.jsonObject(with: data))
             
             let decoder = JSONDecoder()
             
