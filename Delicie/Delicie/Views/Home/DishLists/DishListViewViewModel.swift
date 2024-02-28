@@ -10,7 +10,9 @@ import ProgressHUD
 
 protocol DishListViewViewModelDelegate:AnyObject{
     func didFetchDishCategory()
+    func didSelectDishDetailedView(_ dish: Dish)
 }
+
 final class DishListViewViewModel:NSObject{
     
     var dishCategory: DishCategory? 
@@ -35,7 +37,7 @@ final class DishListViewViewModel:NSObject{
                 DispatchQueue.main.async {
                     self?.delegate?.didFetchDishCategory()
                 }
-                print(dishes)
+//                print(dishes)
             case .failure(let error):
                 ProgressHUD.error(error.localizedDescription)
             }
@@ -58,6 +60,11 @@ extension DishListViewViewModel: UITableViewDelegate, UITableViewDataSource{
 //        cell.textLabel?.text = viewModel.name
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dish = dishes[indexPath.row]
+        delegate?.didSelectDishDetailedView(dish)
     }
     
     

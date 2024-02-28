@@ -34,6 +34,8 @@ final class DishListViewController: UIViewController {
         view.addSubview(dishLishView)
         
         view.backgroundColor = .systemBackground
+        
+        dishLishView.delegate = self
     }
     
     private func layout() {
@@ -45,5 +47,15 @@ final class DishListViewController: UIViewController {
             dishLishView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
+}
+
+// MARK: - DishlistViewDelegate : To push selected cell from dishListTableView
+extension DishListViewController: DishListViewDelegate{
+    func didSelectedDishDetailedView(_ dish: Dish) {
+        let viewModel = DishDetailViewViewModel(dish: dish)
+        let detailedVC = DishDetailViewController(viewModel: viewModel)
+        //        print(dish)
+        detailedVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(detailedVC, animated: true)
+    }
 }

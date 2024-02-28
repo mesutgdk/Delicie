@@ -16,10 +16,10 @@ final class DishListTableViewCell: UITableViewCell {
     private let dishImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.cornerRadius = 5
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .blue
+//        imageView.backgroundColor = .blue
         return imageView
     }()
     

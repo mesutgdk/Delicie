@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol DishListViewDelegate:AnyObject{
+    func didSelectedDishDetailedView(_ dish: Dish)
+}
+
 final class DishListView: UIView {
     
     private let viewModel : DishListViewViewModel
+    
+    weak var delegate: DishListViewDelegate?
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -90,9 +96,16 @@ final class DishListView: UIView {
 
 // MARK: - DishListViewViewModelDelegate : To load data and tableview
 extension DishListView: DishListViewViewModelDelegate{
+
     func didFetchDishCategory() {
         animationSpinnerAndTableView()
 //        self.tableView.reloadData()
     }
+    
+    func didSelectDishDetailedView(_ dish: Dish) {
+        
+        delegate?.didSelectedDishDetailedView(dish)
+    }
+    
     
 }
