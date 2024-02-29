@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance()
             .setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().tintColor = .systemCyan
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.resignOnTouchOutside = true

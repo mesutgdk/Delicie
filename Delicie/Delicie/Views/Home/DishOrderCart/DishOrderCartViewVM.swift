@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 protocol DishOrderCartViewVMDelegate: AnyObject{
     func didSelectOrder(_ order: Order) //for going into detailed view
@@ -14,13 +15,30 @@ protocol DishOrderCartViewVMDelegate: AnyObject{
 final class DishOrderCartViewVM:NSObject{
     
     public weak var delegate : DishOrderCartViewVMDelegate?
+    private var orders: [Order] = [] {
+        didSet {
+            for order in orders {
+                let viewModel = DishOrderCartTableViewCellVM(order: order)
+                
+                orderCellViewModels.append(viewModel)
+            }
+        }
+    }
     
-    private lazy var orderCellViewModels: [DishOrderCartTableViewCellVM] = [
-        .init(order: .init(id: "id", name: "mesut geco", dish: .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34))),
-        .init(order: .init(id: "id", name: "cido geco", dish: .init(id: "id1", name: "Indomia", image: "https://source.unsplash.com/random/200x200?sig=2", description: "This is the best I ever had", calories: 214))),
-        .init(order: .init(id: "id", name: "ato geco", dish: .init(id: "id1", name: "Pizza", image: "https://source.unsplash.com/random/200x200?sig=3", description: "This is the best I ever had", calories: 1006))),
-        .init(order: .init(id: "id", name: "hayırlısı geco", dish: .init(id: "id1", name: "Garri", image: "https://source.unsplash.com/random/200x200?sig=1", description: "This is the best I ever had", calories: 34)))
-    ]
+    private lazy var orderCellViewModels: [DishOrderCartTableViewCellVM] = []
+    
+    func fetchDishOrder(){
+        NetworkService.shared.fetchOrders { [weak self] (result)in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                self?.orders = orders
+                
+            case .failure(let error):
+                ProgressHUD.error(error.localizedDescription)
+            }
+        }
+    }
 }
 extension DishOrderCartViewVM: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

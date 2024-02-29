@@ -73,7 +73,7 @@ extension HomeViewController: HomeViewDelegate{
     
     func homeToDishCategory(_ dishDetailedView: HomeView, didSelectCategory dishCategory: DishCategory) {
         let viewModel = DishListViewViewModel(dishCategory: dishCategory)
-        viewModel.fetchDischCategories()
+        viewModel.fetchDishCategories()
         
         let vc = DishListViewController(viewModel: viewModel)
         vc.title = viewModel.dishCategory?.name

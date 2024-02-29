@@ -57,6 +57,7 @@ final class DishOrderCartView: UIView {
         animationSpinnerAndTableView()
         
         viewModel.delegate = self
+        viewModel.fetchDishOrder()
     }
     
     private func layout(){

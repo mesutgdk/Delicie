@@ -27,7 +27,7 @@ final class DishListViewViewModel:NSObject{
         self.dishCategory = dishCategory
     }
     
-    func fetchDischCategories(){
+    func fetchDishCategories(){
         
         NetworkService.shared.fetchCategoryDishes(categoryId: dishCategory?.id ?? "") { [weak self] (result) in
             switch result {
