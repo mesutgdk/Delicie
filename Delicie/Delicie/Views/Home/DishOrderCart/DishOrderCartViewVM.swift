@@ -10,11 +10,13 @@ import ProgressHUD
 
 protocol DishOrderCartViewVMDelegate: AnyObject{
     func didSelectOrder(_ order: Order) //for going into detailed view
+    func didFetchOrder() // to fetch orders
 }
 
 final class DishOrderCartViewVM:NSObject{
     
     public weak var delegate : DishOrderCartViewVMDelegate?
+    
     private var orders: [Order] = [] {
         didSet {
             for order in orders {
@@ -33,7 +35,8 @@ final class DishOrderCartViewVM:NSObject{
             case .success(let orders):
                 ProgressHUD.dismiss()
                 self?.orders = orders
-                
+                self?.delegate?.didFetchOrder()
+                print(orders)
             case .failure(let error):
                 ProgressHUD.error(error.localizedDescription)
             }
@@ -59,5 +62,7 @@ extension DishOrderCartViewVM: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = orderCellViewModels[indexPath.row]
         delegate?.didSelectOrder(selectedCell.order)
+        
+//        delegate?.didFetchOrder() // to refresh orders
     }
 }

@@ -96,9 +96,13 @@ final class DishOrderCartView: UIView {
 }
 // MARK: - DishOrderCartTableViewVMDelegate
 extension DishOrderCartView: DishOrderCartViewVMDelegate{
+ 
     func didSelectOrder(_ order: Order) {
         delegate?.dishOrderCartView(self, didSelectOrder: order)
     }
     
+    func didFetchOrder() {
+        tableView.reloadData()
+    }
 }
 
