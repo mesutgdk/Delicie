@@ -6,7 +6,7 @@ Delicie is a sleek and intuitive iOS app designed to make ordering food a deligh
 Delicie brings convenience and flavor right to your fingertips.
 
 ## Key Features
-- Programmatically UI design
+- No Storyboard - Programmatically UI design
 - It has high testability and readability with MVVM and Clean architecture.
 - Onboarding - Tried 2 different methods 1- UIPageViewController, Protocol delegate, User defaults  2- CollectionView with paging.
 - Home Screen - Explore food categories, popular dishes, and chef's specials.
