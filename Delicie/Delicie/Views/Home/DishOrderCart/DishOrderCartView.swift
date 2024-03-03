@@ -54,8 +54,6 @@ final class DishOrderCartView: UIView {
         addSubviews(tableView,spinner)
         spinner.startAnimating()
         
-        animationSpinnerAndTableView()
-        
         viewModel.delegate = self
         viewModel.fetchDishOrder()
     }
@@ -103,6 +101,7 @@ extension DishOrderCartView: DishOrderCartViewVMDelegate{
     
     func didFetchOrder() {
         tableView.reloadData()
+        animationSpinnerAndTableView() // to stop animate spinner
     }
 }
 

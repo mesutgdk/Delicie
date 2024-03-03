@@ -36,7 +36,7 @@ final class DishOrderCartViewVM:NSObject{
                 ProgressHUD.dismiss()
                 self?.orders = orders
                 self?.delegate?.didFetchOrder()
-                print(orders)
+//                print(orders)
             case .failure(let error):
                 ProgressHUD.error(error.localizedDescription)
             }
@@ -63,6 +63,6 @@ extension DishOrderCartViewVM: UITableViewDelegate, UITableViewDataSource{
         let selectedCell = orderCellViewModels[indexPath.row]
         delegate?.didSelectOrder(selectedCell.order)
         
-//        delegate?.didFetchOrder() // to refresh orders
+        delegate?.didFetchOrder() // to refresh orders
     }
 }
